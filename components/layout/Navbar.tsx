@@ -1,13 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
+  const { t, language, setLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,36 +55,82 @@ const Navbar = () => {
               onClick={() => scrollToSection("problems")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
-              Optimización Cloud
+              {t.nav.cloud}
             </button>
             <button
               onClick={() => scrollToSection("solutions")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
-              Automatización Finanzas
+              {t.nav.finance}
             </button>
             <button
               onClick={() => scrollToSection("clients")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
-              Clientes
+              {t.nav.clients}
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
-              Contacto
+              {t.nav.contact}
             </button>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Selector & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Select language"
+              >
+                <Globe size={18} className="text-gray-600" />
+                <span className="text-sm font-medium text-gray-700 uppercase">
+                  {language}
+                </span>
+              </button>
+              {isLangMenuOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-10"
+                    onClick={() => setIsLangMenuOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-20">
+                    <button
+                      onClick={() => {
+                        setLanguage("en");
+                        setIsLangMenuOpen(false);
+                      }}
+                      className={cn(
+                        "w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors",
+                        language === "en" && "bg-primary-50 text-primary-600 font-semibold"
+                      )}
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => {
+                        setLanguage("es");
+                        setIsLangMenuOpen(false);
+                      }}
+                      className={cn(
+                        "w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors",
+                        language === "es" && "bg-primary-50 text-primary-600 font-semibold"
+                      )}
+                    >
+                      Español
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
             <Button
               onClick={() => scrollToSection("contact")}
               variant="primary"
               size="md"
             >
-              Agendar Reunión
+              {t.nav.cta}
             </Button>
           </div>
 
@@ -104,34 +153,62 @@ const Navbar = () => {
               onClick={() => scrollToSection("problems")}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
             >
-              Optimización Cloud
+              {t.nav.cloud}
             </button>
             <button
               onClick={() => scrollToSection("solutions")}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
             >
-              Automatización Finanzas
+              {t.nav.finance}
             </button>
             <button
               onClick={() => scrollToSection("clients")}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
             >
-              Clientes
+              {t.nav.clients}
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
             >
-              Contacto
+              {t.nav.contact}
             </button>
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
+              <div className="flex items-center gap-2 px-4">
+                <Globe size={16} className="text-gray-600" />
+                <button
+                  onClick={() => {
+                    setLanguage("en");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={cn(
+                    "text-sm px-2 py-1 rounded",
+                    language === "en" && "bg-primary-100 text-primary-600 font-semibold"
+                  )}
+                >
+                  EN
+                </button>
+                <span className="text-gray-400">|</span>
+                <button
+                  onClick={() => {
+                    setLanguage("es");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={cn(
+                    "text-sm px-2 py-1 rounded",
+                    language === "es" && "bg-primary-100 text-primary-600 font-semibold"
+                  )}
+                >
+                  ES
+                </button>
+              </div>
               <Button
                 onClick={() => scrollToSection("contact")}
                 variant="primary"
                 size="md"
                 className="w-full"
               >
-                Agendar Reunión
+                {t.nav.cta}
               </Button>
             </div>
           </div>

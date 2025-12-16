@@ -4,8 +4,10 @@ import FadeIn from "@/components/animations/FadeIn";
 import Button from "@/components/ui/Button";
 import { Check, Cloud, Zap, Shield, Target, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SolutionCloud = () => {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -18,10 +20,10 @@ const SolutionCloud = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-            Automatización de FinOps:
+            {t.solutions.cloud.title}
           </h2>
           <p className="text-xl text-center text-gray-600 mb-16">
-            Ahorrá hasta 35% sin tocar código
+            {t.solutions.cloud.subtitle}
           </p>
         </FadeIn>
 
@@ -30,32 +32,28 @@ const SolutionCloud = () => {
           <FadeIn direction="right">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Cómo funciona:
+                {t.solutions.cloud.how}:
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Nuestra plataforma se conecta a tus nubes (AWS, Azure, GCP) y
-                automatiza todo el ciclo de optimización:
+                {t.solutions.cloud.description}
               </p>
 
               <div className="space-y-4 mb-8">
                 {[
                   {
                     step: "1",
-                    title: "Detecta desperdicios",
-                    description:
-                      "recursos ociosos, instancias mal dimensionadas, volúmenes sin usar, oportunidades de Reserved Instances",
+                    title: t.solutions.cloud.step1,
+                    description: t.solutions.cloud.step1Desc,
                   },
                   {
                     step: "2",
-                    title: "Elimina falsos positivos",
-                    description:
-                      "considera contexto de negocio, ownership y reglas específicas de tu empresa",
+                    title: t.solutions.cloud.step2,
+                    description: t.solutions.cloud.step2Desc,
                   },
                   {
                     step: "3",
-                    title: "Ejecuta automáticamente",
-                    description:
-                      "apaga, redimensiona y optimiza con un solo clic de aprobación, con audit trail completo",
+                    title: t.solutions.cloud.step3,
+                    description: t.solutions.cloud.step3Desc,
                   },
                 ].map((item, idx) => (
                   <motion.div
@@ -81,14 +79,14 @@ const SolutionCloud = () => {
 
               <div className="bg-white rounded-xl p-6 shadow-md mb-8">
                 <h4 className="font-semibold text-gray-900 mb-4">
-                  Resultados concretos:
+                  {t.solutions.cloud.results}:
                 </h4>
                 <ul className="space-y-3">
                   {[
-                    "20-35% de reducción en gasto cloud en 4-8 semanas",
-                    "75% menos trabajo manual para equipos de FinOps",
-                    "Gobernanza total: workflows con aprobación y trazabilidad",
-                    "Sin código: templates predefinidos para casos comunes",
+                    t.solutions.cloud.r1,
+                    t.solutions.cloud.r2,
+                    t.solutions.cloud.r3,
+                    t.solutions.cloud.r4,
                   ].map((result, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <Check className="text-primary-600 flex-shrink-0 mt-0.5" size={20} />
@@ -100,20 +98,19 @@ const SolutionCloud = () => {
 
               <div className="mb-8">
                 <p className="text-gray-600 mb-2">
-                  <span className="font-semibold text-gray-900">¿Para quién?</span>{" "}
-                  Empresas con gasto cloud &gt;USD 50K/mes: fintech, banca, retail,
-                  SaaS, tech
+                  <span className="font-semibold text-gray-900">{t.solutions.cloud.for}?</span>{" "}
+                  {t.solutions.cloud.forDesc}
                 </p>
                 <p className="text-gray-600">
-                  <span className="font-semibold text-gray-900">Roles clave:</span>{" "}
-                  Head of FinOps, CFO, CTO, VP Engineering, Director de Cloud
+                  <span className="font-semibold text-gray-900">{t.solutions.cloud.roles}:</span>{" "}
+                  {t.solutions.cloud.rolesDesc}
                 </p>
               </div>
 
               <div className="mb-8">
-                <p className="text-sm text-gray-500 mb-2">Clientes que lo usan:</p>
+                <p className="text-sm text-gray-500 mb-2">{t.solutions.cloud.clients}:</p>
                 <p className="text-sm font-medium text-gray-700">
-                  Check Point • Roku • Cyera • Sapiens • Bancos globales
+                  {t.solutions.cloud.clientsDesc}
                 </p>
               </div>
 
@@ -123,7 +120,7 @@ const SolutionCloud = () => {
                 size="lg"
                 className="group"
               >
-                Agendar demo
+                {t.solutions.cloud.cta}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

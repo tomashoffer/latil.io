@@ -10,8 +10,10 @@ import Textarea from "@/components/ui/Textarea";
 import Select from "@/components/ui/Select";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { Mail, Linkedin, Send, CheckCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactCTA = () => {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -59,11 +61,10 @@ const ContactCTA = () => {
         <FadeIn>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              ¿Listo para automatizar y ahorrar?
+              {t.contact.title}
             </h2>
             <p className="text-xl text-primary-100 max-w-3xl mx-auto">
-              Agendá una reunión de 20 minutos sin compromiso. Evaluamos tu caso,
-              te mostramos las soluciones y estimamos el ahorro potencial.
+              {t.contact.subtitle}
             </p>
           </div>
         </FadeIn>
@@ -76,62 +77,60 @@ const ContactCTA = () => {
                 <div className="text-center py-8">
                   <CheckCircle className="text-green-600 mx-auto mb-4" size={48} />
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    ¡Mensaje enviado!
+                    {t.contact.form.success}
                   </h3>
                   <p className="text-gray-600">
-                    Te contactaremos pronto para coordinar la reunión.
+                    {t.contact.form.successDesc}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <Input
-                    label="Nombre completo"
+                    label={t.contact.form.name}
                     {...register("name")}
                     error={errors.name?.message}
-                    placeholder="Juan Pérez"
+                    placeholder={t.contact.form.name}
                   />
 
                   <Input
-                    label="Email corporativo"
+                    label={t.contact.form.email}
                     type="email"
                     {...register("email")}
                     error={errors.email?.message}
-                    placeholder="juan@empresa.com"
+                    placeholder={t.contact.form.email}
                   />
 
                   <Input
-                    label="Empresa"
+                    label={t.contact.form.company}
                     {...register("company")}
                     error={errors.company?.message}
-                    placeholder="Mi Empresa S.A."
+                    placeholder={t.contact.form.company}
                   />
 
                   <Input
-                    label="Rol/Cargo"
+                    label={t.contact.form.role}
                     {...register("role")}
                     error={errors.role?.message}
-                    placeholder="CFO / Head of FinOps"
+                    placeholder={t.contact.form.role}
                   />
 
                   <Select
-                    label="Desafío principal"
+                    label={t.contact.form.challenge}
                     {...register("challenge")}
                     error={errors.challenge?.message}
                   >
-                    <option value="">Seleccioná un desafío</option>
-                    <option value="cloud">Costos cloud fuera de control</option>
-                    <option value="finance">
-                      Procesos financieros lentos y manuales
-                    </option>
-                    <option value="both">Ambos</option>
+                    <option value="">{t.contact.form.challengeOptions.placeholder}</option>
+                    <option value="cloud">{t.contact.form.challengeOptions.cloud}</option>
+                    <option value="finance">{t.contact.form.challengeOptions.finance}</option>
+                    <option value="both">{t.contact.form.challengeOptions.both}</option>
                   </Select>
 
                   <Textarea
-                    label="Mensaje (opcional)"
+                    label={t.contact.form.message}
                     rows={4}
                     {...register("message")}
                     error={errors.message?.message}
-                    placeholder="Contanos más sobre tu situación..."
+                    placeholder={t.contact.form.messagePlaceholder}
                   />
 
                   <Button
@@ -142,10 +141,10 @@ const ContactCTA = () => {
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Enviando..."
+                      t.contact.form.submitting
                     ) : (
                       <>
-                        Enviar mensaje
+                        {t.contact.form.submit}
                         <Send className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </>
                     )}
@@ -158,7 +157,7 @@ const ContactCTA = () => {
           {/* Contact Info */}
           <FadeIn direction="left" delay={0.2}>
             <div className="text-white">
-              <h3 className="text-2xl font-bold mb-6">O escríbenos directamente:</h3>
+              <h3 className="text-2xl font-bold mb-6">{t.contact.direct}</h3>
               <div className="space-y-6">
                 <a
                   href="mailto:contacto@latil.io"
@@ -168,7 +167,7 @@ const ContactCTA = () => {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <div className="font-semibold">Email</div>
+                    <div className="font-semibold">{t.contact.email}</div>
                     <div className="text-primary-100">contacto@latil.io</div>
                   </div>
                 </a>
@@ -183,19 +182,19 @@ const ContactCTA = () => {
                     <Linkedin size={24} />
                   </div>
                   <div>
-                    <div className="font-semibold">LinkedIn</div>
-                    <div className="text-primary-100">Conectá con nosotros</div>
+                    <div className="font-semibold">{t.contact.linkedin}</div>
+                    <div className="text-primary-100">{t.contact.linkedinDesc}</div>
                   </div>
                 </a>
               </div>
 
               <div className="mt-8 p-6 bg-white/10 rounded-xl backdrop-blur-sm">
-                <h4 className="font-semibold mb-3">Nuestro compromiso:</h4>
+                <h4 className="font-semibold mb-3">{t.contact.commitment}:</h4>
                 <ul className="space-y-2 text-primary-100 text-sm">
-                  <li>✓ Respuesta en menos de 24 horas</li>
-                  <li>✓ Consulta inicial sin costo</li>
-                  <li>✓ Análisis personalizado de tu caso</li>
-                  <li>✓ Estimación de ahorro potencial</li>
+                  <li>{t.contact.c1}</li>
+                  <li>{t.contact.c2}</li>
+                  <li>{t.contact.c3}</li>
+                  <li>{t.contact.c4}</li>
                 </ul>
               </div>
             </div>

@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import LogoCarousel from "@/components/ui/LogoCarousel";
 import { ArrowRight, TrendingDown, Zap, Briefcase } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -34,13 +36,13 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
-            Reduce costos cloud hasta{" "}
+            {t.hero.headline}{" "}
             <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-              35%
+              {t.hero.headlineHighlight1}
             </span>{" "}
-            y acelera tus procesos financieros con{" "}
+            {t.hero.headlineMiddle}{" "}
             <span className="bg-gradient-to-r from-accent-600 to-primary-600 bg-clip-text text-transparent">
-              IA
+              {t.hero.headlineHighlight2}
             </span>
           </motion.h1>
 
@@ -51,14 +53,13 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-10 leading-relaxed"
           >
-            Ayudamos a empresas en LATAM y Europa a automatizar la optimización
-            de infraestructura cloud y liberar hasta{" "}
-            <span className="font-semibold text-gray-900">30%</span> del tiempo
-            de equipos financieros, con soluciones enterprise probadas por{" "}
+            {t.hero.subheadline}{" "}
+            <span className="font-semibold text-gray-900">{t.hero.subheadlineHighlight}</span>{" "}
+            {t.hero.subheadlineMiddle}{" "}
             <span className="font-semibold text-gray-900">
-              Booking.com, Check Point
+              {t.hero.subheadlineCompanies}
             </span>{" "}
-            y Fortune 500.
+            {t.hero.subheadlineEnd}
           </motion.p>
 
           {/* CTAs */}
@@ -74,7 +75,7 @@ const Hero = () => {
               size="lg"
               className="group"
             >
-              Agendar Reunión
+              {t.hero.ctaPrimary}
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -82,7 +83,7 @@ const Hero = () => {
               variant="outline"
               size="lg"
             >
-              Ver Soluciones
+              {t.hero.ctaSecondary}
             </Button>
           </motion.div>
 
@@ -96,17 +97,17 @@ const Hero = () => {
             <div className="flex flex-col items-center">
               <TrendingDown className="text-primary-600 mb-2" size={32} />
               <div className="text-3xl font-bold text-gray-900">35%</div>
-              <div className="text-sm text-gray-600">Reducción en costos cloud</div>
+              <div className="text-sm text-gray-600">{t.hero.stats.cloud}</div>
             </div>
             <div className="flex flex-col items-center">
               <Zap className="text-accent-600 mb-2" size={32} />
               <div className="text-3xl font-bold text-gray-900">30%</div>
-              <div className="text-sm text-gray-600">Tiempo liberado en finanzas</div>
+              <div className="text-sm text-gray-600">{t.hero.stats.finance}</div>
             </div>
             <div className="flex flex-col items-center">
               <Briefcase className="text-primary-600 mb-2" size={32} />
               <div className="text-3xl font-bold text-gray-900">75%</div>
-              <div className="text-sm text-gray-600">Menos trabajo manual</div>
+              <div className="text-sm text-gray-600">{t.hero.stats.manual}</div>
             </div>
           </motion.div>
         </div>
@@ -116,7 +117,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 right-0 py-8 bg-white/50 backdrop-blur-sm border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-gray-500 mb-6">
-            Empresas que confían en nuestras soluciones
+            {t.hero.clients}
           </p>
           <LogoCarousel
             logos={[

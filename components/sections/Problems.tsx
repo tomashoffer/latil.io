@@ -3,29 +3,32 @@
 import FadeIn from "@/components/animations/FadeIn";
 import Card from "@/components/ui/Card";
 import { Cloud, Calculator, DollarSign, Clock, AlertTriangle, BarChart3 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Problems = () => {
+  const { t } = useLanguage();
+
   const problems = [
     {
       icon: Cloud,
-      title: "Costos de cloud descontrolados",
-      pain: "Tu equipo revisa dashboards de AWS, Azure o GCP cada semana, identifica recursos ociosos y oportunidades de ahorro, pero nadie tiene tiempo de ejecutar los cambios. El gasto sigue creciendo y las recomendaciones quedan en PDFs que nadie implementa.",
+      title: t.problems.cloud.title,
+      pain: t.problems.cloud.pain,
       consequences: [
-        { icon: DollarSign, text: "Miles de dólares desperdiciados cada mes" },
-        { icon: Clock, text: "75% del tiempo de FinOps en trabajo manual" },
-        { icon: BarChart3, text: "Falta de visibilidad por equipo/proyecto" },
-        { icon: AlertTriangle, text: "Alertas de costo que nadie atiende" },
+        { icon: DollarSign, text: t.problems.cloud.c1 },
+        { icon: Clock, text: t.problems.cloud.c2 },
+        { icon: BarChart3, text: t.problems.cloud.c3 },
+        { icon: AlertTriangle, text: t.problems.cloud.c4 },
       ],
     },
     {
       icon: Calculator,
-      title: "Cierres financieros eternos",
-      pain: "Tu equipo de finanzas dedica días enteros al cierre mensual: copiar datos entre Excel, sistemas y ERPs, consolidar números de múltiples países, calcular provisiones manualmente, y correr el riesgo constante de errores humanos.",
+      title: t.problems.finance.title,
+      pain: t.problems.finance.pain,
       consequences: [
-        { icon: Clock, text: "Cierres que demoran días en lugar de horas" },
-        { icon: AlertTriangle, text: "Errores en conciliaciones y reportes" },
-        { icon: Clock, text: "Trabajo repetitivo que agota al equipo" },
-        { icon: AlertTriangle, text: "Sin tiempo para análisis estratégico" },
+        { icon: Clock, text: t.problems.finance.c1 },
+        { icon: AlertTriangle, text: t.problems.finance.c2 },
+        { icon: Clock, text: t.problems.finance.c3 },
+        { icon: AlertTriangle, text: t.problems.finance.c4 },
       ],
     },
   ];
@@ -35,7 +38,7 @@ const Problems = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
-            ¿Reconocés estos desafíos?
+            {t.problems.title}
           </h2>
         </FadeIn>
 
@@ -60,7 +63,7 @@ const Problems = () => {
 
                     <div className="mt-auto">
                       <h4 className="font-semibold text-gray-900 mb-4">
-                        Consecuencias:
+                        {idx === 0 ? t.problems.cloud.consequences : t.problems.finance.consequences}:
                       </h4>
                       <ul className="space-y-3">
                         {problem.consequences.map((consequence, cIdx) => {
@@ -92,4 +95,3 @@ const Problems = () => {
 };
 
 export default Problems;
-

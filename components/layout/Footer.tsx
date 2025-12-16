@@ -1,8 +1,10 @@
 "use client";
 
 import { Mail, Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-gray-900 text-gray-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -13,20 +15,20 @@ const Footer = () => {
               Latil.io
             </h3>
             <p className="text-sm">
-              Automatización enterprise para Finanzas y Cloud
+              {t.footer.tagline}
             </p>
           </div>
 
           {/* Soluciones */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Soluciones</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.solutions}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#solutions"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  Optimización de Cloud (FinOps)
+                  {t.footer.cloud}
                 </a>
               </li>
               <li>
@@ -34,7 +36,7 @@ const Footer = () => {
                   href="#solutions"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  Automatización Financiera
+                  {t.footer.finance}
                 </a>
               </li>
             </ul>
@@ -42,7 +44,7 @@ const Footer = () => {
 
           {/* Contacto */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Contacto</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -64,26 +66,26 @@ const Footer = () => {
                   LinkedIn
                 </a>
               </li>
-              <li className="pt-2">Cobertura: LATAM & Europa</li>
+              <li className="pt-2">{t.contact.coverage}</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-sm">
-          <p>© 2025 Latil.io - Todos los derechos reservados</p>
+          <p>{t.footer.rights}</p>
           <div className="flex gap-6 mt-4 sm:mt-0">
             <a
               href="#"
               className="hover:text-primary-400 transition-colors"
             >
-              Términos
+              {t.footer.terms}
             </a>
             <a
               href="#"
               className="hover:text-primary-400 transition-colors"
             >
-              Privacidad
+              {t.footer.privacy}
             </a>
           </div>
         </div>

@@ -2,8 +2,11 @@
 
 import FadeIn from "@/components/animations/FadeIn";
 import Card from "@/components/ui/Card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Clients = () => {
+  const { t } = useLanguage();
+  
   const clients = [
     "Booking.com",
     "Check Point",
@@ -15,20 +18,12 @@ const Clients = () => {
     "Sapiens International",
   ];
 
-  const testimonial = {
-    quote:
-      "La automatización de FinOps nos ayudó a eliminar falsos positivos en alertas de costos y lograr ahorros reales con un solo clic de aprobación.",
-    author: "Dieter Matzion",
-    role: "Sr. Cloud Governance Engineer",
-    company: "Roku",
-  };
-
   return (
     <section id="clients" className="py-20 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
-            Empresas que confían en nuestras soluciones
+            {t.clients.title}
           </h2>
         </FadeIn>
 
@@ -67,12 +62,12 @@ const Clients = () => {
                 <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2V8z" />
               </svg>
               <blockquote className="text-xl text-gray-700 mb-6 leading-relaxed">
-                "{testimonial.quote}"
+                "{t.clients.testimonial.quote}"
               </blockquote>
               <div>
-                <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                <p className="font-semibold text-gray-900">{t.clients.testimonial.author}</p>
                 <p className="text-sm text-gray-600">
-                  {testimonial.role}, {testimonial.company}
+                  {t.clients.testimonial.role}, {t.clients.testimonial.company}
                 </p>
               </div>
             </div>

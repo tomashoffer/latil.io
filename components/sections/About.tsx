@@ -2,28 +2,31 @@
 
 import FadeIn from "@/components/animations/FadeIn";
 import { Target, Zap, BarChart3, Handshake } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   const values = [
     {
       icon: Target,
-      title: "Diagnóstico sin costo",
-      description: "Evaluamos tu caso antes de proponer",
+      title: t.about.v1,
+      description: t.about.v1Desc,
     },
     {
       icon: Zap,
-      title: "Implementación rápida",
-      description: "Resultados en semanas, no meses",
+      title: t.about.v2,
+      description: t.about.v2Desc,
     },
     {
       icon: BarChart3,
-      title: "ROI medible",
-      description: "Ahorros visibles desde el primer mes",
+      title: t.about.v3,
+      description: t.about.v3Desc,
     },
     {
       icon: Handshake,
-      title: "Acompañamiento total",
-      description: "Soporte continuo post-implementación",
+      title: t.about.v4,
+      description: t.about.v4Desc,
     },
   ];
 
@@ -32,22 +35,17 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-8">
-            Latil.io: Tu socio estratégico en automatización
+            {t.about.title}
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.2}>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-lg text-gray-600 leading-relaxed">
-              Somos un equipo con experiencia en operaciones, finanzas y tecnología
-              cloud. Entendemos los dolores de equipos de FinOps y CFOs porque
-              hemos estado ahí.
+              {t.about.p1}
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
-              Por eso seleccionamos solo soluciones enterprise probadas, con ROI
-              demostrable y adoptadas por empresas globales líderes. No vendemos
-              software genérico: ayudamos a resolver problemas reales de eficiencia
-              operativa.
+              {t.about.p2}
             </p>
           </div>
         </FadeIn>

@@ -4,8 +4,10 @@ import FadeIn from "@/components/animations/FadeIn";
 import Button from "@/components/ui/Button";
 import { Check, Brain, Clock, FileText, Globe, BarChart3, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SolutionFinance = () => {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -18,10 +20,10 @@ const SolutionFinance = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-            Inteligencia Artificial para Finanzas:
+            {t.solutions.finance.title}
           </h2>
           <p className="text-xl text-center text-gray-600 mb-16">
-            Cierres 3x más rápidos, cero errores
+            {t.solutions.finance.subtitle}
           </p>
         </FadeIn>
 
@@ -164,15 +166,15 @@ const SolutionFinance = () => {
 
               <div className="bg-white rounded-xl p-6 shadow-md mb-8 border border-gray-200">
                 <h4 className="font-semibold text-gray-900 mb-4">
-                  Casos de uso:
+                  {t.solutions.finance.useCases}:
                 </h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {[
-                    "Cierre mensual/trimestral end-to-end",
-                    "Conciliaciones bancarias y de cuentas",
-                    "Revenue recognition y tie-outs",
-                    "Análisis de variaciones (budget vs actual)",
-                    "Consolidaciones multi-país",
+                    t.solutions.finance.uc1,
+                    t.solutions.finance.uc2,
+                    t.solutions.finance.uc3,
+                    t.solutions.finance.uc4,
+                    t.solutions.finance.uc5,
                   ].map((useCase, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-accent-600 mt-0.5">•</span>
@@ -184,14 +186,14 @@ const SolutionFinance = () => {
 
               <div className="bg-white rounded-xl p-6 shadow-md mb-8 border border-gray-200">
                 <h4 className="font-semibold text-gray-900 mb-4">
-                  Resultados concretos:
+                  {t.solutions.finance.results}:
                 </h4>
                 <ul className="space-y-3">
                   {[
-                    "30% menos tiempo en tareas manuales repetitivas",
-                    "Cierres 3-5x más rápidos (días → horas)",
-                    "Menos errores y más control (audit trail completo)",
-                    "Sin contratar: más capacidad con el mismo equipo",
+                    t.solutions.finance.r1,
+                    t.solutions.finance.r2,
+                    t.solutions.finance.r3,
+                    t.solutions.finance.r4,
                   ].map((result, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={20} />
@@ -203,20 +205,19 @@ const SolutionFinance = () => {
 
               <div className="mb-8">
                 <p className="text-gray-600 mb-2">
-                  <span className="font-semibold text-gray-900">¿Para quién?</span>{" "}
-                  Empresas 50-500+ empleados con finanzas complejas: fintech,
-                  e-commerce, travel, SaaS, retail, banca
+                  <span className="font-semibold text-gray-900">{t.solutions.finance.for}?</span>{" "}
+                  {t.solutions.finance.forDesc}
                 </p>
                 <p className="text-gray-600">
-                  <span className="font-semibold text-gray-900">Roles clave:</span>{" "}
-                  CFO, Controller, VP Finance, FP&A Lead, Regional Finance VP
+                  <span className="font-semibold text-gray-900">{t.solutions.finance.roles}:</span>{" "}
+                  {t.solutions.finance.rolesDesc}
                 </p>
               </div>
 
               <div className="mb-8">
-                <p className="text-sm text-gray-500 mb-2">Clientes que lo usan:</p>
+                <p className="text-sm text-gray-500 mb-2">{t.solutions.finance.clients}:</p>
                 <p className="text-sm font-medium text-gray-700">
-                  Booking.com • Fiverr • Public.com • Artlist • Fortune 500
+                  {t.solutions.finance.clientsDesc}
                 </p>
               </div>
 
@@ -226,7 +227,7 @@ const SolutionFinance = () => {
                 size="lg"
                 className="group"
               >
-                Agendar demo
+                {t.solutions.finance.cta}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
