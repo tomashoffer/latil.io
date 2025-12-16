@@ -1,0 +1,210 @@
+"use client";
+
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import FadeIn from "@/components/animations/FadeIn";
+import Button from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
+import Textarea from "@/components/ui/Textarea";
+import Select from "@/components/ui/Select";
+import { contactFormSchema, type ContactFormData } from "@/lib/validations";
+import { Mail, Linkedin, Send, CheckCircle } from "lucide-react";
+
+const ContactCTA = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        throw new Error("Error al enviar el formulario");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Hubo un error al enviar el formulario. Por favor intentá nuevamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section
+      id="contact"
+      className="py-20 lg:py-32 bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              ¿Listo para automatizar y ahorrar?
+            </h2>
+            <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+              Agendá una reunión de 20 minutos sin compromiso. Evaluamos tu caso,
+              te mostramos las soluciones y estimamos el ahorro potencial.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Form */}
+          <FadeIn direction="right">
+            <div className="bg-white rounded-2xl p-8 shadow-2xl">
+              {isSuccess ? (
+                <div className="text-center py-8">
+                  <CheckCircle className="text-green-600 mx-auto mb-4" size={48} />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    ¡Mensaje enviado!
+                  </h3>
+                  <p className="text-gray-600">
+                    Te contactaremos pronto para coordinar la reunión.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <Input
+                    label="Nombre completo"
+                    {...register("name")}
+                    error={errors.name?.message}
+                    placeholder="Juan Pérez"
+                  />
+
+                  <Input
+                    label="Email corporativo"
+                    type="email"
+                    {...register("email")}
+                    error={errors.email?.message}
+                    placeholder="juan@empresa.com"
+                  />
+
+                  <Input
+                    label="Empresa"
+                    {...register("company")}
+                    error={errors.company?.message}
+                    placeholder="Mi Empresa S.A."
+                  />
+
+                  <Input
+                    label="Rol/Cargo"
+                    {...register("role")}
+                    error={errors.role?.message}
+                    placeholder="CFO / Head of FinOps"
+                  />
+
+                  <Select
+                    label="Desafío principal"
+                    {...register("challenge")}
+                    error={errors.challenge?.message}
+                  >
+                    <option value="">Seleccioná un desafío</option>
+                    <option value="cloud">Costos cloud fuera de control</option>
+                    <option value="finance">
+                      Procesos financieros lentos y manuales
+                    </option>
+                    <option value="both">Ambos</option>
+                  </Select>
+
+                  <Textarea
+                    label="Mensaje (opcional)"
+                    rows={4}
+                    {...register("message")}
+                    error={errors.message?.message}
+                    placeholder="Contanos más sobre tu situación..."
+                  />
+
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="lg"
+                    className="w-full group"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      "Enviando..."
+                    ) : (
+                      <>
+                        Enviar mensaje
+                        <Send className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
+            </div>
+          </FadeIn>
+
+          {/* Contact Info */}
+          <FadeIn direction="left" delay={0.2}>
+            <div className="text-white">
+              <h3 className="text-2xl font-bold mb-6">O escríbenos directamente:</h3>
+              <div className="space-y-6">
+                <a
+                  href="mailto:contacto@latil.io"
+                  className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <div className="font-semibold">Email</div>
+                    <div className="text-primary-100">contacto@latil.io</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://linkedin.com/company/latil"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                    <Linkedin size={24} />
+                  </div>
+                  <div>
+                    <div className="font-semibold">LinkedIn</div>
+                    <div className="text-primary-100">Conectá con nosotros</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="mt-8 p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+                <h4 className="font-semibold mb-3">Nuestro compromiso:</h4>
+                <ul className="space-y-2 text-primary-100 text-sm">
+                  <li>✓ Respuesta en menos de 24 horas</li>
+                  <li>✓ Consulta inicial sin costo</li>
+                  <li>✓ Análisis personalizado de tu caso</li>
+                  <li>✓ Estimación de ahorro potencial</li>
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactCTA;
+
