@@ -35,7 +35,7 @@ const SolutionFinance = () => {
                 <div className="bg-white rounded-xl p-6">
                   <div className="flex items-center justify-between mb-6">
                     <h4 className="text-lg font-bold text-gray-900">
-                      Proceso de Cierre Automatizado
+                      {t.solutions.finance.visual.title}
                     </h4>
                     <Brain className="text-accent-600" size={24} />
                   </div>
@@ -43,21 +43,21 @@ const SolutionFinance = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
                       <div>
-                        <div className="text-sm text-gray-600 mb-1">Antes</div>
-                        <div className="text-2xl font-bold text-gray-900">5 días</div>
+                        <div className="text-sm text-gray-600 mb-1">{t.solutions.finance.visual.before}</div>
+                        <div className="text-2xl font-bold text-gray-900">{t.solutions.finance.visual.beforeTime}</div>
                       </div>
                       <ArrowRight className="text-gray-400" size={20} />
                       <div>
-                        <div className="text-sm text-gray-600 mb-1">Ahora</div>
-                        <div className="text-2xl font-bold text-green-700">8 horas</div>
+                        <div className="text-sm text-gray-600 mb-1">{t.solutions.finance.visual.after}</div>
+                        <div className="text-2xl font-bold text-green-700">{t.solutions.finance.visual.afterTime}</div>
                       </div>
                     </div>
 
                     <div className="space-y-3">
                       {[
-                        { icon: FileText, label: "Cierre mensual", status: "Completado", color: "green" },
-                        { icon: BarChart3, label: "Conciliaciones", status: "En proceso", color: "blue" },
-                        { icon: Globe, label: "Consolidación multi-país", status: "Pendiente", color: "gray" },
+                        { icon: FileText, label: t.solutions.finance.visual.processes.monthly, status: t.solutions.finance.visual.status.completed, color: "green" },
+                        { icon: BarChart3, label: t.solutions.finance.visual.processes.reconciliations, status: t.solutions.finance.visual.status.inProcess, color: "blue" },
+                        { icon: Globe, label: t.solutions.finance.visual.processes.consolidation, status: t.solutions.finance.visual.status.pending, color: "gray" },
                       ].map((item, idx) => {
                         const IconComponent = item.icon;
                         return (
@@ -91,7 +91,7 @@ const SolutionFinance = () => {
                       <div className="flex items-center gap-2 mb-2">
                         <Clock className="text-accent-600" size={16} />
                         <span className="text-sm font-medium text-gray-900">
-                          Tiempo ahorrado este mes
+                          {t.solutions.finance.visual.timeSaved}
                         </span>
                       </div>
                       <div className="text-2xl font-bold text-accent-700">142 horas</div>
@@ -115,11 +115,10 @@ const SolutionFinance = () => {
           <FadeIn direction="left" delay={0.2}>
             <div className="order-1 lg:order-2">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Cómo funciona:
+                {t.solutions.finance.how}:
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Un agente de IA aprende cómo trabaja tu equipo financiero (Excel,
-                ERPs, sistemas) y replica esos procesos automáticamente:
+                {t.solutions.finance.description}
               </p>
 
               <div className="space-y-4 mb-8">

@@ -103,6 +103,24 @@ export const translations = {
         clients: "Clients using it:",
         clientsDesc: "Booking.com • Fiverr • Public.com • Artlist • Fortune 500",
         cta: "Schedule demo",
+        visual: {
+          title: "Automated Closing Process",
+          before: "Before",
+          after: "Now",
+          beforeTime: "5 days",
+          afterTime: "8 hours",
+          processes: {
+            monthly: "Monthly closing",
+            reconciliations: "Reconciliations",
+            consolidation: "Multi-country consolidation",
+          },
+          status: {
+            completed: "Completed",
+            inProcess: "In process",
+            pending: "Pending",
+          },
+          timeSaved: "Time saved this month",
+        },
       },
     },
     clients: {
@@ -273,6 +291,24 @@ export const translations = {
         clients: "Clientes que lo usan:",
         clientsDesc: "Booking.com • Fiverr • Public.com • Artlist • Fortune 500",
         cta: "Agendar demo",
+        visual: {
+          title: "Proceso de Cierre Automatizado",
+          before: "Antes",
+          after: "Ahora",
+          beforeTime: "5 días",
+          afterTime: "8 horas",
+          processes: {
+            monthly: "Cierre mensual",
+            reconciliations: "Conciliaciones",
+            consolidation: "Consolidación multi-país",
+          },
+          status: {
+            completed: "Completado",
+            inProcess: "En proceso",
+            pending: "Pendiente",
+          },
+          timeSaved: "Tiempo ahorrado este mes",
+        },
       },
     },
     clients: {
