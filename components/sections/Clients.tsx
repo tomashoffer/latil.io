@@ -62,7 +62,7 @@ const Clients = () => {
                 <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2V8z" />
               </svg>
               <blockquote className="text-xl text-gray-700 mb-6 leading-relaxed">
-                "{t.clients.testimonial.quote}"
+                &ldquo;{t.clients.testimonial.quote}&rdquo;
               </blockquote>
               <div>
                 <p className="font-semibold text-gray-900">{t.clients.testimonial.author}</p>
