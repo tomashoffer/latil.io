@@ -84,18 +84,20 @@ Todo el contenido está en los componentes de secciones dentro de `/components/s
 
 ## 📝 Formulario de Contacto
 
-El formulario está conectado a `/api/contact/route.ts`. Para integrar con servicios reales:
+El formulario está conectado a `/api/contact/route.ts` y envía emails a **contact@latil.io** usando Resend.
 
-1. **Email**: Integrar Resend o SendGrid
-2. **CRM**: Conectar con HubSpot, Salesforce, etc.
-3. **Base de datos**: Guardar leads en PostgreSQL/MongoDB
+### Configuración de Resend
 
-Ejemplo con Resend:
-```typescript
-import { Resend } from 'resend';
-const resend = new Resend(process.env.RESEND_API_KEY);
-await resend.emails.send({ ... });
+1. Crear cuenta en [Resend](https://resend.com)
+2. Obtener tu API Key desde el dashboard
+3. Crear archivo `.env.local` en la raíz del proyecto:
+```bash
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxx
 ```
+
+4. (Opcional) Verificar tu dominio en Resend para usar `noreply@latil.io` en lugar de `onboarding@resend.dev`
+
+El email se envía automáticamente cuando alguien completa el formulario con toda la información del contacto.
 
 ## 🚢 Deploy
 
