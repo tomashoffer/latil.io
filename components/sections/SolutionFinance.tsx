@@ -115,7 +115,7 @@ const SolutionFinance = () => {
           <FadeIn direction="left" delay={0.2}>
             <div className="order-1 lg:order-2">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {t.solutions.finance.how}:
+                {t.solutions.finance.how}
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {t.solutions.finance.description}
@@ -125,21 +125,18 @@ const SolutionFinance = () => {
                 {[
                   {
                     step: "1",
-                    title: "Observa y aprende",
-                    description:
-                      "mirá cómo tu equipo hace cierres, conciliaciones o reportes",
+                    title: t.solutions.finance.step1,
+                    description: t.solutions.finance.step1Desc,
                   },
                   {
                     step: "2",
-                    title: "Construye workflows",
-                    description:
-                      "el agente crea la automatización adaptada a tu lógica única",
+                    title: t.solutions.finance.step2,
+                    description: t.solutions.finance.step2Desc,
                   },
                   {
                     step: "3",
-                    title: "Ejecuta en segundos",
-                    description:
-                      "corre el proceso completo con un clic, siempre con posibilidad de pausar, editar o revertir",
+                    title: t.solutions.finance.step3,
+                    description: t.solutions.finance.step3Desc,
                   },
                 ].map((item, idx) => (
                   <motion.div
@@ -165,7 +162,7 @@ const SolutionFinance = () => {
 
               <div className="bg-white rounded-xl p-6 shadow-md mb-8 border border-gray-200">
                 <h4 className="font-semibold text-gray-900 mb-4">
-                  {t.solutions.finance.useCases}:
+                  {t.solutions.finance.useCases}
                 </h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {[
@@ -185,7 +182,7 @@ const SolutionFinance = () => {
 
               <div className="bg-white rounded-xl p-6 shadow-md mb-8 border border-gray-200">
                 <h4 className="font-semibold text-gray-900 mb-4">
-                  {t.solutions.finance.results}:
+                  {t.solutions.finance.results}
                 </h4>
                 <ul className="space-y-3">
                   {[
@@ -204,17 +201,17 @@ const SolutionFinance = () => {
 
               <div className="mb-8">
                 <p className="text-gray-600 mb-2">
-                  <span className="font-semibold text-gray-900">{t.solutions.finance.for}?</span>{" "}
+                  <span className="font-semibold text-gray-900">{t.solutions.finance.for}</span>{" "}
                   {t.solutions.finance.forDesc}
                 </p>
                 <p className="text-gray-600">
-                  <span className="font-semibold text-gray-900">{t.solutions.finance.roles}:</span>{" "}
+                  <span className="font-semibold text-gray-900">{t.solutions.finance.roles}</span>{" "}
                   {t.solutions.finance.rolesDesc}
                 </p>
               </div>
 
               <div className="mb-8">
-                <p className="text-sm text-gray-500 mb-2">{t.solutions.finance.clients}:</p>
+                <p className="text-sm text-gray-500 mb-2">{t.solutions.finance.clients}</p>
                 <p className="text-sm font-medium text-gray-700">
                   {t.solutions.finance.clientsDesc}
                 </p>

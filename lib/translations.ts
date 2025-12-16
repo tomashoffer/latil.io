@@ -73,6 +73,15 @@ export const translations = {
         clients: "Clients using it:",
         clientsDesc: "Check Point • Roku • Cyera • Sapiens • Global banks",
         cta: "Schedule demo",
+        visual: {
+          title: "Optimization Dashboard",
+          savings: "Savings this month",
+          savingsChange: "+23% vs previous month",
+          optimizedResources: "Optimized resources",
+          timeSaved: "Time saved",
+          activeWorkflows: "Active workflows",
+          active: "Active",
+        },
       },
       finance: {
         title: "Artificial Intelligence for Finance:",
@@ -261,6 +270,15 @@ export const translations = {
         clients: "Clientes que lo usan:",
         clientsDesc: "Check Point • Roku • Cyera • Sapiens • Bancos globales",
         cta: "Agendar demo",
+        visual: {
+          title: "Dashboard de Optimización",
+          savings: "Ahorro este mes",
+          savingsChange: "+23% vs mes anterior",
+          optimizedResources: "Recursos optimizados",
+          timeSaved: "Tiempo ahorrado",
+          activeWorkflows: "Workflows activos",
+          active: "Activo",
+        },
       },
       finance: {
         title: "Inteligencia Artificial para Finanzas:",
