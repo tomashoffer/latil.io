@@ -88,16 +88,21 @@ El formulario está conectado a `/api/contact/route.ts` y envía emails a **cont
 
 ### Configuración de Resend
 
-1. Crear cuenta en [Resend](https://resend.com)
-2. Obtener tu API Key desde el dashboard
+1. Crear cuenta en [Resend](https://resend.com) (plan gratuito: 3,000 emails/mes)
+2. Obtener tu API Key desde el dashboard (Dashboard → API Keys → Create API Key)
 3. Crear archivo `.env.local` en la raíz del proyecto:
 ```bash
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxx
+RESEND_API_KEY=re_tu_api_key_real_aqui
 ```
+
+**Importante:** 
+- El archivo `.env.local` ya está en `.gitignore`, así que no se subirá a Git
+- Reemplazá `re_tu_api_key_real_aqui` con tu API key real de Resend
+- En producción (Netlify/Vercel), agregá la variable `RESEND_API_KEY` en la configuración del proyecto
 
 4. (Opcional) Verificar tu dominio en Resend para usar `noreply@latil.io` en lugar de `onboarding@resend.dev`
 
-El email se envía automáticamente cuando alguien completa el formulario con toda la información del contacto.
+El email se envía automáticamente a **contact@latil.io** cuando alguien completa el formulario con toda la información del contacto.
 
 ## 🚢 Deploy
 
