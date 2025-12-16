@@ -93,14 +93,22 @@ El formulario está conectado a `/api/contact/route.ts` y envía emails a **cont
 3. Crear archivo `.env.local` en la raíz del proyecto:
 ```bash
 RESEND_API_KEY=re_tu_api_key_real_aqui
+RESEND_TEST_EMAIL=tu_email@gmail.com  # Opcional: para pruebas antes de verificar dominio
+RESEND_FROM_EMAIL=noreply@latil.io  # Opcional: usar cuando dominio esté verificado
 ```
 
 **Importante:** 
 - El archivo `.env.local` ya está en `.gitignore`, así que no se subirá a Git
 - Reemplazá `re_tu_api_key_real_aqui` con tu API key real de Resend
-- En producción (Netlify/Vercel), agregá la variable `RESEND_API_KEY` en la configuración del proyecto
+- `RESEND_TEST_EMAIL`: Opcional. Si no está configurado, usa `contact@latil.io` (requiere dominio verificado)
+- `RESEND_FROM_EMAIL`: Opcional. Si no está configurado, usa `onboarding@resend.dev` (solo para pruebas)
+- En producción (Netlify/Vercel), agregá las variables en la configuración del proyecto
 
-4. (Opcional) Verificar tu dominio en Resend para usar `noreply@latil.io` en lugar de `onboarding@resend.dev`
+4. **Para producción:** Verificar tu dominio `latil.io` en Resend:
+   - Ir a [resend.com/domains](https://resend.com/domains)
+   - Agregar dominio `latil.io`
+   - Configurar los registros DNS que Resend te indique (DKIM, SPF modificado, etc.)
+   - Una vez verificado, configurar `RESEND_FROM_EMAIL=noreply@latil.io` en producción
 
 El email se envía automáticamente a **contact@latil.io** cuando alguien completa el formulario con toda la información del contacto.
 

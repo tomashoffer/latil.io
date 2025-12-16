@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import Select from "@/components/ui/Select";
+import Modal from "@/components/ui/Modal";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { Mail, Linkedin, Send, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -40,7 +42,7 @@ const ContactCTA = () => {
       if (response.ok) {
         setIsSuccess(true);
         reset();
-        setTimeout(() => setIsSuccess(false), 5000);
+        // El modal se cierra manualmente o después de 5 segundos
       } else {
         throw new Error("Error al enviar el formulario");
       }
@@ -73,18 +75,7 @@ const ContactCTA = () => {
           {/* Form */}
           <FadeIn direction="right">
             <div className="bg-white rounded-2xl p-8 shadow-2xl">
-              {isSuccess ? (
-                <div className="text-center py-8">
-                  <CheckCircle className="text-green-600 mx-auto mb-4" size={48} />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {t.contact.form.success}
-                  </h3>
-                  <p className="text-gray-600">
-                    {t.contact.form.successDesc}
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <Input
                     label={t.contact.form.name}
                     {...register("name")}
@@ -150,9 +141,45 @@ const ContactCTA = () => {
                     )}
                   </Button>
                 </form>
-              )}
             </div>
           </FadeIn>
+
+          {/* Success Modal */}
+          <Modal isOpen={isSuccess} onClose={() => setIsSuccess(false)}>
+            <div className="p-8">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", delay: 0.2, bounce: 0.5 }}
+                className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
+              >
+                <CheckCircle className="text-white" size={48} />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-center"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  {t.contact.form.success}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {t.contact.form.successDesc}
+                </p>
+
+                <Button
+                  onClick={() => setIsSuccess(false)}
+                  variant="primary"
+                  size="lg"
+                  className="w-full"
+                >
+                  {t.contact.form.close}
+                </Button>
+              </motion.div>
+            </div>
+          </Modal>
 
           {/* Contact Info */}
           <FadeIn direction="left" delay={0.2}>

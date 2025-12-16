@@ -19,10 +19,20 @@ export async function POST(request: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Enviar email a contact@latil.io
+    // Determinar email destinatario:
+    // - Si hay RESEND_TEST_EMAIL configurado, usarlo (útil para desarrollo/pruebas)
+    // - Si no, usar contact@latil.io (requiere dominio verificado en Resend)
+    const recipientEmail = process.env.RESEND_TEST_EMAIL || "contact@latil.io";
+
+    // Determinar remitente:
+    // - Si hay dominio verificado, usar email del dominio
+    // - Si no, usar onboarding@resend.dev (solo funciona con emails de prueba)
+    const fromEmail = process.env.RESEND_FROM_EMAIL || "Latil.io Contact Form <onboarding@resend.dev>";
+
+    // Enviar email
     const { data, error } = await resend.emails.send({
-      from: "Latil.io Contact Form <onboarding@resend.dev>", // Cambiar por tu dominio verificado en Resend
-      to: ["contact@latil.io"],
+      from: fromEmail,
+      to: [recipientEmail],
       subject: `Nuevo contacto: ${validatedData.name} - ${validatedData.company}`,
       html: `
         <h2>Nuevo contacto desde el formulario</h2>
