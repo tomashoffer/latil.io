@@ -48,7 +48,7 @@ const ContactCTA = () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Hubo un error al enviar el formulario. Por favor intentá nuevamente.");
+      // Error manejado silenciosamente - el usuario puede intentar nuevamente
     } finally {
       setIsSubmitting(false);
     }
