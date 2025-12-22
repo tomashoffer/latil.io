@@ -254,7 +254,7 @@ const CustomDevelopmentPage = () => {
       {/* Services Section */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500 mb-6">{solution.services}</p>
+          <p className="text-sm text-gray-500 mb-6">Nuestros servicios</p>
           <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
             {["Custom Development", "Product Management", "Technical Consulting", "Process Automation"].map((service, idx) => (
               <div key={idx} className="text-gray-600 font-semibold text-sm bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
