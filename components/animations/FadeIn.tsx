@@ -1,32 +1,32 @@
 "use client";
 
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import { motion } from "framer-motion";
 
 interface FadeInProps {
   children: React.ReactNode;
   delay?: number;
   direction?: "up" | "down" | "left" | "right";
+  className?: string;
 }
 
-const FadeIn = ({ children, delay = 0, direction = "up" }: FadeInProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const variants = {
-    up: { y: 30, opacity: 0 },
-    down: { y: -30, opacity: 0 },
-    left: { x: 30, opacity: 0 },
-    right: { x: -30, opacity: 0 },
+const FadeIn = ({ children, delay = 0, direction = "up", className }: FadeInProps) => {
+  const getInitialProps = () => {
+    switch (direction) {
+      case "up": return { y: 30, opacity: 0 };
+      case "down": return { y: -30, opacity: 0 };
+      case "left": return { x: 30, opacity: 0 };
+      case "right": return { x: -30, opacity: 0 };
+      default: return { y: 30, opacity: 0 };
+    }
   };
 
   return (
     <motion.div
-      ref={ref}
-      initial={variants[direction]}
-      animate={isInView ? { y: 0, x: 0, opacity: 1 } : variants[direction]}
-      transition={{ duration: 0.6, delay }}
+      className={className}
+      initial={getInitialProps()}
+      whileInView={{ y: 0, x: 0, opacity: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay, ease: "easeOut" }}
     >
       {children}
     </motion.div>

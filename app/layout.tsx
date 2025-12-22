@@ -43,7 +43,7 @@ export default function RootLayout({
                 "Automatización enterprise para optimización de cloud y procesos financieros",
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "contacto@latil.io",
+                email: "contact@latil.io",
                 contactType: "Customer Service",
               },
             }),

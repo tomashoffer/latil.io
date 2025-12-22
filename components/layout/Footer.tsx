@@ -48,11 +48,11 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="mailto:contacto@latil.io"
+                  href="mailto:contact@latil.io"
                   className="flex items-center gap-2 hover:text-primary-400 transition-colors"
                 >
                   <Mail size={16} />
-                  contacto@latil.io
+                  contact@latil.io
                 </a>
               </li>
               <li>

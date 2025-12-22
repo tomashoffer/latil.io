@@ -1,16 +1,30 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, Cloud, Brain, FileSearch, Stethoscope, ShieldAlert, Code2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const solutionItems = [
+  { key: "finops", href: "/solutions/finops", icon: Cloud },
+  { key: "finance", href: "/solutions/finance", icon: Brain },
+  { key: "taxIntelligence", href: "/solutions/tax-intelligence", icon: FileSearch },
+  { key: "healthcare", href: "/solutions/healthcare", icon: Stethoscope },
+  { key: "quantumSecurity", href: "/solutions/quantum-security", icon: ShieldAlert },
+  { key: "custom", href: "/solutions/custom", icon: Code2 },
+] as const;
 
 const Navbar = () => {
   const { t, language, setLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +35,25 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    if (pathname !== "/") {
+      window.location.href = `/#${id}`;
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
+    }
+  };
+
+  const goHome = () => {
+    if (pathname !== "/") {
+      window.location.href = "/";
+    } else {
+      const element = document.getElementById("hero");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -42,7 +71,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
-              onClick={() => scrollToSection("hero")}
+              onClick={goHome}
               className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent"
             >
               Latil.io
@@ -51,18 +80,52 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("problems")}
+            {/* Solutions Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                onMouseEnter={() => setIsSolutionsOpen(true)}
+                className="flex items-center gap-1 text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              >
+                {t.nav.solutions}
+                <ChevronDown size={16} className={cn("transition-transform", isSolutionsOpen && "rotate-180")} />
+              </button>
+              {isSolutionsOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-10"
+                    onClick={() => setIsSolutionsOpen(false)}
+                  />
+                  <div
+                    className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-20"
+                    onMouseLeave={() => setIsSolutionsOpen(false)}
+                  >
+                    {solutionItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.key}
+                          href={item.href}
+                          onClick={() => setIsSolutionsOpen(false)}
+                          className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
+                        >
+                          <Icon size={20} className="text-primary-600" />
+                          <span className="text-gray-700 font-medium">
+                            {t.nav.solutionItems[item.key]}
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
+            <Link
+              href="/about"
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
-              {t.nav.cloud}
-            </button>
-            <button
-              onClick={() => scrollToSection("solutions")}
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
-            >
-              {t.nav.finance}
-            </button>
+              {t.nav.about}
+            </Link>
             <button
               onClick={() => scrollToSection("clients")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
@@ -149,18 +212,41 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <button
-              onClick={() => scrollToSection("problems")}
+            {/* Solutions Dropdown Mobile */}
+            <div>
+              <button
+                onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
+                className="flex items-center justify-between w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                <span>{t.nav.solutions}</span>
+                <ChevronDown size={16} className={cn("transition-transform", isMobileSolutionsOpen && "rotate-180")} />
+              </button>
+              {isMobileSolutionsOpen && (
+                <div className="pl-4 space-y-1 mt-1">
+                  {solutionItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.key}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+                      >
+                        <Icon size={18} className="text-primary-600" />
+                        <span>{t.nav.solutionItems[item.key]}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+            <Link
+              href="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
             >
-              {t.nav.cloud}
-            </button>
-            <button
-              onClick={() => scrollToSection("solutions")}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              {t.nav.finance}
-            </button>
+              {t.nav.about}
+            </Link>
             <button
               onClick={() => scrollToSection("clients")}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
@@ -219,4 +305,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import LogoCarousel from "@/components/ui/LogoCarousel";
-import { ArrowRight, TrendingDown, Zap, Briefcase } from "lucide-react";
+import { ArrowRight, TrendingDown, Zap, Layers } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
@@ -54,12 +54,9 @@ const Hero = () => {
             className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-10 leading-relaxed"
           >
             {t.hero.subheadline}{" "}
-            <span className="font-semibold text-gray-900">{t.hero.subheadlineHighlight}</span>{" "}
-            {t.hero.subheadlineMiddle}{" "}
             <span className="font-semibold text-gray-900">
               {t.hero.subheadlineCompanies}
-            </span>{" "}
-            {t.hero.subheadlineEnd}
+            </span>
           </motion.p>
 
           {/* CTAs */}
@@ -105,9 +102,9 @@ const Hero = () => {
               <div className="text-sm text-gray-600">{t.hero.stats.finance}</div>
             </div>
             <div className="flex flex-col items-center">
-              <Briefcase className="text-primary-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">75%</div>
-              <div className="text-sm text-gray-600">{t.hero.stats.manual}</div>
+              <Layers className="text-primary-600 mb-2" size={32} />
+              <div className="text-3xl font-bold text-gray-900">6</div>
+              <div className="text-sm text-gray-600">{t.hero.stats.solutions}</div>
             </div>
           </motion.div>
         </div>

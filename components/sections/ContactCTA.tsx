@@ -187,7 +187,7 @@ const ContactCTA = () => {
               <h3 className="text-2xl font-bold mb-6">{t.contact.direct}</h3>
               <div className="space-y-6">
                 <a
-                  href="mailto:contacto@latil.io"
+                  href="mailto:contact@latil.io"
                   className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm"
                 >
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
@@ -195,7 +195,7 @@ const ContactCTA = () => {
                   </div>
                   <div>
                     <div className="font-semibold">{t.contact.email}</div>
-                    <div className="text-primary-100">contacto@latil.io</div>
+                    <div className="text-primary-100">contact@latil.io</div>
                   </div>
                 </a>
 
@@ -216,7 +216,7 @@ const ContactCTA = () => {
               </div>
 
               <div className="mt-8 p-6 bg-white/10 rounded-xl backdrop-blur-sm">
-                <h4 className="font-semibold mb-3">{t.contact.commitment}:</h4>
+                <h4 className="font-semibold mb-3">{t.contact.commitment}</h4>
                 <ul className="space-y-2 text-primary-100 text-sm">
                   <li>{t.contact.c1}</li>
                   <li>{t.contact.c2}</li>
