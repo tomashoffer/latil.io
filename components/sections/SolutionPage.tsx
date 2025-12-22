@@ -206,8 +206,8 @@ const SolutionPage = ({ solutionKey, iconName, accentColor }: SolutionPageProps)
               <p className="text-gray-600 mb-6">{solution.rolesDesc}</p>
 
               <div className={`${colors.bgLight} rounded-xl p-4`}>
-                <p className="text-sm text-gray-500 mb-1">{solution.clients}</p>
-                <p className="font-medium text-gray-700">{solution.clientsDesc}</p>
+                <p className="text-sm text-gray-500 mb-1">{(solution as any).clients || "Clients:"}</p>
+                <p className="font-medium text-gray-700">{(solution as any).clientsDesc || ""}</p>
               </div>
             </div>
           </div>

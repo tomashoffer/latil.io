@@ -261,7 +261,7 @@ const QuantumSecurityPage = () => {
       {/* Industries Section */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500 mb-6">{solution.industries}</p>
+          <p className="text-sm text-gray-500 mb-6">Industries at risk</p>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
             {["Banks", "Insurance", "Healthcare", "Government", "Defense"].map((industry, idx) => (
               <div key={idx} className="text-gray-600 font-semibold text-base bg-white px-4 py-2 rounded-lg shadow-sm">

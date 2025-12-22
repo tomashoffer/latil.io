@@ -243,7 +243,7 @@ const TaxIntelligencePage = () => {
       {/* Clients Section */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500 mb-6">{solution.clients}</p>
+          <p className="text-sm text-gray-500 mb-6">Organizations using it:</p>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {["National Tax Authorities", "State Revenue Agencies", "International Organizations"].map((client, idx) => (
               <div key={idx} className="text-gray-600 font-semibold text-base">
