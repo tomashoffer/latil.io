@@ -14,7 +14,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Initialize with 'en' as default, will be updated in useEffect
+  // Initialize with 'es' as default, will be updated in useEffect
   const [language, setLanguageState] = useState<Language>(() => {
     // Only access localStorage on client side
     if (typeof window !== "undefined") {
@@ -23,11 +23,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         return savedLanguage;
       }
     }
-    return "en";
+    return "es";
   });
 
   useEffect(() => {
-    // Get language from localStorage or default to 'en'
+    // Get language from localStorage or default to 'es'
     const savedLanguage = localStorage.getItem("language") as Language;
     if (savedLanguage && (savedLanguage === "en" || savedLanguage === "es")) {
       setLanguageState(savedLanguage);

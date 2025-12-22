@@ -162,7 +162,7 @@ const QuantumSecurityPage = () => {
                   <div className="px-5 py-4 bg-purple-50 border-t border-gray-100">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 size={16} className="text-purple-600" />
-                      <span className="text-sm font-medium text-purple-700">Protected against "harvest now" attacks</span>
+                      <span className="text-sm font-medium text-purple-700">Protected against &quot;harvest now&quot; attacks</span>
                     </div>
                   </div>
                 </div>

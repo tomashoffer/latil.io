@@ -111,9 +111,13 @@ const ContactCTA = () => {
                     error={errors.challenge?.message}
                   >
                     <option value="">{t.contact.form.challengeOptions.placeholder}</option>
-                    <option value="cloud">{t.contact.form.challengeOptions.cloud}</option>
+                    <option value="finops">{t.contact.form.challengeOptions.finops}</option>
                     <option value="finance">{t.contact.form.challengeOptions.finance}</option>
-                    <option value="both">{t.contact.form.challengeOptions.both}</option>
+                    <option value="tax">{t.contact.form.challengeOptions.tax}</option>
+                    <option value="healthcare">{t.contact.form.challengeOptions.healthcare}</option>
+                    <option value="quantum">{t.contact.form.challengeOptions.quantum}</option>
+                    <option value="custom">{t.contact.form.challengeOptions.custom}</option>
+                    <option value="other">{t.contact.form.challengeOptions.other}</option>
                   </Select>
 
                   <Textarea
