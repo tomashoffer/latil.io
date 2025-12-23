@@ -3,6 +3,16 @@
 import { Mail, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
+import Link from "next/link";
+
+const solutionItems = [
+  { key: "finops", href: "/solutions/finops" },
+  { key: "finance", href: "/solutions/finance" },
+  { key: "taxIntelligence", href: "/solutions/tax-intelligence" },
+  { key: "healthcare", href: "/solutions/healthcare" },
+  { key: "quantumSecurity", href: "/solutions/quantum-security" },
+  { key: "custom", href: "/solutions/custom" },
+] as const;
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -28,22 +38,16 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.solutions}</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="#solutions"
-                  className="hover:text-primary-400 transition-colors"
-                >
-                  {t.footer.cloud}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#solutions"
-                  className="hover:text-primary-400 transition-colors"
-                >
-                  {t.footer.finance}
-                </a>
-              </li>
+              {solutionItems.map((item) => (
+                <li key={item.key}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-primary-400 transition-colors"
+                  >
+                    {t.nav.solutionItems[item.key]}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

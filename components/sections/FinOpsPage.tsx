@@ -29,7 +29,7 @@ const FinOpsPage = () => {
       {/* Two column layout */}
       <section className="pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '3rem', alignItems: 'start' }} className="hidden lg:grid">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 lg:gap-12 items-start">
             {/* Left column */}
             <div className="space-y-6">
               {/* How it works */}
@@ -134,8 +134,8 @@ const FinOpsPage = () => {
             </div>
           </div>
 
-          {/* Mobile layout */}
-          <div className="lg:hidden space-y-8">
+          {/* Mobile/Tablet layout - ahora se muestra en todas las pantallas pequeñas */}
+          <div className="lg:hidden space-y-8 mt-8">
             {/* Dashboard first on mobile */}
             <div className="relative max-w-md mx-auto">
               <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">

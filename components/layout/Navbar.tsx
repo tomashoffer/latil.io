@@ -59,6 +59,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -69,8 +70,17 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+          {/* Mobile Menu Button - izquierda en mobile */}
+          <button
+            className="md:hidden p-2 text-gray-700"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Logo - derecha en mobile, izquierda en desktop */}
+          <div className="flex-shrink-0 md:flex-shrink-0 md:order-none ml-auto md:ml-0 mr-[5px] md:mr-0">
             <button
               onClick={goHome}
               className="flex items-center"
@@ -205,110 +215,162 @@ const Navbar = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-gray-700"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </div>
+    </nav>
 
-      {/* Mobile Menu */}
+    {/* Mobile Sidebar - se desliza desde la izquierda - FUERA del nav para mejor z-index */}
+    <>
+      {/* Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-4 pt-2 pb-4 space-y-2">
-            {/* Solutions Dropdown Mobile */}
-            <div>
+        <div
+          className="fixed inset-0 bg-black/50 z-[60] md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+      
+      {/* Sidebar */}
+      <div
+        className={cn(
+          "fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out md:hidden",
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+          <div className="flex flex-col h-full">
+            {/* Header del sidebar */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <Image
+                src="/logos/latil-wordmark-gradient.png"
+                alt="Latil.io"
+                width={120}
+                height={32}
+                className="h-8 w-auto"
+              />
               <button
-                onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
-                className="flex items-center justify-between w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Close menu"
               >
-                <span>{t.nav.solutions}</span>
-                <ChevronDown size={16} className={cn("transition-transform", isMobileSolutionsOpen && "rotate-180")} />
+                <X size={24} />
               </button>
-              {isMobileSolutionsOpen && (
-                <div className="pl-4 space-y-1 mt-1">
-                  {solutionItems.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.key}
-                        href={item.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-                      >
-                        <Icon size={18} className="text-primary-600" />
-                        <span>{t.nav.solutionItems[item.key]}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
             </div>
-            <Link
-              href="/about"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              {t.nav.about}
-            </Link>
-            <button
-              onClick={() => scrollToSection("clients")}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              {t.nav.clients}
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              {t.nav.contact}
-            </button>
-            <div className="pt-2 space-y-2">
-              <div className="flex items-center gap-2 px-4">
-                <Globe size={16} className="text-gray-600" />
+
+            {/* Menu items */}
+            <div className="flex-1 overflow-y-auto px-4 py-4">
+              <nav className="space-y-2">
+                {/* Solutions Dropdown Mobile */}
+                <div>
+                  <button
+                    onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
+                    className="flex items-center justify-between w-full text-left px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-base"
+                  >
+                    <span>{t.nav.solutions}</span>
+                    <ChevronDown size={18} className={cn("transition-transform text-gray-600", isMobileSolutionsOpen && "rotate-180")} />
+                  </button>
+                  {isMobileSolutionsOpen && (
+                    <div className="pl-2 space-y-1 mt-2 mb-2">
+                      {solutionItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.key}
+                            href={item.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-sm"
+                          >
+                            <Icon size={18} className="text-primary-600 flex-shrink-0" />
+                            <span>{t.nav.solutionItems[item.key]}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+                
+                <Link
+                  href="/about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full text-left px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-base"
+                >
+                  {t.nav.about}
+                </Link>
+                
                 <button
                   onClick={() => {
-                    setLanguage("en");
+                    scrollToSection("clients");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={cn(
-                    "text-sm px-2 py-1 rounded",
-                    language === "en" && "bg-primary-100 text-primary-600 font-semibold"
-                  )}
+                  className="block w-full text-left px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-base"
                 >
-                  EN
+                  {t.nav.clients}
                 </button>
-                <span className="text-gray-400">|</span>
+                
                 <button
                   onClick={() => {
-                    setLanguage("es");
+                    scrollToSection("contact");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={cn(
-                    "text-sm px-2 py-1 rounded",
-                    language === "es" && "bg-primary-100 text-primary-600 font-semibold"
-                  )}
+                  className="block w-full text-left px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-base"
                 >
-                  ES
+                  {t.nav.contact}
                 </button>
+              </nav>
+
+              {/* Language Selector */}
+              <div className="pt-4 border-t border-gray-200">
+                <div className="flex items-center gap-2 px-4 py-2">
+                  <Globe size={18} className="text-gray-600" />
+                  <span className="text-sm font-medium text-gray-700">Idioma</span>
+                </div>
+                <div className="flex gap-2 px-4">
+                  <button
+                    onClick={() => {
+                      setLanguage("en");
+                    }}
+                    className={cn(
+                      "flex-1 text-sm px-3 py-2 rounded-lg transition-colors",
+                      language === "en" 
+                        ? "bg-primary-100 text-primary-600 font-semibold" 
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    )}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage("es");
+                    }}
+                    className={cn(
+                      "flex-1 text-sm px-3 py-2 rounded-lg transition-colors",
+                      language === "es" 
+                        ? "bg-primary-100 text-primary-600 font-semibold" 
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    )}
+                  >
+                    Español
+                  </button>
+                </div>
               </div>
-              <Button
-                onClick={() => scrollToSection("contact")}
-                variant="primary"
-                size="md"
-                className="w-full"
-              >
-                {t.nav.cta}
-              </Button>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Button
+                  onClick={() => {
+                    scrollToSection("contact");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  variant="primary"
+                  size="md"
+                  className="w-full"
+                >
+                  {t.nav.cta}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      )}
-    </nav>
+      </>
+    </>
   );
 };
 
