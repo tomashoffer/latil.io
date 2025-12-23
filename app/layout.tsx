@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     "Reducí hasta 35% tus costos cloud y liberá 30% del tiempo de tu equipo financiero. Soluciones enterprise probadas por Booking.com y Check Point.",
   keywords:
     "FinOps, automatización finanzas, optimización cloud, AWS, Azure, GCP, cierre contable, conciliaciones",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logos/latil-icon-96-gradient.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/logos/latil-icon-96-gradient.png",
+  },
   openGraph: {
     title: "Latil.io - Automatización Enterprise para Cloud y Finanzas",
     description:

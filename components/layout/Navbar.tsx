@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const solutionItems = [
   { key: "finops", href: "/solutions/finops", icon: Cloud },
@@ -72,9 +73,16 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <button
               onClick={goHome}
-              className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent"
+              className="flex items-center"
             >
-              Latil.io
+              <Image
+                src="/logos/latil-wordmark-gradient.png"
+                alt="Latil.io"
+                width={140}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
             </button>
           </div>
 

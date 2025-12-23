@@ -2,6 +2,7 @@
 
 import { Mail, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -11,9 +12,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-4">
-              Latil.io
-            </h3>
+            <Image
+              src="/logos/latil-wordmark-gradient.png"
+              alt="Latil.io"
+              width={120}
+              height={32}
+              className="h-8 w-auto mb-4"
+            />
             <p className="text-sm">
               {t.footer.tagline}
             </p>
