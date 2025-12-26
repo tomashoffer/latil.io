@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50/30 pt-20 pb-40"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50/30 pt-20 pb-16"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -89,7 +89,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-24"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12"
           >
             <div className="flex flex-col items-center">
               <TrendingDown className="text-primary-600 mb-2" size={32} />
@@ -111,7 +111,7 @@ const Hero = () => {
       </div>
 
       {/* Floating Logos Carousel Section */}
-      <div id="clients" className="absolute bottom-0 left-0 right-0 py-8 bg-white/50 backdrop-blur-sm border-t border-gray-200">
+      {/* <div id="clients" className="absolute bottom-0 left-0 right-0 py-8 bg-white/50 backdrop-blur-sm border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-base md:text-lg font-medium text-gray-600 mb-6">
             {t.hero.clients}
@@ -129,7 +129,7 @@ const Hero = () => {
             speed={30}
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

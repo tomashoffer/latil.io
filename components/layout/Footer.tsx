@@ -66,7 +66,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/company/latil"
+                  href="https://www.linkedin.com/company/latil-io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-primary-400 transition-colors"

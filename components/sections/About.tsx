@@ -25,7 +25,7 @@ const About = () => {
     {
       icon: Handshake,
       title: "Alcance Global",
-      description: "Servimos a empresas en LATAM y Europa.",
+      description: "Servimos a empresas en todo el mundo.",
     },
   ];
 

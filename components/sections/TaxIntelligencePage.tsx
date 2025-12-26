@@ -242,12 +242,15 @@ const TaxIntelligencePage = () => {
 
       {/* Clients Section */}
       <section className="py-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500 mb-6">Organizations using it:</p>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {["National Tax Authorities", "State Revenue Agencies", "International Organizations"].map((client, idx) => (
-              <div key={idx} className="text-gray-600 font-semibold text-base">
-                {client}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm text-gray-500 mb-6 text-center">{solution.clients || "Organizations using it:"}</p>
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+            {((solution as any).clientsList || ["National Tax Authorities", "State Revenue Agencies", "International Organizations"]).map((org: string, idx: number) => (
+              <div 
+                key={idx} 
+                className="bg-white text-gray-700 font-semibold text-sm md:text-base px-5 py-2.5 rounded-lg shadow-sm border border-gray-200 hover:border-green-300 hover:shadow-md transition-all duration-200"
+              >
+                {org}
               </div>
             ))}
           </div>

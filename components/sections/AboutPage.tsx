@@ -189,14 +189,8 @@ const AboutPage = () => {
       {/* Partners Logos */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500 mb-8">Trusted by leading companies</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {["Booking.com", "Check Point", "Roku", "Fiverr", "Public.com"].map((company, idx) => (
-              <div key={idx} className="text-gray-400 font-semibold text-lg hover:text-gray-600 transition-colors">
-                {company}
-              </div>
-            ))}
-          </div>
+          <p className="text-sm text-gray-500 mb-2">Trusted by leading companies</p>
+          <p className="text-lg font-semibold text-gray-700">Used by more than 500 companies and the most important enterprises in the market</p>
         </div>
       </section>
 

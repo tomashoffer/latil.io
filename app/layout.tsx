@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Latil.io - Automatización de IA para Optimizar Cloud y Finanzas",
   description:
-    "Reducí hasta 35% tus costos cloud y liberá 30% del tiempo de tu equipo financiero. Soluciones enterprise probadas por Booking.com y Check Point.",
+    "Reducí hasta 35% tus costos cloud y liberá 30% del tiempo de tu equipo financiero. Soluciones enterprise probadas por empresas Fortune 500 y las empresas más importantes del mercado.",
   keywords:
     "FinOps, automatización finanzas, optimización cloud, AWS, Azure, GCP, cierre contable, conciliaciones",
   icons: {

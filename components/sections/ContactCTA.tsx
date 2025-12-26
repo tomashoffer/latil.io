@@ -204,7 +204,7 @@ const ContactCTA = () => {
                 </a>
 
                 <a
-                  href="https://linkedin.com/company/latil"
+                  href="https://www.linkedin.com/company/latil-io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm"
