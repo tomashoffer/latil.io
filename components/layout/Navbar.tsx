@@ -144,12 +144,12 @@ const Navbar = () => {
             >
               {t.nav.about}
             </Link>
-            <button
+            {/* <button
               onClick={() => scrollToSection("clients")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               {t.nav.clients}
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection("contact")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
@@ -295,7 +295,7 @@ const Navbar = () => {
                   {t.nav.about}
                 </Link>
                 
-                <button
+                {/* <button
                   onClick={() => {
                     scrollToSection("clients");
                     setIsMobileMenuOpen(false);
@@ -303,7 +303,7 @@ const Navbar = () => {
                   className="block w-full text-left px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-base"
                 >
                   {t.nav.clients}
-                </button>
+                </button> */}
                 
                 <button
                   onClick={() => {
