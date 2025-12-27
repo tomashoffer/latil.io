@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button";
 import LogoCarousel from "@/components/ui/LogoCarousel";
 import { ArrowRight, TrendingDown, Zap, Layers, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CALENDLY_URL } from "@/lib/config";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -13,6 +14,10 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const openCalendly = () => {
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -90,7 +95,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={openCalendly}
               variant="primary"
               size="lg"
               className="group"

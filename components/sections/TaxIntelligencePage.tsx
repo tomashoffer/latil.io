@@ -3,13 +3,14 @@
 import Button from "@/components/ui/Button";
 import { Check, ArrowRight, FileSearch, Globe, Database, TrendingUp, AlertTriangle, Eye } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CALENDLY_URL } from "@/lib/config";
 
 const TaxIntelligencePage = () => {
   const { t } = useLanguage();
   const solution = t.solutions.taxIntelligence;
 
-  const scrollToContact = () => {
-    window.location.href = "/#contact";
+  const openCalendly = () => {
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -262,7 +263,7 @@ const TaxIntelligencePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
           <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">{t.contact.subtitle}</p>
-          <Button onClick={scrollToContact} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-100">
+          <Button onClick={openCalendly} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-100">
             {solution.cta} <ArrowRight className="ml-2" />
           </Button>
         </div>

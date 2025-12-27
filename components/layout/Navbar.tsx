@@ -8,6 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { CALENDLY_URL } from "@/lib/config";
 
 const solutionItems = [
   { key: "finops", href: "/solutions/finops", icon: Cloud },
@@ -45,6 +46,10 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
+  };
+
+  const openCalendly = () => {
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
   const goHome = () => {
@@ -207,7 +212,7 @@ const Navbar = () => {
               )}
             </div>
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={openCalendly}
               variant="primary"
               size="md"
             >
@@ -356,7 +361,7 @@ const Navbar = () => {
               <div className="pt-4">
                 <Button
                   onClick={() => {
-                    scrollToSection("contact");
+                    openCalendly();
                     setIsMobileMenuOpen(false);
                   }}
                   variant="primary"

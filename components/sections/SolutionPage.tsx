@@ -3,6 +3,7 @@
 import Button from "@/components/ui/Button";
 import { Check, ArrowRight, ExternalLink, Cloud, Brain, FileSearch, Stethoscope, ShieldAlert, Code2, LucideIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CALENDLY_URL } from "@/lib/config";
 
 const iconMap: Record<string, LucideIcon> = {
   Cloud,
@@ -70,8 +71,8 @@ const SolutionPage = ({ solutionKey, iconName, accentColor }: SolutionPageProps)
   const colors = colorClasses[accentColor];
   const Icon = iconMap[iconName] || Cloud;
 
-  const scrollToContact = () => {
-    window.location.href = "/#contact";
+  const openCalendly = () => {
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
   // Check if solution has use cases (finance and healthcare have them)
@@ -102,7 +103,7 @@ const SolutionPage = ({ solutionKey, iconName, accentColor }: SolutionPageProps)
           )}
           <div className="flex justify-center">
             <Button
-              onClick={scrollToContact}
+              onClick={openCalendly}
               variant="primary"
               size="lg"
               className="group"
