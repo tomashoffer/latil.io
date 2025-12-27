@@ -11,8 +11,9 @@ import Textarea from "@/components/ui/Textarea";
 import Select from "@/components/ui/Select";
 import Modal from "@/components/ui/Modal";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
-import { Mail, Linkedin, Send, CheckCircle } from "lucide-react";
+import { Mail, Linkedin, Send, CheckCircle, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CALENDLY_URL } from "@/lib/config";
 
 const ContactCTA = () => {
   const { t } = useLanguage();
@@ -52,6 +53,10 @@ const ContactCTA = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const openCalendly = () => {
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -217,6 +222,19 @@ const ContactCTA = () => {
                     <div className="text-primary-100">{t.contact.linkedinDesc}</div>
                   </div>
                 </a>
+
+                <button
+                  onClick={openCalendly}
+                  className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm w-full text-left"
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                    <Calendar size={24} />
+                  </div>
+                  <div>
+                    <div className="font-semibold">{t.contact.calendar}</div>
+                    <div className="text-primary-100">{t.contact.calendarDesc}</div>
+                  </div>
+                </button>
               </div>
 
               <div className="mt-8 p-6 bg-white/10 rounded-xl backdrop-blur-sm">

@@ -246,7 +246,7 @@ const SolutionPage = ({ solutionKey, iconName, accentColor }: SolutionPageProps)
             {t.contact.subtitle}
           </p>
           <Button
-            onClick={scrollToContact}
+            onClick={openCalendly}
             variant="secondary"
             size="lg"
             className="bg-white text-gray-900 hover:bg-gray-100"
