@@ -14,8 +14,8 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Always start with 'es' to match server-side rendering
-  const [language, setLanguageState] = useState<Language>("es");
+  // Always start with 'en' to match server-side rendering
+  const [language, setLanguageState] = useState<Language>("en");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
