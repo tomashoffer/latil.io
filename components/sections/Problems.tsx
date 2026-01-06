@@ -90,19 +90,18 @@ const Problems = () => {
     },
   ];
 
-  // Split problems into rows: 3-2-1 pyramid layout
-  const firstRow = problems.slice(0, 3);  // cloud, finance, taxIntelligence
-  const secondRow = problems.slice(3, 5); // healthcare, quantumSecurity
-  const thirdRow = problems.slice(5);     // custom (full width)
+  // Split problems into rows: 3 + 3
+  const firstRow = problems.slice(0, 3);
+  const secondRow = problems.slice(3);
 
-  const renderCard = (problem: typeof problems[0], idx: number, isFullWidth = false) => {
+  const renderCard = (problem: typeof problems[0], idx: number) => {
     const IconComponent = problem.icon;
     return (
       <FadeIn key={idx} delay={idx * 0.1}>
         <Link href={problem.href} className="block h-full group">
           <Card hover className="h-full transition-all duration-300 group-hover:border-primary-300 group-hover:shadow-lg">
-            <div className={`flex ${isFullWidth ? 'flex-col md:flex-row md:items-start gap-8' : 'flex-col'} h-full`}>
-              <div className={isFullWidth ? 'md:flex-1' : 'mb-6'}>
+            <div className="flex flex-col h-full">
+              <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl flex items-center justify-center mb-4 group-hover:from-primary-200 group-hover:to-accent-200 transition-all">
                   <IconComponent className="text-primary-600" size={32} />
                 </div>
@@ -114,11 +113,11 @@ const Problems = () => {
                 </p>
               </div>
 
-              <div className={isFullWidth ? 'md:flex-1' : 'mt-auto'}>
+              <div className="mt-auto">
                 <h4 className="font-semibold text-gray-900 mb-4">
                   {problem.consequencesTitle}
                 </h4>
-                <ul className={`${isFullWidth ? 'grid grid-cols-1 md:grid-cols-2 gap-3' : 'space-y-3'} mb-6`}>
+                <ul className="space-y-3 mb-6">
                   {problem.consequences.map((consequence, cIdx) => {
                     const ConsequenceIcon = consequence.icon;
                     return (
@@ -156,19 +155,14 @@ const Problems = () => {
           </h2>
         </FadeIn>
 
-        {/* First row - 3 cards: Cloud, Finance, Tax Intelligence */}
+        {/* First row - 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
           {firstRow.map((problem, idx) => renderCard(problem, idx))}
         </div>
 
-        {/* Second row - 2 cards centered: Healthcare, Quantum Security */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-6 lg:mb-8 max-w-4xl mx-auto">
+        {/* Second row - 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {secondRow.map((problem, idx) => renderCard(problem, idx + 3))}
-        </div>
-
-        {/* Third row - 1 card full width: Custom Development */}
-        <div className="w-full">
-          {thirdRow.map((problem, idx) => renderCard(problem, idx + 5, true))}
         </div>
       </div>
     </section>
