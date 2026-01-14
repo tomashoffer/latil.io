@@ -207,7 +207,6 @@ const ContactCTA = () => {
                     <div className="text-primary-100">contact@latil.io</div>
                   </div>
                 </a>
-
                 <a
                   href="https://www.linkedin.com/company/latil-io/"
                   target="_blank"

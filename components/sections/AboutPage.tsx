@@ -5,7 +5,6 @@ import Button from "@/components/ui/Button";
 import { ArrowRight, Target, Handshake, Award, Linkedin, Users, Rocket, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
-import { CALENDLY_URL } from "@/lib/config";
 
 const AboutPage = () => {
   const { t } = useLanguage();
@@ -26,8 +25,8 @@ const AboutPage = () => {
 
   const about = t.about;
 
-  const openCalendly = () => {
-    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
+  const scrollToContact = () => {
+    window.location.href = "/#contact";
   };
 
   return (
@@ -200,7 +199,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
           <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">{t.contact.subtitle}</p>
-          <Button onClick={openCalendly} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-100">
+          <Button onClick={scrollToContact} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-100">
             {about.cta} <ArrowRight className="ml-2" />
           </Button>
         </div>

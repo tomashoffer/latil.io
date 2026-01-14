@@ -28,6 +28,20 @@ export const metadata: Metadata = {
     siteName: "Latil.io",
     locale: "es_AR",
     type: "website",
+    images: [
+      {
+        url: "https://latil.io/logos/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Latil.io - Enterprise Automation for Finance and Cloud",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Latil.io - Automatización Enterprise para Cloud y Finanzas",
+    description: "Ahorrá hasta 35% en cloud y acelerá tus procesos financieros con IA",
+    images: ["https://latil.io/logos/logo.png"],
   },
 };
 

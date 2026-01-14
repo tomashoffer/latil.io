@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import LogoCarousel from "@/components/ui/LogoCarousel";
-import { ArrowRight, TrendingDown, Zap, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowRight, TrendingDown, Zap, Layers, CheckCircle2, Target, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CALENDLY_URL } from "@/lib/config";
 
@@ -112,12 +112,12 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats - Mobile: 2 cols, Tablet+: 3 cols top row */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-8"
+            className="hidden sm:grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-6"
           >
             <div className="flex flex-col items-center">
               <TrendingDown className="text-primary-600 mb-2" size={32} />
@@ -126,13 +126,66 @@ const Hero = () => {
             </div>
             <div className="flex flex-col items-center">
               <Zap className="text-accent-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">30%</div>
+              <div className="text-3xl font-bold text-gray-900">50%</div>
               <div className="text-sm text-gray-600">{t.hero.stats.finance}</div>
             </div>
             <div className="flex flex-col items-center">
               <Layers className="text-primary-600 mb-2" size={32} />
               <div className="text-3xl font-bold text-gray-900">6</div>
               <div className="text-sm text-gray-600">{t.hero.stats.solutions}</div>
+            </div>
+          </motion.div>
+
+          {/* Stats - Tablet+: 2 cols bottom row */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="hidden sm:grid grid-cols-2 gap-8 max-w-md mx-auto mb-8"
+          >
+            <div className="flex flex-col items-center">
+              <Target className="text-green-600 mb-2" size={32} />
+              <div className="text-3xl font-bold text-gray-900">99.9%</div>
+              <div className="text-sm text-gray-600">{t.hero.stats.accuracy}</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <ShieldCheck className="text-blue-600 mb-2" size={32} />
+              <div className="text-3xl font-bold text-gray-900">100%</div>
+              <div className="text-sm text-gray-600">{t.hero.stats.security}</div>
+            </div>
+          </motion.div>
+
+          {/* Stats - Mobile only: 2 columns grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="grid grid-cols-2 gap-6 max-w-sm mx-auto mb-8 sm:hidden"
+          >
+            <div className="flex flex-col items-center">
+              <TrendingDown className="text-primary-600 mb-2" size={28} />
+              <div className="text-2xl font-bold text-gray-900">35%</div>
+              <div className="text-xs text-gray-600 text-center">{t.hero.stats.cloud}</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <Zap className="text-accent-600 mb-2" size={28} />
+              <div className="text-2xl font-bold text-gray-900">50%</div>
+              <div className="text-xs text-gray-600 text-center">{t.hero.stats.finance}</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <Target className="text-green-600 mb-2" size={28} />
+              <div className="text-2xl font-bold text-gray-900">99.9%</div>
+              <div className="text-xs text-gray-600 text-center">{t.hero.stats.accuracy}</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <ShieldCheck className="text-blue-600 mb-2" size={28} />
+              <div className="text-2xl font-bold text-gray-900">100%</div>
+              <div className="text-xs text-gray-600 text-center">{t.hero.stats.security}</div>
+            </div>
+            <div className="flex flex-col items-center col-span-2">
+              <Layers className="text-primary-600 mb-2" size={28} />
+              <div className="text-2xl font-bold text-gray-900">6</div>
+              <div className="text-xs text-gray-600 text-center">{t.hero.stats.solutions}</div>
             </div>
           </motion.div>
         </div>

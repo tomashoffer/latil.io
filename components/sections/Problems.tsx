@@ -94,6 +94,58 @@ const Problems = () => {
   const firstRow = problems.slice(0, 3);
   const secondRow = problems.slice(3);
 
+  const renderCard = (problem: typeof problems[0], idx: number) => {
+    const IconComponent = problem.icon;
+    return (
+      <FadeIn key={idx} delay={idx * 0.1}>
+        <Link href={problem.href} className="block h-full group">
+          <Card hover className="h-full transition-all duration-300 group-hover:border-primary-300 group-hover:shadow-lg">
+            <div className="flex flex-col h-full">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl flex items-center justify-center mb-4 group-hover:from-primary-200 group-hover:to-accent-200 transition-all">
+                  <IconComponent className="text-primary-600" size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
+                  {problem.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {problem.pain}
+                </p>
+              </div>
+
+              <div className="mt-auto">
+                <h4 className="font-semibold text-gray-900 mb-4">
+                  {problem.consequencesTitle}
+                </h4>
+                <ul className="space-y-3 mb-6">
+                  {problem.consequences.map((consequence, cIdx) => {
+                    const ConsequenceIcon = consequence.icon;
+                    return (
+                      <li
+                        key={cIdx}
+                        className="flex items-start gap-3 text-gray-600"
+                      >
+                        <ConsequenceIcon
+                          className="text-primary-600 flex-shrink-0 mt-0.5"
+                          size={20}
+                        />
+                        <span>{consequence.text}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="flex items-center gap-2 text-primary-600 font-medium group-hover:gap-3 transition-all">
+                  <span>{t.hero.ctaSecondary.includes("Ver") ? "Ver solución" : "View solution"}</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Card>
+        </Link>
+      </FadeIn>
+    );
+  };
+
   return (
     <section id="problems" className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,112 +157,12 @@ const Problems = () => {
 
         {/* First row - 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
-          {firstRow.map((problem, idx) => {
-            const IconComponent = problem.icon;
-            return (
-              <FadeIn key={idx} delay={idx * 0.1}>
-                <Link href={problem.href} className="block h-full group">
-                  <Card hover className="h-full transition-all duration-300 group-hover:border-primary-300 group-hover:shadow-lg">
-                    <div className="flex flex-col h-full">
-                      <div className="mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl flex items-center justify-center mb-4 group-hover:from-primary-200 group-hover:to-accent-200 transition-all">
-                          <IconComponent className="text-primary-600" size={32} />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
-                          {problem.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6">
-                          {problem.pain}
-                        </p>
-                      </div>
-
-                      <div className="mt-auto">
-                        <h4 className="font-semibold text-gray-900 mb-4">
-                          {problem.consequencesTitle}
-                        </h4>
-                        <ul className="space-y-3 mb-6">
-                          {problem.consequences.map((consequence, cIdx) => {
-                            const ConsequenceIcon = consequence.icon;
-                            return (
-                              <li
-                                key={cIdx}
-                                className="flex items-start gap-3 text-gray-600"
-                              >
-                                <ConsequenceIcon
-                                  className="text-primary-600 flex-shrink-0 mt-0.5"
-                                  size={20}
-                                />
-                                <span>{consequence.text}</span>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                        <div className="flex items-center gap-2 text-primary-600 font-medium group-hover:gap-3 transition-all">
-                          <span>{t.hero.ctaSecondary.includes("Ver") ? "Ver solución" : "View solution"}</span>
-                          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
-              </FadeIn>
-            );
-          })}
+          {firstRow.map((problem, idx) => renderCard(problem, idx))}
         </div>
 
         {/* Second row - 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {secondRow.map((problem, idx) => {
-              const IconComponent = problem.icon;
-              return (
-                <FadeIn key={idx + 3} delay={(idx + 3) * 0.1}>
-                  <Link href={problem.href} className="block h-full group">
-                    <Card hover className="h-full transition-all duration-300 group-hover:border-primary-300 group-hover:shadow-lg">
-                      <div className="flex flex-col h-full">
-                        <div className="mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl flex items-center justify-center mb-4 group-hover:from-primary-200 group-hover:to-accent-200 transition-all">
-                            <IconComponent className="text-primary-600" size={32} />
-                          </div>
-                          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
-                            {problem.title}
-                          </h3>
-                          <p className="text-gray-600 leading-relaxed mb-6">
-                            {problem.pain}
-                          </p>
-                        </div>
-
-                        <div className="mt-auto">
-                          <h4 className="font-semibold text-gray-900 mb-4">
-                            {problem.consequencesTitle}
-                          </h4>
-                          <ul className="space-y-3 mb-6">
-                            {problem.consequences.map((consequence, cIdx) => {
-                              const ConsequenceIcon = consequence.icon;
-                              return (
-                                <li
-                                  key={cIdx}
-                                  className="flex items-start gap-3 text-gray-600"
-                                >
-                                  <ConsequenceIcon
-                                    className="text-primary-600 flex-shrink-0 mt-0.5"
-                                    size={20}
-                                  />
-                                  <span>{consequence.text}</span>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                          <div className="flex items-center gap-2 text-primary-600 font-medium group-hover:gap-3 transition-all">
-                            <span>{t.hero.ctaSecondary.includes("Ver") ? "Ver solución" : "View solution"}</span>
-                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
-                  </Link>
-                </FadeIn>
-              );
-            })}
+          {secondRow.map((problem, idx) => renderCard(problem, idx + 3))}
         </div>
       </div>
     </section>
