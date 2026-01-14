@@ -87,7 +87,7 @@ const AboutPage = () => {
                     alt={about.alejandro.name}
                     width={128}
                     height={128}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[50%_30%]"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{about.alejandro.name}</h3>
