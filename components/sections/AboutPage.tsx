@@ -76,22 +76,22 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{about.team}</h2>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Alejandro */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
               <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-6 shadow-lg ring-4 ring-accent-100">
+                <div className="w-28 h-28 rounded-full overflow-hidden mb-5 shadow-lg ring-4 ring-accent-100">
                   <Image
                     src="/team/ale.jpeg"
                     alt={about.alejandro.name}
-                    width={128}
-                    height={128}
+                    width={112}
+                    height={112}
                     className="w-full h-full object-cover object-[50%_30%]"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{about.alejandro.name}</h3>
-                <p className="text-accent-600 font-semibold mb-4">{about.alejandro.role}</p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">{about.alejandro.bio}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{about.alejandro.name}</h3>
+                <p className="text-accent-600 font-semibold mb-3 text-sm">{about.alejandro.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">{about.alejandro.bio}</p>
                 <div className="flex items-center gap-4">
                   <a 
                     href={`mailto:${about.alejandro.email}`}
@@ -106,31 +106,30 @@ const AboutPage = () => {
                     className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium transition-colors"
                   >
                     <Linkedin size={18} />
-                    LinkedIn
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Tomas */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
               <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-6 shadow-lg ring-4 ring-blue-100">
+                <div className="w-28 h-28 rounded-full overflow-hidden mb-5 shadow-lg ring-4 ring-accent-100">
                   <Image
                     src="/team/tomas.jpg"
                     alt={about.tomas.name}
-                    width={128}
-                    height={128}
+                    width={112}
+                    height={112}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{about.tomas.name}</h3>
-                <p className="text-blue-600 font-semibold mb-4">{about.tomas.role}</p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">{about.tomas.bio}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{about.tomas.name}</h3>
+                <p className="text-accent-600 font-semibold mb-3 text-sm">{about.tomas.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">{about.tomas.bio}</p>
                 <div className="flex items-center gap-4">
                   <a 
                     href={`mailto:${about.tomas.email}`}
-                    className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors"
+                    className="inline-flex items-center gap-2 text-gray-600 hover:text-accent-600 font-medium transition-colors"
                   >
                     <Mail size={18} />
                   </a>
@@ -138,10 +137,43 @@ const AboutPage = () => {
                     href={about.tomas.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                    className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium transition-colors"
                   >
                     <Linkedin size={18} />
-                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Nicolas */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-28 h-28 rounded-full overflow-hidden mb-5 shadow-lg ring-4 ring-accent-100">
+                  <Image
+                    src="/team/nico.jpeg"
+                    alt={about.nicolas.name}
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{about.nicolas.name}</h3>
+                <p className="text-accent-600 font-semibold mb-3 text-sm">{about.nicolas.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">{about.nicolas.bio}</p>
+                <div className="flex items-center gap-4">
+                  <a 
+                    href={`mailto:${about.nicolas.email}`}
+                    className="inline-flex items-center gap-2 text-gray-600 hover:text-accent-600 font-medium transition-colors"
+                  >
+                    <Mail size={18} />
+                  </a>
+                  <a 
+                    href={about.nicolas.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium transition-colors"
+                  >
+                    <Linkedin size={18} />
                   </a>
                 </div>
               </div>
