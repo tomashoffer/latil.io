@@ -49,6 +49,13 @@ export const translations = {
         email: "tomas@latil.io",
         linkedin: "https://www.linkedin.com/in/tomashoffer/",
       },
+      nicolas: {
+        name: "Nicolas Surijón",
+        role: "CSO & Partner",
+        bio: "Leads digital transformation and technology strategy at Latil.io. With 15+ years as CEO, CFO, and Director of Digital Transformation in the public sector, Nicolas brings deep expertise in business operations, software development, and driving innovation at scale.",
+        email: "nicolas@latil.io",
+        linkedin: "https://www.linkedin.com/in/nsurijon/",
+      },
     },
     hero: {
       headline: "Scalable technology solutions",
@@ -433,6 +440,13 @@ export const translations = {
         bio: "Lidera operaciones, desarrollo de negocios y partnerships estratégicos en Latil.io. Con background en operaciones y tecnología, Tomas se enfoca en estrategia go-to-market, customer success y escalar soluciones de automatización empresarial en todo el mundo.",
         email: "tomas@latil.io",
         linkedin: "https://www.linkedin.com/in/tomashoffer/",
+      },
+      nicolas: {
+        name: "Nicolas Surijón",
+        role: "CSO & Partner",
+        bio: "Lidera transformación digital y estrategia tecnológica en Latil.io. Con más de 15 años de experiencia como CEO, CFO y Director de Transformación Digital en sector público, Nicolas aporta expertise profundo en operaciones de negocio, desarrollo de software e innovación a escala.",
+        email: "nicolas@latil.io",
+        linkedin: "https://www.linkedin.com/in/nsurijon/",
       },
     },
     hero: {
