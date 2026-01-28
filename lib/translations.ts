@@ -219,7 +219,7 @@ export const translations = {
       taxIntelligence: {
         title: "Tax Intelligence Platform:",
         subtitle: "Uncover hidden economies with AI",
-        hero: "Governments and tax authorities lose billions annually to unreported income and unregistered businesses. IVIX uses AI to analyze public data and identify tax gaps at scale.",
+        hero: "Governments and tax authorities lose billions annually to unreported income and unregistered businesses. Our platform uses AI to analyze public data and identify tax gaps at scale.",
         how: "How it works:",
         description: "Our AI platform scans publicly available data across the internet to detect hidden business activity:",
         step1: "Collects open-source data",
@@ -241,8 +241,8 @@ export const translations = {
         clientsDesc: "National tax authorities • State revenue agencies • International organizations",
         clientsList: ["National Tax Authorities", "State Revenue Agencies", "International Organizations"],
         cta: "Request demo",
-        partner: "Powered by IVIX",
-        partnerUrl: "https://www.ivix.ai",
+        partner: "",
+        partnerUrl: "",
       },
       healthcare: {
         title: "AI Agents for Healthcare:",
@@ -611,7 +611,7 @@ export const translations = {
       taxIntelligence: {
         title: "Plataforma de Inteligencia Fiscal:",
         subtitle: "Descubrí economías ocultas con IA",
-        hero: "Los gobiernos y autoridades fiscales pierden miles de millones anualmente por ingresos no declarados y negocios no registrados. IVIX usa IA para analizar datos públicos e identificar brechas fiscales a escala.",
+        hero: "Los gobiernos y autoridades fiscales pierden miles de millones anualmente por ingresos no declarados y negocios no registrados. Nuestra plataforma usa IA para analizar datos públicos e identificar brechas fiscales a escala.",
         how: "Cómo funciona:",
         description: "Nuestra plataforma de IA escanea datos públicos disponibles en internet para detectar actividad comercial oculta:",
         step1: "Recolecta datos públicos",
@@ -633,8 +633,8 @@ export const translations = {
         clientsDesc: "Autoridades fiscales nacionales • Agencias de recaudación estatales • Organizaciones internacionales",
         clientsList: ["Autoridades Fiscales Nacionales", "Agencias de Recaudación Estatales", "Organizaciones Internacionales"],
         cta: "Solicitar demo",
-        partner: "Powered by IVIX",
-        partnerUrl: "https://www.ivix.ai",
+        partner: "",
+        partnerUrl: "",
       },
       healthcare: {
         title: "Agentes de IA para Salud:",
