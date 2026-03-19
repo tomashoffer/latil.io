@@ -14,17 +14,17 @@ const CustomDevelopmentPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50/30">
       {/* Hero Header */}
       <section className="pt-28 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Code2 className="text-white" size={32} />
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             {solution.title}
           </h1>
-          <p className="text-xl text-orange-600 font-medium mb-6">
+          <p className="text-xl text-primary-600 font-medium mb-6">
             {solution.subtitle}
           </p>
           <p className="text-gray-600 max-w-3xl mx-auto">
@@ -46,9 +46,9 @@ const CustomDevelopmentPage = () => {
                 
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-orange-500" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-amber-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-yellow-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
+                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-accent-600" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -69,7 +69,7 @@ const CustomDevelopmentPage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-orange-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -86,30 +86,30 @@ const CustomDevelopmentPage = () => {
 
             {/* Right column - Dashboard */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-3xl p-1 shadow-2xl">
+              <div className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-3xl p-1 shadow-2xl">
                 <div className="bg-white rounded-2xl overflow-hidden">
                   {/* Header */}
                   <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                     <h3 className="font-semibold text-gray-900">Development Partner</h3>
-                    <Code2 size={20} className="text-orange-500" />
+                    <Code2 size={20} className="text-primary-600" />
                   </div>
 
                   {/* Main stats */}
                   <div className="grid grid-cols-2 border-b border-gray-100">
-                    <div className="px-5 py-4 border-r border-gray-100 bg-gradient-to-br from-orange-50 to-white">
+                    <div className="px-5 py-4 border-r border-gray-100 bg-gradient-to-br from-primary-50 to-white">
                       <div className="flex items-center gap-2 mb-1">
-                        <Award size={14} className="text-orange-500" />
+                        <Award size={14} className="text-primary-600" />
                         <p className="text-xs text-gray-500">Experience</p>
                       </div>
-                      <p className="text-2xl font-bold text-orange-600">20+</p>
+                      <p className="text-2xl font-bold text-primary-600">20+</p>
                       <p className="text-xs text-gray-400">years</p>
                     </div>
-                    <div className="px-5 py-4 bg-gradient-to-bl from-amber-50 to-white">
+                    <div className="px-5 py-4 bg-gradient-to-bl from-accent-50 to-white">
                       <div className="flex items-center gap-2 mb-1">
-                        <Users size={14} className="text-amber-500" />
+                        <Users size={14} className="text-accent-600" />
                         <p className="text-xs text-gray-500">Team</p>
                       </div>
-                      <p className="text-2xl font-bold text-amber-600">Dev + PM</p>
+                      <p className="text-2xl font-bold text-accent-600">Dev + PM</p>
                       <p className="text-xs text-gray-400">full stack</p>
                     </div>
                   </div>
@@ -123,50 +123,50 @@ const CustomDevelopmentPage = () => {
                           <Puzzle size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">Custom software</span>
                         </div>
-                        <span className="text-xs font-medium text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full">Core</span>
+                        <span className="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">Core</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <Lightbulb size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">Product management</span>
                         </div>
-                        <span className="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Strategy</span>
+                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Strategy</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <GitBranch size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">Technical consulting</span>
                         </div>
-                        <span className="text-xs font-medium text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded-full">Advisory</span>
+                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Advisory</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <Rocket size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">Process automation</span>
                         </div>
-                        <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full">Delivery</span>
+                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Delivery</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Methodology */}
-                  <div className="px-5 py-4 bg-gradient-to-r from-orange-50 to-amber-50 border-t border-gray-100">
+                  <div className="px-5 py-4 bg-gradient-to-r from-primary-50 to-accent-50 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Clock size={14} className="text-orange-600" />
+                        <Clock size={14} className="text-primary-600" />
                         <span className="text-sm text-gray-600">Agile methodology</span>
                       </div>
-                      <span className="text-sm font-bold text-orange-600">100% transparent</span>
+                      <span className="text-sm font-bold text-primary-600">100% transparent</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Floating badges */}
-              <div className="absolute -top-2 -right-2 bg-orange-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-primary-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
                 20+ years
               </div>
-              <div className="absolute -bottom-2 -left-2 bg-amber-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
+              <div className="absolute -bottom-2 -left-2 bg-accent-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
                 <Users size={12} />
                 Full team
               </div>
@@ -177,31 +177,31 @@ const CustomDevelopmentPage = () => {
           <div className="lg:hidden space-y-8">
             {/* Dashboard first on mobile */}
             <div className="relative max-w-md mx-auto">
-              <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl p-1 shadow-xl">
+              <div className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-1 shadow-xl">
                 <div className="bg-white rounded-xl overflow-hidden">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
                     <h3 className="font-semibold text-gray-900 text-sm">Development Partner</h3>
-                    <Code2 size={16} className="text-orange-500" />
+                    <Code2 size={16} className="text-primary-600" />
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-3 border-r border-gray-100">
                       <p className="text-xs text-gray-500">Experience</p>
-                      <p className="text-xl font-bold text-orange-600">20+ yrs</p>
+                      <p className="text-xl font-bold text-primary-600">20+ yrs</p>
                     </div>
                     <div className="px-4 py-3">
                       <p className="text-xs text-gray-500">Team</p>
-                      <p className="text-xl font-bold text-amber-600">Dev + PM</p>
+                      <p className="text-xl font-bold text-accent-600">Dev + PM</p>
                     </div>
                   </div>
-                  <div className="px-4 py-3 bg-gradient-to-r from-orange-50 to-amber-50 border-t border-gray-100">
+                  <div className="px-4 py-3 bg-gradient-to-r from-primary-50 to-accent-50 border-t border-gray-100">
                     <div className="flex items-center gap-2">
-                      <Clock size={12} className="text-orange-600" />
+                      <Clock size={12} className="text-primary-600" />
                       <span className="text-xs font-medium text-gray-600">Agile • 100% transparent</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-2 -right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-primary-600 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
                 20+ years
               </div>
             </div>
@@ -213,9 +213,9 @@ const CustomDevelopmentPage = () => {
                 <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-orange-500" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-amber-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-yellow-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
+                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-accent-600" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -235,7 +235,7 @@ const CustomDevelopmentPage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-orange-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -267,7 +267,7 @@ const CustomDevelopmentPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-orange-500 to-amber-500">
+      <section className="py-16 bg-gradient-to-br from-primary-600 to-accent-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
           <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">{t.contact.subtitle}</p>

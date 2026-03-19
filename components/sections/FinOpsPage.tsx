@@ -14,7 +14,7 @@ const FinOpsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50/30">
       {/* Hero Header */}
       <section className="pt-28 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -23,6 +23,9 @@ const FinOpsPage = () => {
           </h1>
           <p className="text-xl text-primary-600 font-medium">
             {solution.subtitle}
+          </p>
+          <p className="text-gray-600 max-w-3xl mx-auto mt-4">
+            {solution.hero}
           </p>
         </div>
       </section>
@@ -40,9 +43,9 @@ const FinOpsPage = () => {
                 
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-blue-500" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-indigo-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-violet-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
+                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-primary-600" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -63,7 +66,7 @@ const FinOpsPage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -90,14 +93,14 @@ const FinOpsPage = () => {
                 <div className="px-5 py-4 border-b border-gray-100">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs text-gray-500">Savings this month</span>
-                    <div className="flex items-center gap-1 text-green-500 text-xs">
+                    <div className="flex items-center gap-1 text-accent-600 text-xs">
                       <TrendingDown size={12} />
                       <span className="font-medium">Active</span>
                     </div>
                   </div>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold text-gray-900">$127K</span>
-                    <span className="text-xs text-green-500 font-medium">+23%</span>
+                    <span className="text-xs text-accent-600 font-medium">+23%</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 border-b border-gray-100">
@@ -112,23 +115,23 @@ const FinOpsPage = () => {
                 </div>
                 <div className="px-5 py-3">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                      <div className="w-1.5 h-1.5 bg-accent-600 rounded-full animate-pulse" />
                     <span className="text-xs font-medium text-gray-700">Active workflows</span>
                   </div>
                   <div className="space-y-2">
                     {["Auto-scaling", "RI Optimization", "Cleanup"].map((name, idx) => (
                       <div key={idx} className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
                         <span className="text-xs text-gray-600">{name}</span>
-                        <span className="text-xs font-medium text-green-500">Active</span>
+                          <span className="text-xs font-medium text-accent-600">Active</span>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-2 -right-2 bg-green-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-accent-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
                 35% savings
               </div>
-              <div className="absolute -bottom-2 -left-2 bg-blue-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
+              <div className="absolute -bottom-2 -left-2 bg-primary-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
                 <Zap size={12} />
                 Zero code
               </div>
@@ -147,14 +150,14 @@ const FinOpsPage = () => {
                 <div className="px-5 py-4 border-b border-gray-100">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs text-gray-500">Savings this month</span>
-                    <div className="flex items-center gap-1 text-green-500 text-xs">
+                    <div className="flex items-center gap-1 text-accent-600 text-xs">
                       <TrendingDown size={12} />
                       <span className="font-medium">Active</span>
                     </div>
                   </div>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold text-gray-900">$127K</span>
-                    <span className="text-xs text-green-500 font-medium">+23%</span>
+                    <span className="text-xs text-accent-600 font-medium">+23%</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 border-b border-gray-100">
@@ -168,7 +171,7 @@ const FinOpsPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-2 -right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-accent-600 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
                 35% savings
               </div>
             </div>
@@ -180,9 +183,9 @@ const FinOpsPage = () => {
                 <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-blue-500" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-indigo-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-violet-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
+                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-primary-600" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -201,7 +204,7 @@ const FinOpsPage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}

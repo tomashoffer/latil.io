@@ -1,8 +1,9 @@
 import TaxIntelligencePage from "@/components/sections/TaxIntelligencePage";
 
 export const metadata = {
-  title: "Tax Intelligence Platform - AI for Revenue Recovery | Latil.io",
-  description: "Uncover hidden economies with AI. Detect unreported income, unregistered businesses, and tax gaps at scale with 99% accuracy.",
+  title: "Latil Customer AI Platform - Enterprise AI Agents | Latil.io",
+  description:
+    "Deploy intelligent agents across customer, internal, and back-office workflows. Low-code builder, omnichannel deployment, integrations via API/MCP, and enterprise security.",
 };
 
 export default function TaxIntelligencePageRoute() {

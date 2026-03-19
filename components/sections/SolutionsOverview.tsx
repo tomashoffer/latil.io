@@ -2,7 +2,7 @@
 
 import FadeIn from "@/components/animations/FadeIn";
 import Card from "@/components/ui/Card";
-import { Cloud, Brain, FileSearch, Stethoscope, ShieldAlert, ArrowRight, Code2 } from "lucide-react";
+import { Cloud, Brain, Bot, Stethoscope, ShieldAlert, ArrowRight, Code2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
@@ -25,42 +25,38 @@ const SolutionsOverview = () => {
       color: "accent",
     },
     {
-      icon: FileSearch,
+      icon: Bot,
       title: t.solutions.taxIntelligence.title.replace(":", ""),
       subtitle: t.solutions.taxIntelligence.subtitle,
       href: "/solutions/tax-intelligence",
-      color: "green",
+      color: "primary",
     },
     {
       icon: Stethoscope,
       title: t.solutions.healthcare.title.replace(":", ""),
       subtitle: t.solutions.healthcare.subtitle,
       href: "/solutions/healthcare",
-      color: "blue",
+      color: "accent",
     },
     {
       icon: ShieldAlert,
       title: t.solutions.quantumSecurity.title.replace(":", ""),
       subtitle: t.solutions.quantumSecurity.subtitle,
       href: "/solutions/quantum-security",
-      color: "purple",
+      color: "accent",
     },
     {
       icon: Code2,
       title: t.solutions.custom.title.replace(":", ""),
       subtitle: t.solutions.custom.subtitle,
       href: "/solutions/custom",
-      color: "orange",
+      color: "primary",
     },
   ];
 
   const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
     primary: { bg: "bg-primary-100", text: "text-primary-600", border: "group-hover:border-primary-300" },
     accent: { bg: "bg-accent-100", text: "text-accent-600", border: "group-hover:border-accent-300" },
-    green: { bg: "bg-green-100", text: "text-green-600", border: "group-hover:border-green-300" },
-    blue: { bg: "bg-blue-100", text: "text-blue-600", border: "group-hover:border-blue-300" },
-    purple: { bg: "bg-purple-100", text: "text-purple-600", border: "group-hover:border-purple-300" },
-    orange: { bg: "bg-orange-100", text: "text-orange-600", border: "group-hover:border-orange-300" },
   };
 
   // First row 3 cards, second row 2 cards centered
