@@ -41,7 +41,7 @@ const SolutionFinance = () => {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg border border-primary-200">
                       <div>
                         <div className="text-sm text-gray-600 mb-1">{t.solutions.finance.visual.before}</div>
                         <div className="text-2xl font-bold text-gray-900">{t.solutions.finance.visual.beforeTime}</div>
@@ -49,7 +49,7 @@ const SolutionFinance = () => {
                       <ArrowRight className="text-gray-400" size={20} />
                       <div>
                         <div className="text-sm text-gray-600 mb-1">{t.solutions.finance.visual.after}</div>
-                        <div className="text-2xl font-bold text-green-700">{t.solutions.finance.visual.afterTime}</div>
+                        <div className="text-2xl font-bold text-accent-700">{t.solutions.finance.visual.afterTime}</div>
                       </div>
                     </div>
 
@@ -74,9 +74,9 @@ const SolutionFinance = () => {
                             <span
                               className={`text-xs font-semibold px-2 py-1 rounded ${
                                 item.color === "green"
-                                  ? "bg-green-100 text-green-700"
+                                  ? "bg-accent-100 text-accent-700"
                                   : item.color === "blue"
-                                  ? "bg-blue-100 text-blue-700"
+                                  ? "bg-primary-100 text-primary-700"
                                   : "bg-gray-100 text-gray-700"
                               }`}
                             >

@@ -14,7 +14,7 @@ const FinancePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-accent-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50/30">
       {/* Hero Header */}
       <section className="pt-28 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -43,9 +43,9 @@ const FinancePage = () => {
                 
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-purple-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
                     { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-accent-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-pink-500" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -79,7 +79,7 @@ const FinancePage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -96,7 +96,7 @@ const FinancePage = () => {
 
             {/* Right column - Dashboard */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-accent-500 to-purple-600 rounded-3xl p-1 shadow-2xl">
+              <div className="bg-gradient-to-br from-accent-600 to-primary-600 rounded-3xl p-1 shadow-2xl">
                 <div className="bg-white rounded-2xl overflow-hidden">
                   {/* Header */}
                   <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
@@ -126,14 +126,14 @@ const FinancePage = () => {
                         <FileText size={16} className="text-gray-400" />
                         <span className="text-sm text-gray-700">Monthly closing</span>
                       </div>
-                      <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">Completed</span>
+                      <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-1 rounded-full">Completed</span>
                     </div>
                     <div className="flex items-center justify-between py-2">
                       <div className="flex items-center gap-3">
                         <BarChart3 size={16} className="text-gray-400" />
                         <span className="text-sm text-gray-700">Reconciliations</span>
                       </div>
-                      <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">In process</span>
+                      <span className="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-1 rounded-full">In process</span>
                     </div>
                     <div className="flex items-center justify-between py-2">
                       <div className="flex items-center gap-3">
@@ -145,7 +145,7 @@ const FinancePage = () => {
                   </div>
 
                   {/* Time saved */}
-                  <div className="px-5 py-4 bg-gradient-to-r from-accent-50 to-purple-50 border-t border-gray-100">
+                  <div className="px-5 py-4 bg-gradient-to-r from-accent-50 to-primary-50 border-t border-gray-100">
                     <div className="flex items-center gap-2 mb-1">
                       <Clock size={14} className="text-accent-600" />
                       <span className="text-xs text-gray-500">Time saved this month</span>
@@ -156,7 +156,7 @@ const FinancePage = () => {
               </div>
 
               {/* Floating badges */}
-              <div className="absolute -top-2 -right-2 bg-green-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-accent-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
                 3x faster
               </div>
               <div className="absolute -bottom-2 -left-2 bg-accent-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
@@ -170,7 +170,7 @@ const FinancePage = () => {
           <div className="lg:hidden space-y-8">
             {/* Dashboard first on mobile */}
             <div className="relative max-w-md mx-auto">
-              <div className="bg-gradient-to-br from-accent-500 to-purple-600 rounded-2xl p-1 shadow-xl">
+              <div className="bg-gradient-to-br from-accent-600 to-primary-600 rounded-2xl p-1 shadow-xl">
                 <div className="bg-white rounded-xl overflow-hidden">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
                     <h3 className="font-semibold text-gray-900 text-sm">Automated Closing Process</h3>
@@ -189,7 +189,7 @@ const FinancePage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="px-4 py-3 bg-gradient-to-r from-accent-50 to-purple-50">
+                  <div className="px-4 py-3 bg-gradient-to-r from-accent-50 to-primary-50">
                     <div className="flex items-center gap-2 mb-1">
                       <Clock size={12} className="text-accent-600" />
                       <span className="text-xs text-gray-500">Time saved</span>
@@ -198,7 +198,7 @@ const FinancePage = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-2 -right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-accent-600 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
                 3x faster
               </div>
             </div>
@@ -210,9 +210,9 @@ const FinancePage = () => {
                 <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-purple-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
                     { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-accent-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-pink-500" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -244,7 +244,7 @@ const FinancePage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -279,7 +279,7 @@ const FinancePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-accent-600 to-purple-600">
+      <section className="py-16 bg-gradient-to-br from-accent-600 to-primary-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
           <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">{t.contact.subtitle}</p>

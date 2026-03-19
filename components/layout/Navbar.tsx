@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, ChevronDown, Cloud, Brain, FileSearch, Stethoscope, ShieldAlert, Code2 } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, Cloud, Brain, Bot, Stethoscope, ShieldAlert, Code2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -13,7 +13,7 @@ import { CALENDLY_URL } from "@/lib/config";
 const solutionItems = [
   { key: "finops", href: "/solutions/finops", icon: Cloud },
   { key: "finance", href: "/solutions/finance", icon: Brain },
-  { key: "taxIntelligence", href: "/solutions/tax-intelligence", icon: FileSearch },
+  { key: "taxIntelligence", href: "/solutions/tax-intelligence", icon: Bot },
   { key: "healthcare", href: "/solutions/healthcare", icon: Stethoscope },
   { key: "quantumSecurity", href: "/solutions/quantum-security", icon: ShieldAlert },
   { key: "custom", href: "/solutions/custom", icon: Code2 },
@@ -120,25 +120,30 @@ const Navbar = () => {
                     onClick={() => setIsSolutionsOpen(false)}
                   />
                   <div
-                    className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-20"
+                    className="absolute left-0 mt-2 w-[440px] max-w-[90vw] bg-white rounded-xl shadow-xl border border-gray-200 p-4 z-20"
                     onMouseLeave={() => setIsSolutionsOpen(false)}
                   >
-                    {solutionItems.map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <Link
-                          key={item.key}
-                          href={item.href}
-                          onClick={() => setIsSolutionsOpen(false)}
-                          className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
-                        >
-                          <Icon size={20} className="text-primary-600" />
-                          <span className="text-gray-700 font-medium">
-                            {t.nav.solutionItems[item.key]}
-                          </span>
-                        </Link>
-                      );
-                    })}
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                      {solutionItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.key}
+                            href={item.href}
+                            onClick={() => setIsSolutionsOpen(false)}
+                            className="flex items-start gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                          >
+                            <Icon
+                              size={24}
+                              className="text-primary-600 flex-shrink-0"
+                            />
+                            <span className="text-gray-700 font-medium leading-tight">
+                              {t.nav.solutionItems[item.key]}
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </>
               )}

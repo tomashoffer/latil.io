@@ -14,17 +14,17 @@ const QuantumSecurityPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-violet-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-accent-50 via-white to-primary-50/30">
       {/* Hero Header */}
       <section className="pt-28 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Shield className="text-white" size={32} />
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             {solution.title}
           </h1>
-          <p className="text-xl text-purple-600 font-medium mb-6">
+          <p className="text-xl text-accent-600 font-medium mb-6">
             {solution.subtitle}
           </p>
           <p className="text-gray-600 max-w-3xl mx-auto">
@@ -46,9 +46,9 @@ const QuantumSecurityPage = () => {
                 
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-purple-500" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-violet-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-fuchsia-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-accent-600" },
+                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-primary-600" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -69,7 +69,7 @@ const QuantumSecurityPage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-purple-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -86,16 +86,16 @@ const QuantumSecurityPage = () => {
 
             {/* Right column - Dashboard */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500 to-violet-600 rounded-3xl p-1 shadow-2xl">
+              <div className="bg-gradient-to-br from-accent-600 to-primary-600 rounded-3xl p-1 shadow-2xl">
                 <div className="bg-white rounded-2xl overflow-hidden">
                   {/* Header */}
                   <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                     <h3 className="font-semibold text-gray-900">Quantum Readiness Assessment</h3>
-                    <Shield size={20} className="text-purple-500" />
+                    <Shield size={20} className="text-accent-600" />
                   </div>
 
                   {/* Main score */}
-                  <div className="px-5 py-5 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-violet-50">
+                  <div className="px-5 py-5 border-b border-gray-100 bg-gradient-to-r from-accent-50 to-primary-50">
                     <p className="text-xs text-gray-500 mb-2">Migration Readiness Score</p>
                     <div className="flex items-center gap-4">
                       <div className="relative w-20 h-20">
@@ -105,12 +105,12 @@ const QuantumSecurityPage = () => {
                             strokeDasharray={`${72 * 2.26} ${226.2 - 72 * 2.26}`} strokeLinecap="round" />
                           <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#a855f7" />
+                              <stop offset="0%" stopColor="#8b5cf6" />
                               <stop offset="100%" stopColor="#7c3aed" />
                             </linearGradient>
                           </defs>
                         </svg>
-                        <span className="absolute inset-0 flex items-center justify-center text-xl font-bold text-purple-600">72%</span>
+                        <span className="absolute inset-0 flex items-center justify-center text-xl font-bold text-accent-600">72%</span>
                       </div>
                       <div className="text-sm text-gray-500">
                         <p className="font-medium text-gray-700">Good progress</p>
@@ -127,7 +127,7 @@ const QuantumSecurityPage = () => {
                     </div>
                     <div className="px-5 py-4">
                       <p className="text-xs text-gray-500 mb-1">Vulnerabilities</p>
-                      <p className="text-2xl font-bold text-orange-500">124</p>
+                      <p className="text-2xl font-bold text-primary-600">124</p>
                     </div>
                   </div>
 
@@ -140,40 +140,40 @@ const QuantumSecurityPage = () => {
                           <Key size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">RSA-2048 keys</span>
                         </div>
-                        <span className="text-xs font-medium text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full">Vulnerable</span>
+                        <span className="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">Vulnerable</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <Lock size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">TLS certificates</span>
                         </div>
-                        <span className="text-xs font-medium text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded-full">In review</span>
+                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">In review</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <FileKey size={14} className="text-gray-400" />
                           <span className="text-sm text-gray-700">Data encryption</span>
                         </div>
-                        <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full">Migrated</span>
+                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Migrated</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Protection */}
-                  <div className="px-5 py-4 bg-purple-50 border-t border-gray-100">
+                  <div className="px-5 py-4 bg-accent-50 border-t border-gray-100">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 size={16} className="text-purple-600" />
-                      <span className="text-sm font-medium text-purple-700">Protected against &quot;harvest now&quot; attacks</span>
+                      <CheckCircle2 size={16} className="text-accent-600" />
+                      <span className="text-sm font-medium text-accent-700">Protected against &quot;harvest now&quot; attacks</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Floating badges */}
-              <div className="absolute -top-2 -right-2 bg-purple-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-accent-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
                 Post-quantum
               </div>
-              <div className="absolute -bottom-2 -left-2 bg-violet-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
+              <div className="absolute -bottom-2 -left-2 bg-primary-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
                 <Shield size={12} />
                 Future-proof
               </div>
@@ -184,31 +184,31 @@ const QuantumSecurityPage = () => {
           <div className="lg:hidden space-y-8">
             {/* Dashboard first on mobile */}
             <div className="relative max-w-md mx-auto">
-              <div className="bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl p-1 shadow-xl">
+              <div className="bg-gradient-to-br from-accent-600 to-primary-600 rounded-2xl p-1 shadow-xl">
                 <div className="bg-white rounded-xl overflow-hidden">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
                     <h3 className="font-semibold text-gray-900 text-sm">Quantum Readiness</h3>
-                    <Shield size={16} className="text-purple-500" />
+                    <Shield size={16} className="text-accent-600" />
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-3 border-r border-gray-100">
                       <p className="text-xs text-gray-500">Readiness</p>
-                      <p className="text-xl font-bold text-purple-600">72%</p>
+                      <p className="text-xl font-bold text-accent-600">72%</p>
                     </div>
                     <div className="px-4 py-3">
                       <p className="text-xs text-gray-500">Assets</p>
                       <p className="text-xl font-bold text-gray-900">2,847</p>
                     </div>
                   </div>
-                  <div className="px-4 py-3 bg-purple-50 border-t border-gray-100">
+                  <div className="px-4 py-3 bg-accent-50 border-t border-gray-100">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-purple-600" />
-                      <span className="text-xs font-medium text-purple-700">Protected against harvest attacks</span>
+                      <CheckCircle2 size={14} className="text-accent-600" />
+                      <span className="text-xs font-medium text-accent-700">Protected against harvest attacks</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-2 -right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-accent-600 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
                 Post-quantum
               </div>
             </div>
@@ -220,9 +220,9 @@ const QuantumSecurityPage = () => {
                 <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
                 <div className="space-y-4">
                   {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-purple-500" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-violet-500" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-fuchsia-500" },
+                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-accent-600" },
+                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-primary-600" },
+                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
@@ -242,7 +242,7 @@ const QuantumSecurityPage = () => {
                 <div className="space-y-2">
                   {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-purple-500 flex-shrink-0 mt-0.5" size={18} />
+                      <Check className="text-accent-600 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm text-gray-600">{result}</span>
                     </div>
                   ))}
@@ -267,7 +267,7 @@ const QuantumSecurityPage = () => {
             {((solution as any).clientsList || ["Banks", "Insurance", "Healthcare", "Government", "Defense"]).map((industry: string, idx: number) => (
               <div 
                 key={idx} 
-                className="bg-white text-gray-700 font-semibold text-sm md:text-base px-5 py-2.5 rounded-lg shadow-sm border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all duration-200"
+                className="bg-white text-gray-700 font-semibold text-sm md:text-base px-5 py-2.5 rounded-lg shadow-sm border border-gray-200 hover:border-accent-300 hover:shadow-md transition-all duration-200"
               >
                 {industry}
               </div>
@@ -277,7 +277,7 @@ const QuantumSecurityPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-purple-600 to-violet-600">
+      <section className="py-16 bg-gradient-to-br from-accent-600 to-primary-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
           <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">{t.contact.subtitle}</p>
