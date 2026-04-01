@@ -234,10 +234,10 @@ export const translations = {
         description: "A full stack for agent types, lifecycle tooling, and enterprise security—proven in production with global customers.",
         step1: "AI agent types",
         step1Desc:
-          "Customer-facing agents manage natural end-to-end interactions across voice, chat, email, and apps. Internal agents support employees in real time—answers, system actions, less friction. Back-office agents coordinate systems in the background, reconcile data, and complete processes consistently.",
+          "Customer-facing agents manage natural end-to-end interactions across voice, chat, email, and apps. Internal agents support employees in real time-answers, system actions, less friction. Back-office agents coordinate systems in the background, reconcile data, and complete processes consistently.",
         step2: "Platform capabilities",
         step2Desc:
-          "Agent Builder (low-code or natural language), universal integration with internal systems (CRM, telephony, messaging) via API or MCP, omnichannel deployment—including voice, apps, and ChatGPT—and governance with automated pre-launch testing and compliance controls.",
+          "Agent Builder (low-code or natural language), universal integration with internal systems (CRM, telephony, messaging) via API or MCP, omnichannel deployment including voice, apps, and ChatGPT and governance with automated pre-launch testing and compliance controls.",
         step3: "Security & enterprise standards",
         step3Desc:
           "Data protection with encryption and PII redaction. Certifications such as GDPR, SOC (AICPA), ISO 27779, PCI DSS, and NEN. Architecture built for massive concurrent sessions with high stability.",
@@ -248,12 +248,12 @@ export const translations = {
         r4: "$136M raised from investors including Index Ventures and Insight Partners; customers include UPS, Telefónica, Bank Hapoalim, and Maccabi Healthcare Services",
         for: "For whom?",
         forDesc:
-          "Large enterprises standardizing on AI agents for customer experience, employee copilots, and back-office automation—with implementation support.",
+          "Large enterprises standardizing on AI agents for customer experience, employee copilots, and back-office automation with implementation support.",
         roles: "Key stakeholders:",
         rolesDesc: "CDO, CTO, Head of AI, VP Operations, Head of Customer Experience, CIO",
         clients: "Industries using it:",
-        clientsDesc: "Logistics • Telco • Banking • Healthcare",
-        clientsList: ["Logistics", "Telecommunications", "Banking", "Healthcare"],
+        clientsDesc: "Logistics • Airlines • Telco • Banking • Healthcare",
+        clientsList: ["Logistics", "Airlines", "Telecommunications", "Banking", "Healthcare"],
         cta: "Schedule demo",
         partner: "",
         partnerUrl: "",
@@ -668,7 +668,7 @@ export const translations = {
         subtitle: "Infraestructura de IA para desplegar agentes en cualquier entorno",
         hero: "Nuestra solución de Latil Customer AI Platform es una plataforma de infraestructura de IA diseñada para la transformación de grandes empresas mediante el despliegue de agentes inteligentes en cualquier entorno de trabajo. Combina tecnología avanzada con un equipo de implementación local para resolver flujos complejos de punta a punta.",
         how: "Qué ofrece la plataforma:",
-        description: "Tres pilares: tipos de agentes, capacidades de ciclo de vida completo y seguridad enterprise—con impacto comprobado a escala global.",
+        description: "Tres pilares: tipos de agentes, capacidades de ciclo de vida completo y seguridad enterprise con impacto comprobado a escala global.",
         step1: "Tipos de agentes de IA",
         step1Desc:
           "Agentes de cara al cliente: interacciones naturales de extremo a extremo por voz, chat, correo y apps. Agentes internos: apoyo en tiempo real a empleados, respuestas, ejecución en sistemas y menos fricción. Agentes de back-office: coordinan sistemas en segundo plano, reconcilian datos y completan procesos de forma consistente.",
@@ -689,8 +689,8 @@ export const translations = {
         roles: "Stakeholders clave:",
         rolesDesc: "CDO, CTO, Head of AI, VP Operaciones, Head de Experiencia del Cliente, CIO",
         clients: "Las industrias que lo utilizan:",
-        clientsDesc: "Logística • Telco • Banca • Salud",
-        clientsList: ["Logística", "Telecomunicaciones", "Banca", "Salud"],
+        clientsDesc: "Logística • Aerolíneas • Telco • Banca • Salud",
+        clientsList: ["Logística", "Aerolíneas", "Telecomunicaciones", "Banca", "Salud"],
         cta: "Solicitar demo",
         partner: "",
         partnerUrl: "",
