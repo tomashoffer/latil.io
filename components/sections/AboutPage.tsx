@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
-import { ArrowRight, Target, Handshake, Award, Linkedin, Users, Rocket, Mail } from "lucide-react";
+import { ArrowRight, Target, Handshake, Award, Linkedin, Rocket, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
@@ -32,10 +32,17 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-accent-50/20">
       {/* Hero */}
-      <section className="pt-28 pb-16">
+      <section className="pt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Users className="text-white" size={32} />
+          <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 mx-auto mb-6">
+            <Image
+              src="/logos/logo.png"
+              alt="Latil.io"
+              width={64}
+              height={64}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             {about.title}
@@ -76,7 +83,8 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{about.team}</h2>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="space-y-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Alejandro */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
               <div className="flex flex-col items-center text-center">
@@ -175,6 +183,77 @@ const AboutPage = () => {
                   >
                     <Linkedin size={18} />
                   </a>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Publio */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-28 h-28 rounded-full overflow-hidden mb-5 shadow-lg ring-4 ring-accent-100">
+                    <Image
+                      src="/team/publio.jpeg"
+                      alt={about.publio.name}
+                      width={112}
+                      height={112}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{about.publio.name}</h3>
+                  <p className="text-accent-600 font-semibold mb-3 text-sm">{about.publio.role}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-5">{about.publio.bio}</p>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={`mailto:${about.publio.email}`}
+                      className="inline-flex items-center gap-2 text-gray-600 hover:text-accent-600 font-medium transition-colors"
+                    >
+                      <Mail size={18} />
+                    </a>
+                    <a
+                      href={about.publio.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium transition-colors"
+                    >
+                      <Linkedin size={18} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Karen */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-28 h-28 rounded-full overflow-hidden mb-5 shadow-lg ring-4 ring-accent-100">
+                    <Image
+                      src="/team/karen.jpg"
+                      alt={about.karen.name}
+                      width={112}
+                      height={112}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{about.karen.name}</h3>
+                  <p className="text-accent-600 font-semibold mb-3 text-sm">{about.karen.role}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-5">{about.karen.bio}</p>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={`mailto:${about.karen.email}`}
+                      className="inline-flex items-center gap-2 text-gray-600 hover:text-accent-600 font-medium transition-colors"
+                    >
+                      <Mail size={18} />
+                    </a>
+                    <a
+                      href={about.karen.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium transition-colors"
+                    >
+                      <Linkedin size={18} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
