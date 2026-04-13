@@ -19,7 +19,7 @@ export const translations = {
     },
     about: {
       title: "About Latil.io",
-      subtitle: "Enterprise AI Automation",
+      subtitle: "World-Class AI-Based Solutions for Optimization and Efficiency",
       mission: "Our Mission",
       missionText: "We help companies reduce costs and accelerate operations through AI-powered automation. We partner with world-class solutions to deliver measurable results for enterprises worldwide.",
       story: "Our Story",
@@ -55,6 +55,20 @@ export const translations = {
         bio: "Leads digital transformation and technology strategy at Latil.io. With 15+ years as CEO, CFO, and Director of Digital Transformation in the public sector, Nicolas brings deep expertise in business operations, software development, and driving innovation at scale.",
         email: "nicolas@latil.io",
         linkedin: "https://www.linkedin.com/in/nsurijon/",
+      },
+      publio: {
+        name: "Publio De Gracia",
+        role: "LATAM Regional Collaborator",
+        bio: "Leads governance and regulatory compliance for Latil.io in Latin America, keeping AI deployments secure and aligned with local regulation. A lawyer and advisor with a background in digital transformation and public-sector leadership, he brings legal and risk perspective to enterprise AI rollouts.",
+        email: "publio@latil.io",
+        linkedin: "https://www.linkedin.com/in/publio-de-gracia-aa8994a/",
+      },
+      karen: {
+        name: "Karen Schlaien",
+        role: "Head of Strategic Partnerships & Innovation",
+        bio: "Experienced technology and operations leader with a proven track record of delivering successful, large, and complex programs. Leads strategic partnerships across EMEA and LATAM, connecting high-potential startups with global technology organizations to drive innovation, market expansion, and business growth.",
+        email: "karen@latil.io",
+        linkedin: "https://www.linkedin.com/in/karenschlaien/",
       },
     },
     hero: {
@@ -455,7 +469,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Latil.io",
-      subtitle: "Automatización Empresarial con IA",
+      subtitle: "Soluciones World Class basadas en IA para la Optimización y Eficiencia",
       mission: "Nuestra Misión",
       missionText: "Ayudamos a empresas a reducir costos y acelerar operaciones a través de automatización con IA. Nos asociamos con soluciones de clase mundial para entregar resultados medibles a empresas en todo el mundo.",
       story: "Nuestra Historia",
@@ -491,6 +505,20 @@ export const translations = {
         bio: "Lidera transformación digital y estrategia tecnológica en Latil.io. Con más de 15 años de experiencia como CEO, CFO y Director de Transformación Digital en sector público, Nicolas aporta expertise profundo en operaciones de negocio, desarrollo de software e innovación a escala.",
         email: "nicolas@latil.io",
         linkedin: "https://www.linkedin.com/in/nsurijon/",
+      },
+      publio: {
+        name: "Publio De Gracia",
+        role: "Colaborador Regional LATAM",
+        bio: "Lidera gobernanza y cumplimiento normativo en Latam para Latil.io, asegurando implementaciones de IA seguras y alineadas a la regulación local. Abogado y asesor con experiencia en transformación digital y liderazgo en el sector público, aporta criterio jurídico y de riesgo al despliegue de IA empresarial.",
+        email: "publio@latil.io",
+        linkedin: "https://www.linkedin.com/in/publio-de-gracia-aa8994a/",
+      },
+      karen: {
+        name: "Karen Schlaien",
+        role: "Head of Strategic Partnerships & Innovation",
+        bio: "Líder experimentada en tecnología y operaciones, con trayectoria comprobada en la entrega de programas exitosos, de gran escala y alta complejidad. Lidera alianzas estratégicas en EMEA y LATAM, conectando startups de alto potencial con organizaciones tecnológicas globales para impulsar innovación, expansión de mercado y crecimiento de negocio.",
+        email: "karen@latil.io",
+        linkedin: "https://www.linkedin.com/in/karenschlaien/",
       },
     },
     hero: {
