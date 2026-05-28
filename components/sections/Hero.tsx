@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
-import LogoCarousel from "@/components/ui/LogoCarousel";
 import { ArrowRight, TrendingDown, Zap, Users, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CALENDLY_URL } from "@/lib/config";
@@ -39,7 +38,7 @@ const Hero = () => {
       />
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 sm:pt-10 sm:pb-20 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-10 sm:pb-20 relative z-10 w-full">
         <div className="text-center">
 
           {/* Badge */}
@@ -47,7 +46,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-primary-50 border border-primary-100 text-primary-700 rounded-full px-4 py-1.5 text-sm font-medium mb-8"
+            className="hidden sm:inline-flex items-center gap-2 bg-primary-50 border border-primary-100 text-primary-700 rounded-full px-4 py-1.5 text-sm font-medium mb-8"
           >
             <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse" />
             {t.hero.badge}
@@ -87,7 +86,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex items-center justify-center gap-2 mb-10"
+            className="hidden sm:flex items-center justify-center gap-2 mb-10"
           >
             <CheckCircle2 className="text-green-500 flex-shrink-0" size={16} />
             <p className="text-sm text-gray-500 font-medium">{t.hero.subheadlineCompanies}</p>
@@ -104,7 +103,7 @@ const Hero = () => {
               {t.hero.ctaPrimary}
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
             </Button>
-            <Button onClick={() => scrollToSection("problems")} variant="outline" size="lg">
+            <Button onClick={() => scrollToSection("solutions")} variant="outline" size="lg">
               {t.hero.ctaSecondary}
             </Button>
           </motion.div>
@@ -136,8 +135,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Logo Carousel */}
-      <div className="w-full py-8 bg-white/80 backdrop-blur-sm border-t border-gray-100 relative z-10">
+      {/* Logo Carousel - hidden */}
+      {/* <div className="w-full py-8 bg-white/80 backdrop-blur-sm border-t border-gray-100 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
             {t.hero.clients}
@@ -155,7 +154,7 @@ const Hero = () => {
             speed={30}
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
