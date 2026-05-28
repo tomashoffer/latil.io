@@ -8,9 +8,9 @@ import Link from "next/link";
 const solutionItems = [
   { key: "finops", href: "/solutions/finops" },
   { key: "finance", href: "/solutions/finance" },
-  { key: "taxIntelligence", href: "/solutions/tax-intelligence" },
+  { key: "taxIntelligence", href: "/solutions/customer-platform" },
   { key: "healthcare", href: "/solutions/healthcare" },
-  { key: "quantumSecurity", href: "/solutions/quantum-security" },
+  { key: "quantumSecurity", href: "/solutions/vision-shield" },
   { key: "custom", href: "/solutions/custom" },
 ] as const;
 

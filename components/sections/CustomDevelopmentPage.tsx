@@ -1,284 +1,249 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import { Check, ArrowRight, Code2, Users, Lightbulb, Rocket, GitBranch, Puzzle, Clock, Award } from "lucide-react";
+import { ArrowRight, Code2, Lightbulb, Rocket, Puzzle, Compass, GitBranch, Zap, Award, Users, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CALENDLY_URL } from "@/lib/config";
+import FadeIn from "@/components/animations/FadeIn";
 
 const CustomDevelopmentPage = () => {
   const { t } = useLanguage();
   const solution = t.solutions.custom;
+  const d = solution.dashboard;
 
   const openCalendly = () => {
     window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
+  const steps = [
+    { num: "1", icon: Lightbulb, title: solution.step1, desc: solution.step1Desc },
+    { num: "2", icon: Code2,     title: solution.step2, desc: solution.step2Desc },
+    { num: "3", icon: Rocket,    title: solution.step3, desc: solution.step3Desc },
+  ];
+
+  const useCases = [
+    { icon: Puzzle,    title: solution.uc1, desc: solution.uc1Desc },
+    { icon: Compass,   title: solution.uc2, desc: solution.uc2Desc },
+    { icon: GitBranch, title: solution.uc3, desc: solution.uc3Desc },
+    { icon: Zap,       title: solution.uc4, desc: solution.uc4Desc },
+  ];
+
+  const metrics = [
+    { value: "20+",       label: "Years combined experience" },
+    { value: "Dev + PM",  label: "Complete team included" },
+    { value: "3 phases",  label: "Structured delivery" },
+    { value: "100%",      label: "Agile & transparent" },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50/30">
-      {/* Hero Header */}
-      <section className="pt-28 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Code2 className="text-white" size={32} />
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            {solution.title}
-          </h1>
-          <p className="text-xl text-primary-600 font-medium mb-6">
-            {solution.subtitle}
-          </p>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            {solution.hero}
-          </p>
-        </div>
-      </section>
+    <div className="min-h-screen bg-white">
 
-      {/* Two column layout */}
-      <section className="pb-16">
+      {/* Hero */}
+      <section className="pt-28 pb-16 bg-gradient-to-b from-slate-100/70 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hidden lg:grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-12 items-start">
-            {/* Left column */}
-            <div className="space-y-6">
-              {/* How it works */}
-              <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">{solution.how}</h2>
-                <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
-                
-                <div className="space-y-4">
-                  {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-accent-600" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
-                  ].map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
-                        {step.num}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">{step.title}</h3>
-                        <p className="text-sm text-gray-500">{step.desc}</p>
-                      </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <FadeIn>
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary-600 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-5">
+                Custom Development
+              </span>
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                {solution.title.replace(":", "")}
+              </h1>
+              <p className="text-lg text-primary-600 font-medium mb-4">
+                {solution.subtitle}
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                {solution.hero}
+              </p>
+              <Button onClick={openCalendly} variant="primary" size="lg">
+                {solution.cta} <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </FadeIn>
+
+            <FadeIn delay={0.15}>
+              <div className="relative max-w-md mx-auto lg:ml-auto">
+                <div className="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-0.5 shadow-2xl">
+                  <div className="bg-white rounded-2xl overflow-hidden">
+                    <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100">
+                      <h3 className="font-semibold text-gray-900 text-sm">{d.title}</h3>
+                      <Code2 size={16} className="text-primary-600" />
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Results */}
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{solution.results}</h3>
-                <div className="space-y-2">
-                  {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
-                      <span className="text-sm text-gray-600">{result}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* For whom */}
-              <div className="bg-white/60 rounded-xl p-5 backdrop-blur-sm">
-                <p className="text-sm text-gray-600">
-                  <span className="font-semibold text-gray-900">{solution.for}</span> {solution.forDesc}
-                </p>
-              </div>
-            </div>
-
-            {/* Right column - Dashboard */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-3xl p-1 shadow-2xl">
-                <div className="bg-white rounded-2xl overflow-hidden">
-                  {/* Header */}
-                  <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-                    <h3 className="font-semibold text-gray-900">Development Partner</h3>
-                    <Code2 size={20} className="text-primary-600" />
-                  </div>
-
-                  {/* Main stats */}
-                  <div className="grid grid-cols-2 border-b border-gray-100">
-                    <div className="px-5 py-4 border-r border-gray-100 bg-gradient-to-br from-primary-50 to-white">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Award size={14} className="text-primary-600" />
-                        <p className="text-xs text-gray-500">Experience</p>
-                      </div>
-                      <p className="text-2xl font-bold text-primary-600">20+</p>
-                      <p className="text-xs text-gray-400">years</p>
-                    </div>
-                    <div className="px-5 py-4 bg-gradient-to-bl from-accent-50 to-white">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Users size={14} className="text-accent-600" />
-                        <p className="text-xs text-gray-500">Team</p>
-                      </div>
-                      <p className="text-2xl font-bold text-accent-600">Dev + PM</p>
-                      <p className="text-xs text-gray-400">full stack</p>
-                    </div>
-                  </div>
-
-                  {/* Services */}
-                  <div className="px-5 py-4 space-y-3">
-                    <p className="text-xs font-medium text-gray-500">What we build</p>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <Puzzle size={14} className="text-gray-400" />
-                          <span className="text-sm text-gray-700">Custom software</span>
+                    <div className="grid grid-cols-2 border-b border-gray-100">
+                      <div className="px-5 py-4 border-r border-gray-100 bg-primary-50/40">
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <Award size={12} className="text-primary-500" />
+                          <p className="text-xs text-gray-400">{d.stat1Label}</p>
                         </div>
-                        <span className="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">Core</span>
+                        <p className="text-2xl font-bold text-primary-600">{d.stat1Value}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">{d.stat1Sub}</p>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <Lightbulb size={14} className="text-gray-400" />
-                          <span className="text-sm text-gray-700">Product management</span>
+                      <div className="px-5 py-4 bg-accent-50/40">
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <Users size={12} className="text-accent-500" />
+                          <p className="text-xs text-gray-400">{d.stat2Label}</p>
                         </div>
-                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Strategy</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <GitBranch size={14} className="text-gray-400" />
-                          <span className="text-sm text-gray-700">Technical consulting</span>
-                        </div>
-                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Advisory</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <Rocket size={14} className="text-gray-400" />
-                          <span className="text-sm text-gray-700">Process automation</span>
-                        </div>
-                        <span className="text-xs font-medium text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full">Delivery</span>
+                        <p className="text-2xl font-bold text-accent-600">{d.stat2Value}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">{d.stat2Sub}</p>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Methodology */}
-                  <div className="px-5 py-4 bg-gradient-to-r from-primary-50 to-accent-50 border-t border-gray-100">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Clock size={14} className="text-primary-600" />
-                        <span className="text-sm text-gray-600">Agile methodology</span>
+                    <div className="px-5 py-3">
+                      <p className="text-xs font-semibold text-gray-400 mb-2">{d.buildLabel}</p>
+                      <div className="space-y-1.5">
+                        {[
+                          { icon: Puzzle,    label: d.row1Label, badge: d.badge1, color: "text-primary-700 bg-primary-50" },
+                          { icon: Lightbulb, label: d.row2Label, badge: d.badge2, color: "text-accent-700 bg-accent-50" },
+                          { icon: GitBranch, label: d.row3Label, badge: d.badge3, color: "text-accent-700 bg-accent-50" },
+                          { icon: Rocket,    label: d.row4Label, badge: d.badge4, color: "text-accent-700 bg-accent-50" },
+                        ].map((row, idx) => {
+                          const Icon = row.icon;
+                          return (
+                            <div key={idx} className="flex items-center justify-between py-1 border-b border-gray-50 last:border-0">
+                              <div className="flex items-center gap-2">
+                                <Icon size={13} className="text-gray-400" />
+                                <span className="text-sm text-gray-700">{row.label}</span>
+                              </div>
+                              <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${row.color}`}>{row.badge}</span>
+                            </div>
+                          );
+                        })}
                       </div>
-                      <span className="text-sm font-bold text-primary-600">100% transparent</span>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badges */}
-              <div className="absolute -top-2 -right-2 bg-primary-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg">
-                20+ years
-              </div>
-              <div className="absolute -bottom-2 -left-2 bg-accent-600 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
-                <Users size={12} />
-                Full team
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile/Tablet layout */}
-          <div className="lg:hidden space-y-8">
-            {/* Dashboard first on mobile */}
-            <div className="relative max-w-md mx-auto">
-              <div className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-1 shadow-xl">
-                <div className="bg-white rounded-xl overflow-hidden">
-                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-                    <h3 className="font-semibold text-gray-900 text-sm">Development Partner</h3>
-                    <Code2 size={16} className="text-primary-600" />
-                  </div>
-                  <div className="grid grid-cols-2">
-                    <div className="px-4 py-3 border-r border-gray-100">
-                      <p className="text-xs text-gray-500">Experience</p>
-                      <p className="text-xl font-bold text-primary-600">20+ yrs</p>
-                    </div>
-                    <div className="px-4 py-3">
-                      <p className="text-xs text-gray-500">Team</p>
-                      <p className="text-xl font-bold text-accent-600">Dev + PM</p>
-                    </div>
-                  </div>
-                  <div className="px-4 py-3 bg-gradient-to-r from-primary-50 to-accent-50 border-t border-gray-100">
-                    <div className="flex items-center gap-2">
-                      <Clock size={12} className="text-primary-600" />
-                      <span className="text-xs font-medium text-gray-600">Agile • 100% transparent</span>
+                    <div className="px-5 py-3 bg-gradient-to-r from-primary-50 to-accent-50 border-t border-gray-100 flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <Clock size={13} className="text-primary-500" />
+                        <span className="text-xs text-gray-500">{d.footerLabel}</span>
+                      </div>
+                      <span className="text-sm font-bold text-primary-600">{d.footerValue}</span>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="absolute -top-2 -right-2 bg-primary-600 text-white px-2 py-1 rounded-full text-xs font-medium shadow-lg">
-                20+ years
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">{solution.how}</h2>
-                <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
-                <div className="space-y-4">
-                  {[
-                    { num: "1", title: solution.step1, desc: solution.step1Desc, color: "bg-primary-600" },
-                    { num: "2", title: solution.step2, desc: solution.step2Desc, color: "bg-accent-600" },
-                    { num: "3", title: solution.step3, desc: solution.step3Desc, color: "bg-accent-600" },
-                  ].map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className={`w-7 h-7 ${step.color} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}>
-                        {step.num}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">{step.title}</h3>
-                        <p className="text-sm text-gray-500">{step.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="absolute -top-3 -right-3 bg-primary-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                  {d.float1}
+                </div>
+                <div className="absolute -bottom-3 -left-3 bg-white text-primary-600 border border-primary-200 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                  <Users size={12} />
+                  {d.float2}
                 </div>
               </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{solution.results}</h3>
-                <div className="space-y-2">
-                  {[solution.r1, solution.r2, solution.r3, solution.r4].map((result, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <Check className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
-                      <span className="text-sm text-gray-600">{result}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white/60 rounded-xl p-5 backdrop-blur-sm">
-                <p className="text-sm text-gray-600">
-                  <span className="font-semibold text-gray-900">{solution.for}</span> {solution.forDesc}
-                </p>
-              </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500 mb-6">Nuestros servicios</p>
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-            {["Custom Development", "Product Management", "Technical Consulting", "Process Automation"].map((service, idx) => (
-              <div key={idx} className="text-gray-600 font-semibold text-sm bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
-                {service}
+      {/* Metrics strip */}
+      <section className="py-10 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {metrics.map((m, idx) => (
+              <div key={idx} className="text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-primary-400 mb-1">{m.value}</div>
+                <div className="text-xs text-gray-400 leading-snug">{m.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-3">
+              {solution.how.replace(":", "")}
+            </h2>
+            <p className="text-gray-500 text-center mb-10 max-w-2xl mx-auto">
+              {solution.description}
+            </p>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <FadeIn key={idx} delay={idx * 0.1} className="h-full">
+                  <div className="h-full p-6 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-primary-200 transition-all">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        {step.num}
+                      </div>
+                      <div className="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center border border-primary-100">
+                        <Icon size={16} className="text-primary-600" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What we build */}
+      <section className="py-14 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
+              {solution.useCases.replace(":", "")}
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {useCases.map((uc, idx) => {
+              const Icon = uc.icon;
+              return (
+                <FadeIn key={idx} delay={idx * 0.08} className="h-full">
+                  <div className="h-full p-6 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-primary-200 transition-all">
+                    <div className="w-10 h-10 bg-primary-50 rounded-lg border border-primary-100 flex items-center justify-center mb-4">
+                      <Icon size={20} className="text-primary-600" />
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-1.5 text-sm">{uc.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{uc.desc}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* For whom */}
+      <section className="py-14 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">{solution.for}</h2>
+                <p className="text-gray-600 leading-relaxed">{solution.forDesc}</p>
+              </div>
+              <div className="bg-gray-50 rounded-xl border border-gray-100 p-6">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">{solution.roles}</p>
+                <div className="flex flex-wrap gap-2">
+                  {solution.rolesDesc.split(", ").map((role, idx) => (
+                    <span key={idx} className="bg-white text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
+                      {role}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary-600 to-accent-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 bg-gray-900">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
-          <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">{t.contact.subtitle}</p>
-          <Button onClick={openCalendly} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-100">
-            {solution.cta} <ArrowRight className="ml-2" />
+          <p className="text-lg text-gray-400 mb-8">{t.contact.subtitle}</p>
+          <Button onClick={openCalendly} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-50">
+            {solution.cta} <ArrowRight className="ml-2" size={18} />
           </Button>
         </div>
       </section>
+
     </div>
   );
 };
 
 export default CustomDevelopmentPage;
-
