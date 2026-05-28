@@ -1,7 +1,6 @@
 "use client";
 
 import FadeIn from "@/components/animations/FadeIn";
-import Card from "@/components/ui/Card";
 import { Cloud, Brain, Bot, Stethoscope, Eye, ArrowRight, Code2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
@@ -60,53 +59,58 @@ const SolutionsOverview = () => {
     },
   ];
 
-  const firstRow = solutions.slice(0, 3);
-  const secondRow = solutions.slice(3);
-
   const renderCard = (solution: typeof solutions[0], idx: number) => {
     const IconComponent = solution.icon;
 
     return (
-      <FadeIn key={idx} delay={idx * 0.1}>
+      <FadeIn key={idx} delay={idx * 0.08}>
         <Link href={solution.href} className="block h-full group">
-          <Card hover className="h-full transition-all duration-300 group-hover:border-primary-300 group-hover:shadow-lg">
-            <div className="flex flex-col h-full p-1">
-              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
-                <IconComponent className="text-primary-600" size={24} />
+          <div className="relative h-full flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm group-hover:shadow-xl group-hover:border-accent-200 group-hover:-translate-y-1 transition-all duration-300">
+            <div className="p-6 flex flex-col flex-1">
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-14 h-14 bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl flex items-center justify-center ring-1 ring-accent-200/60">
+                  <IconComponent className="text-accent-600" size={28} />
+                </div>
+                <span className="text-5xl font-black text-accent-100 leading-none select-none">
+                  0{idx + 1}
+                </span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1.5 group-hover:text-primary-600 transition-colors leading-snug">
+              <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-accent-600 transition-colors leading-snug">
                 {solution.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-3 leading-relaxed">
+              <p className="text-gray-500 text-sm mb-4 leading-relaxed flex-grow">
                 {solution.subtitle}
               </p>
-              <ul className="space-y-1.5 mb-4 flex-grow">
+              <ul className="space-y-1.5 mb-5">
                 {solution.benefits.map((benefit, bIdx) => (
                   <li key={bIdx} className="flex items-start gap-2 text-gray-600 text-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0 mt-1"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-400 flex-shrink-0 mt-1" />
                     <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-xs font-semibold mb-4">
-                  {solution.outcome}
-                </div>
-                <div className="flex items-center gap-2 text-primary-600 font-medium text-sm group-hover:gap-3 transition-all">
-                  <span>{t.nav.learnMore}</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <div className="mt-auto pt-4 border-t border-gray-50">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-accent-50 border border-accent-200 text-accent-700 text-xs font-semibold">
+                    {solution.outcome}
+                  </span>
+                  <div className="flex items-center gap-1.5 text-accent-600 font-medium text-sm group-hover:gap-2.5 transition-all">
+                    <span>{t.nav.learnMore}</span>
+                    <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+                  </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </Link>
       </FadeIn>
     );
   };
 
   return (
-    <section id="solutions" className="pt-12 lg:pt-16 pb-20 lg:pb-28 bg-gradient-to-br from-gray-50 to-primary-50/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="solutions" className="pt-12 lg:pt-16 pb-10 lg:pb-28 bg-gradient-to-br from-gray-50 via-white to-primary-50/20 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
             {t.nav.solutionsSectionTitle}
@@ -115,13 +119,11 @@ const SolutionsOverview = () => {
             {t.nav.solutionsSubtitle}
           </p>
         </FadeIn>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
-          {firstRow.map((solution, idx) => renderCard(solution, idx))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {solutions.slice(0, 3).map((solution, idx) => renderCard(solution, idx))}
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {secondRow.map((solution, idx) => renderCard(solution, idx + 3))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solutions.slice(3).map((solution, idx) => renderCard(solution, idx + 3))}
         </div>
       </div>
     </section>
