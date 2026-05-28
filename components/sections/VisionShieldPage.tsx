@@ -1,14 +1,14 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import { ArrowRight, Heart, PenLine, ShieldCheck, TrendingUp, FileText, Database, Stethoscope, ClipboardList, FileText as FT, Activity, Users, Clock } from "lucide-react";
+import { ArrowRight, Eye, Crosshair, Brain, ShieldCheck, Monitor, Users, Wifi, ShoppingBag, Star, CreditCard, BarChart2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CALENDLY_URL } from "@/lib/config";
 import FadeIn from "@/components/animations/FadeIn";
 
-const HealthcarePage = () => {
+const VisionShieldPage = () => {
   const { t } = useLanguage();
-  const solution = t.solutions.healthcare;
+  const solution = t.solutions.quantumSecurity;
   const d = solution.dashboard;
 
   const openCalendly = () => {
@@ -16,36 +16,36 @@ const HealthcarePage = () => {
   };
 
   const steps = [
-    { num: "1", icon: PenLine,    title: solution.step1, desc: solution.step1Desc },
-    { num: "2", icon: ShieldCheck, title: solution.step2, desc: solution.step2Desc },
-    { num: "3", icon: TrendingUp,  title: solution.step3, desc: solution.step3Desc },
+    { num: "1", icon: Crosshair, title: solution.step1, desc: solution.step1Desc },
+    { num: "2", icon: Brain,     title: solution.step2, desc: solution.step2Desc },
+    { num: "3", icon: ShieldCheck,title: solution.step3, desc: solution.step3Desc },
   ];
 
   const useCases = [
-    { icon: FileText,     title: solution.uc1, desc: solution.uc1Desc },
-    { icon: Database,     title: solution.uc2, desc: solution.uc2Desc },
-    { icon: Stethoscope,  title: solution.uc3, desc: solution.uc3Desc },
-    { icon: ClipboardList, title: solution.uc4, desc: solution.uc4Desc },
+    { icon: ShoppingBag, title: solution.uc1, desc: solution.uc1Desc },
+    { icon: Star,        title: solution.uc2, desc: solution.uc2Desc },
+    { icon: CreditCard,  title: solution.uc3, desc: solution.uc3Desc },
+    { icon: BarChart2,   title: solution.uc4, desc: solution.uc4Desc },
   ];
 
   const metrics = [
-    { value: "150+",  label: "Notes automated daily" },
-    { value: "10-15h", label: "Saved weekly per clinician" },
-    { value: "30%",   label: "Documentation reduction" },
-    { value: "50×",   label: "ROI" },
+    { value: "99.2%",  label: d.mainLabel },
+    { value: "NIST",   label: d.mainSub },
+    { value: "6+",     label: "Challenging conditions" },
+    { value: d.footerRight, label: d.footerLeft },
   ];
 
   return (
     <div className="min-h-screen bg-white">
 
       {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-b from-primary-50/60 to-white">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-slate-100/70 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             <FadeIn>
               <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary-600 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-5">
-                HealthCare Agent
+                Vision Shield
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                 {solution.title.replace("Latil ", "").replace(":", "")}
@@ -63,63 +63,61 @@ const HealthcarePage = () => {
 
             <FadeIn delay={0.15}>
               <div className="relative max-w-md mx-auto lg:ml-auto">
-                <div className="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-0.5 shadow-2xl">
-                  <div className="bg-white rounded-2xl overflow-hidden">
-                    <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100">
-                      <h3 className="font-semibold text-gray-900 text-sm">{d.title}</h3>
-                      <Heart size={16} className="text-primary-500" />
+                <div className="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+                  <div className="flex items-center justify-between px-5 py-3 border-b border-gray-700">
+                    <h3 className="font-semibold text-white text-sm">{d.title}</h3>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-xs text-green-400 font-medium">Live</span>
                     </div>
-                    <div className="grid grid-cols-2 border-b border-gray-100">
-                      <div className="px-5 py-4 border-r border-gray-100 bg-primary-50/40">
-                        <p className="text-xs text-gray-400 mb-1">{d.stat1Label}</p>
-                        <p className="text-2xl font-bold text-primary-600">{d.stat1Value}</p>
-                        <p className="text-xs text-gray-400 mt-0.5">{d.stat1Sub}</p>
-                      </div>
-                      <div className="px-5 py-4 bg-accent-50/40">
-                        <p className="text-xs text-gray-400 mb-1">{d.stat2Label}</p>
-                        <p className="text-2xl font-bold text-accent-600">{d.stat2Value}</p>
-                        <p className="text-xs text-gray-400 mt-0.5">{d.stat2Sub}</p>
-                      </div>
+                  </div>
+                  <div className="px-5 py-4 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900">
+                    <p className="text-xs text-gray-400 mb-1">{d.mainLabel}</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl font-bold text-green-400">{d.mainValue}</span>
+                      <span className="text-sm text-gray-400 font-medium">{d.mainSub}</span>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 border-b border-gray-700">
+                    <div className="px-5 py-3 border-r border-gray-700">
+                      <p className="text-xs text-gray-400 mb-0.5">{d.stat1Label}</p>
+                      <p className="text-xl font-bold text-white">{d.stat1Value}</p>
                     </div>
                     <div className="px-5 py-3">
-                      <p className="text-xs font-semibold text-gray-400 mb-2">{d.workflowsLabel}</p>
-                      <div className="space-y-1.5">
-                        {[
-                          { icon: FT,       label: d.row1Label, badge: d.badge1, color: "text-accent-700 bg-accent-50" },
-                          { icon: ClipboardList, label: d.row2Label, badge: d.badge2, color: "text-accent-700 bg-accent-50" },
-                          { icon: Users,    label: d.row3Label, badge: d.badge3, color: "text-primary-700 bg-primary-50" },
-                          { icon: Activity, label: d.row4Label, badge: d.badge4, color: "text-primary-700 bg-primary-50" },
-                        ].map((row, idx) => {
-                          const Icon = row.icon;
-                          return (
-                            <div key={idx} className="flex items-center justify-between py-1 border-b border-gray-50 last:border-0">
-                              <div className="flex items-center gap-2">
-                                <Icon size={13} className="text-gray-400" />
-                                <span className="text-sm text-gray-700">{row.label}</span>
-                              </div>
-                              <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${row.color}`}>{row.badge}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
+                      <p className="text-xs text-gray-400 mb-0.5">{d.stat2Label}</p>
+                      <p className="text-xl font-bold text-green-400">{d.stat2Value}</p>
                     </div>
-                    <div className="px-5 py-3 bg-gradient-to-r from-primary-50 to-accent-50 border-t border-gray-100 flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-gray-400 mb-0.5">{d.footerLabel1}</p>
-                        <p className="text-lg font-bold text-primary-600">{d.footerValue1}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-xs text-gray-400 mb-0.5">{d.footerLabel2}</p>
-                        <p className="text-lg font-bold text-accent-600">{d.footerValue2}</p>
-                      </div>
-                    </div>
+                  </div>
+                  <div className="px-5 py-4 space-y-2">
+                    {[
+                      { icon: Monitor, label: d.row1Label, badge: d.badge1, color: "text-green-400 bg-green-900/50" },
+                      { icon: Users,   label: d.row2Label, badge: d.badge2, color: "text-blue-400 bg-blue-900/50" },
+                      { icon: Wifi,    label: d.row3Label, badge: d.badge3, color: "text-blue-400 bg-blue-900/50" },
+                    ].map((row, idx) => {
+                      const Icon = row.icon;
+                      return (
+                        <div key={idx} className="flex items-center justify-between py-1.5 border-b border-gray-700/50 last:border-0">
+                          <div className="flex items-center gap-2">
+                            <Icon size={14} className="text-gray-500" />
+                            <span className="text-sm text-gray-300">{row.label}</span>
+                          </div>
+                          <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${row.color}`}>
+                            {row.badge}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="px-5 py-3 bg-gray-800/50 border-t border-gray-700 flex items-center justify-between">
+                    <span className="text-xs text-gray-400">{d.footerLeft}</span>
+                    <span className="text-sm font-bold text-green-400">{d.footerRight}</span>
                   </div>
                 </div>
                 <div className="absolute -top-3 -right-3 bg-primary-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
                   {d.float1}
                 </div>
-                <div className="absolute -bottom-3 -left-3 bg-white text-primary-600 border border-primary-200 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-                  <Clock size={12} />
+                <div className="absolute -bottom-3 -left-3 bg-gray-900 text-green-400 border border-green-700 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                  <ShieldCheck size={12} />
                   {d.float2}
                 </div>
               </div>
@@ -129,13 +127,13 @@ const HealthcarePage = () => {
       </section>
 
       {/* Metrics strip */}
-      <section className="py-10 bg-primary-600">
+      <section className="py-10 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {metrics.map((m, idx) => (
               <div key={idx} className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-white mb-1">{m.value}</div>
-                <div className="text-xs text-primary-100 leading-snug">{m.label}</div>
+                <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-1">{m.value}</div>
+                <div className="text-xs text-gray-400 leading-snug">{m.label}</div>
               </div>
             ))}
           </div>
@@ -160,7 +158,7 @@ const HealthcarePage = () => {
                 <FadeIn key={idx} delay={idx * 0.1} className="h-full">
                   <div className="h-full p-6 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-primary-200 transition-all">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                      <div className="w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                         {step.num}
                       </div>
                       <div className="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center border border-primary-100">
@@ -229,10 +227,10 @@ const HealthcarePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary-600 to-accent-600">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
-          <p className="text-lg text-white/80 mb-8">{t.contact.subtitle}</p>
+          <p className="text-lg text-gray-400 mb-8">{t.contact.subtitle}</p>
           <Button onClick={openCalendly} variant="secondary" size="lg" className="bg-white text-gray-900 hover:bg-gray-50">
             {solution.cta} <ArrowRight className="ml-2" size={18} />
           </Button>
@@ -243,4 +241,4 @@ const HealthcarePage = () => {
   );
 };
 
-export default HealthcarePage;
+export default VisionShieldPage;

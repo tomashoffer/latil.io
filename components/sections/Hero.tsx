@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import LogoCarousel from "@/components/ui/LogoCarousel";
-import { ArrowRight, TrendingDown, Zap, Layers, CheckCircle2, Target, ShieldCheck } from "lucide-react";
+import { ArrowRight, TrendingDown, Zap, Users, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CALENDLY_URL } from "@/lib/config";
 
 const Hero = () => {
   const { t } = useLanguage();
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -23,22 +24,40 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50/30 pt-20 pb-12"
+      className="relative flex flex-col overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50/30 pt-20"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+      {/* Gradient orbs */}
+      <div className="absolute top-24 left-1/4 w-[480px] h-[480px] bg-primary-400/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-32 right-1/4 w-[400px] h-[400px] bg-accent-400/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Main content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 sm:pt-10 sm:pb-20 relative z-10 w-full">
         <div className="text-center">
+
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 bg-primary-50 border border-primary-100 text-primary-700 rounded-full px-4 py-1.5 text-sm font-medium mb-8"
+          >
+            <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse" />
+            {t.hero.badge}
+          </motion.div>
+
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
             {t.hero.headline}
@@ -50,20 +69,7 @@ const Hero = () => {
                 </span>
               </>
             )}
-            {t.hero.headlineMiddle && (
-              <>
-                {" "}
-                {t.hero.headlineMiddle}
-              </>
-            )}
-            {t.hero.headlineHighlight2 && (
-              <>
-                {" "}
-                <span className="bg-gradient-to-r from-accent-600 to-primary-600 bg-clip-text text-transparent">
-                  {t.hero.headlineHighlight2}
-                </span>
-              </>
-            )}
+            {t.hero.headlineMiddle && <> {t.hero.headlineMiddle}</>}
           </motion.h1>
 
           {/* Subheadline */}
@@ -71,130 +77,69 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-4xl mx-auto mb-6 leading-relaxed font-medium"
+            className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed"
           >
             {t.hero.subheadline}
           </motion.p>
+
+          {/* Social proof line */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="flex items-center justify-center gap-2 mb-10"
           >
-            <CheckCircle2 className="text-green-500 flex-shrink-0" size={20} />
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 font-semibold max-w-4xl">
-              {t.hero.subheadlineCompanies}
-            </p>
+            <CheckCircle2 className="text-green-500 flex-shrink-0" size={16} />
+            <p className="text-sm text-gray-500 font-medium">{t.hero.subheadlineCompanies}</p>
           </motion.div>
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <Button
-              onClick={openCalendly}
-              variant="primary"
-              size="lg"
-              className="group"
-            >
+            <Button onClick={openCalendly} variant="primary" size="lg" className="group">
               {t.hero.ctaPrimary}
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
             </Button>
-            <Button
-              onClick={() => scrollToSection("problems")}
-              variant="outline"
-              size="lg"
-            >
+            <Button onClick={() => scrollToSection("problems")} variant="outline" size="lg">
               {t.hero.ctaSecondary}
             </Button>
           </motion.div>
 
-          {/* Stats - Mobile: 2 cols, Tablet+: 3 cols top row */}
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="hidden sm:grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-6"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="grid grid-cols-3 gap-3 sm:gap-6 max-w-xl mx-auto"
           >
-            <div className="flex flex-col items-center">
-              <TrendingDown className="text-primary-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">35%</div>
-              <div className="text-sm text-gray-600">{t.hero.stats.cloud}</div>
+            <div className="flex flex-col items-center p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm">
+              <TrendingDown className="text-primary-600 mb-1.5" size={22} />
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">35%</div>
+              <div className="text-xs text-gray-500 text-center mt-1 leading-tight">{t.hero.stats.cloud}</div>
             </div>
-            <div className="flex flex-col items-center">
-              <Zap className="text-accent-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">50%</div>
-              <div className="text-sm text-gray-600">{t.hero.stats.finance}</div>
+            <div className="flex flex-col items-center p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm">
+              <Zap className="text-accent-600 mb-1.5" size={22} />
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">3×</div>
+              <div className="text-xs text-gray-500 text-center mt-1 leading-tight">{t.hero.stats.fastClosings}</div>
             </div>
-            <div className="flex flex-col items-center">
-              <Layers className="text-primary-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">6</div>
-              <div className="text-sm text-gray-600">{t.hero.stats.solutions}</div>
+            <div className="flex flex-col items-center p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm">
+              <Users className="text-green-600 mb-1.5" size={22} />
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">85%</div>
+              <div className="text-xs text-gray-500 text-center mt-1 leading-tight">{t.hero.stats.aiResolution}</div>
             </div>
           </motion.div>
 
-          {/* Stats - Tablet+: 2 cols bottom row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="hidden sm:grid grid-cols-2 gap-8 max-w-md mx-auto mb-8"
-          >
-            <div className="flex flex-col items-center">
-              <Target className="text-green-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">99.9%</div>
-              <div className="text-sm text-gray-600">{t.hero.stats.accuracy}</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <ShieldCheck className="text-blue-600 mb-2" size={32} />
-              <div className="text-3xl font-bold text-gray-900">100%</div>
-              <div className="text-sm text-gray-600">{t.hero.stats.security}</div>
-            </div>
-          </motion.div>
-
-          {/* Stats - Mobile only: 2 columns grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-2 gap-6 max-w-sm mx-auto mb-8 sm:hidden"
-          >
-            <div className="flex flex-col items-center">
-              <TrendingDown className="text-primary-600 mb-2" size={28} />
-              <div className="text-2xl font-bold text-gray-900">35%</div>
-              <div className="text-xs text-gray-600 text-center">{t.hero.stats.cloud}</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <Zap className="text-accent-600 mb-2" size={28} />
-              <div className="text-2xl font-bold text-gray-900">50%</div>
-              <div className="text-xs text-gray-600 text-center">{t.hero.stats.finance}</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <Target className="text-green-600 mb-2" size={28} />
-              <div className="text-2xl font-bold text-gray-900">99.9%</div>
-              <div className="text-xs text-gray-600 text-center">{t.hero.stats.accuracy}</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <ShieldCheck className="text-blue-600 mb-2" size={28} />
-              <div className="text-2xl font-bold text-gray-900">100%</div>
-              <div className="text-xs text-gray-600 text-center">{t.hero.stats.security}</div>
-            </div>
-            <div className="flex flex-col items-center col-span-2">
-              <Layers className="text-primary-600 mb-2" size={28} />
-              <div className="text-2xl font-bold text-gray-900">6</div>
-              <div className="text-xs text-gray-600 text-center">{t.hero.stats.solutions}</div>
-            </div>
-          </motion.div>
         </div>
       </div>
 
-      {/* Floating Logos Carousel Section */}
-      {/* <div id="clients" className="absolute bottom-0 left-0 right-0 py-8 bg-white/50 backdrop-blur-sm border-t border-gray-200">
+      {/* Logo Carousel */}
+      <div className="w-full py-8 bg-white/80 backdrop-blur-sm border-t border-gray-100 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-base md:text-lg font-medium text-gray-600 mb-6">
+          <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
             {t.hero.clients}
           </p>
           <LogoCarousel
@@ -210,10 +155,9 @@ const Hero = () => {
             speed={30}
           />
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
 
 export default Hero;
-
