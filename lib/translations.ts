@@ -142,7 +142,7 @@ export const translations = {
       },
       quantumSecurity: {
         title: "Passive surveillance that misses real threats",
-        pain: "Security cameras record everything but act on nothing. They can't identify people in poor light, crowds or with face coverings — and generate no actionable alerts when it matters most.",
+        pain: "Security cameras record everything but act on nothing. They can't identify people in poor light, crowds or with face coverings, and generate no actionable alerts when it matters most.",
         consequences: "Key impacts:",
         c1: "Threats undetected in challenging conditions",
         c2: "Passive systems with no real-time alerts",
@@ -167,7 +167,7 @@ export const translations = {
         hero: "A no-code FinOps automation platform that helps cloud cost teams eliminate waste, reduce noise, and execute safe savings actions with governance and measurable impact.",
         how: "How it works:",
         description:
-          "Cloud cost management becomes an automated, measurable workflow. We detect waste, reduce noise, and execute safe savings actions—without requiring engineers to learn FinOps tools.",
+          "Cloud cost management becomes an automated, measurable workflow. We detect waste, reduce noise, and execute safe savings actions, without requiring engineers to learn FinOps tools.",
         step1: "No-code automation for cost workflows",
         step1Desc:
           "Build FinOps flows using natural language and pre-built templates. Recommendations are filtered with business context to stay relevant and actionable.",
@@ -207,16 +207,16 @@ export const translations = {
         cardOutcome: "3× faster financial closings",
         b1: "Agent learns from your existing workflows by observation",
         b2: "Full review and approval control at every step",
-        hero: "Deploy AI agents that observe your existing financial workflows and automate the full close cycle — reconciliations, consolidation, reporting — with built-in review, governance, and a complete audit trail.",
+        hero: "Deploy AI agents that observe your existing financial workflows and automate the full close cycle: reconciliations, consolidation, and reporting, with built-in review, governance, and a complete audit trail.",
         how: "Train & Execute:",
         description:
-          "Our AI agent learns from your existing financial workflows and turns complex tasks into controlled automations—so they run in seconds, with review and governance built in.",
+          "Our AI agent learns from your existing financial workflows and turns complex tasks into controlled automations, so they run in seconds, with review and governance built in.",
         step1: "Train by observation",
         step1Desc:
           "Work as usual: the agent observes your processes and builds a tailored automation without exhaustive manual configuration.",
         step2: "Review & control",
         step2Desc:
-          "Review each action, fine-tune details, and add manual steps when needed — you stay in full control at every stage.",
+          "Review each action, fine-tune details, and add manual steps when needed. You stay in full control at every stage.",
         step3: "One-click execution",
         step3Desc:
           "Run the complete workflow with one button. Pause, edit, or revert at any time, with AICPA SOC 2 and ISO 27001 security, full traceability, and controlled permissions.",
@@ -236,7 +236,7 @@ export const translations = {
         r3: "Speed: generate reports faster to support better decisions",
         r4: "Scalable efficiency: reduce operational bottlenecks without growing headcount",
         for: "For whom?",
-        forDesc: "CFO-led finance teams that need to automate complex closes, reconciliations, reporting, and audit workflows—with governance and compliance.",
+        forDesc: "CFO-led finance teams that need to automate complex closes, reconciliations, reporting, and audit workflows, with governance and compliance.",
         roles: "Key roles:",
         rolesDesc: "CFO, Controller, Finance Ops/Accounting leadership, FP&A Lead, internal controls owners, audit & compliance partners",
         clients: "Industries using it:",
@@ -287,7 +287,7 @@ export const translations = {
         b2: "Dedicated local delivery team and 1-month pilot program",
         hero: "Our Latil Customer AI Platform is an AI infrastructure platform for large-enterprise transformation: deploy intelligent agents across your operating environment with advanced technology plus a local implementation team to solve complex workflows end to end.",
         how: "What the platform delivers:",
-        description: "A full stack for agent types, lifecycle tooling, and enterprise security—proven in production with global customers.",
+        description: "A full stack for agent types, lifecycle tooling, and enterprise security, proven in production with global customers.",
         step1: "AI agent types",
         step1Desc:
           "Customer-facing agents across voice, chat, email and apps. Internal agents support employees with real-time answers and system actions. Back-office agents coordinate systems, reconcile data, and complete processes consistently.",
@@ -340,11 +340,11 @@ export const translations = {
         subtitle: "Automate operations, focus on patients",
         cardOutcome: "More care, less administration",
         b1: "AI-assisted clinical note drafting from the first draft",
-        b2: "RAG grounding on hospital data — no hallucinations",
-        hero: "Clinical documentation is the foundation for better outcomes. Latil HealthCare Agent assists clinicians from the first draft, structures information from EHR data, and helps deliver defendable notes—so care teams spend more time on patients and less on administration, with lower legal risk.",
+        b2: "RAG grounding on hospital data, zero hallucinations",
+        hero: "Clinical documentation is the foundation for better outcomes. Latil HealthCare Agent assists clinicians from the first draft, structures information from EHR data, and helps deliver defendable notes, so care teams spend more time on patients and less on administration, with lower legal risk.",
         how: "Care-first documentation:",
         description:
-          "Designed to improve clinical note quality, reduce administrative burden, and turn unstructured EHR information into actionable intelligence—backed by an architecture of trust for hospital-grade environments.",
+          "Designed to improve clinical note quality, reduce administrative burden, and turn unstructured EHR information into actionable intelligence, backed by an architecture of trust for hospital-grade environments.",
         step1: "Care-first note generation",
         step1Desc:
           "Assisted creation of accurate clinical notes following guidelines and best practices. Reduces physician workload while keeping notes complete, consistent, and defensible.",
@@ -473,7 +473,7 @@ export const translations = {
         cardOutcome: "20+ years of combined experience",
         b1: "Discovery to launch: strategy, build and support",
         b2: "Senior developers and product managers on your project",
-        hero: "No standard solution fits your business? Our team of senior developers and product managers — with 20+ years of combined experience — partners with you from concept to launch to build exactly what you need.",
+        hero: "No standard solution fits your business? Our team of senior developers and product managers, with 20+ years of combined experience, partners with you from concept to launch to build exactly what you need.",
         how: "How we work:",
         description: "We partner with you from concept to delivery, across three structured phases with continuous feedback and full transparency.",
         step1: "Discovery & Strategy",
@@ -755,7 +755,7 @@ export const translations = {
         hero: "Una plataforma de automatización de FinOps no-code que ayuda a los equipos de costos en la nube a eliminar desperdicio, reducir ruido y ejecutar ahorros seguros con gobernanza e impacto medible.",
         how: "Cómo funciona:",
         description:
-          "La gestión de costos en la nube se convierte en flujos automatizados y medibles. Detectamos desperdicio, reducimos el ruido de recomendaciones y ejecutamos acciones seguras de ahorro—sin exigir que los equipos de ingeniería aprendan nuevas herramientas.",
+          "La gestión de costos en la nube se convierte en flujos automatizados y medibles. Detectamos desperdicio, reducimos el ruido de recomendaciones y ejecutamos acciones seguras de ahorro, sin exigir que los equipos de ingeniería aprendan nuevas herramientas.",
         step1: "Automatización sin código (No-Code)",
         step1Desc:
           "Creá flujos FinOps con lenguaje natural y plantillas prediseñadas. Las recomendaciones se filtran con contexto de negocio para mantenerse relevantes y ejecutables.",
@@ -795,16 +795,16 @@ export const translations = {
         cardOutcome: "Cierres 3× más rápidos",
         b1: "El agente aprende de tus flujos existentes por observación",
         b2: "Control de revisión y aprobación en cada paso",
-        hero: "Desplegá agentes de IA que observan tus flujos financieros y automatizan el ciclo completo — conciliaciones, consolidación, reportes — con revisión, gobernanza y trazabilidad incorporadas.",
+        hero: "Desplegá agentes de IA que observan tus flujos financieros y automatizan el ciclo completo: conciliaciones, consolidación y reportes, con revisión, gobernanza y trazabilidad incorporadas.",
         how: "Entrenar y Ejecutar:",
         description:
-          "Nuestro agente de IA aprende de tus flujos de trabajo financieros existentes y convierte tareas complejas en automatizaciones controladas—para que se ejecuten en segundos, con revisión y gobernanza incorporadas.",
+          "Nuestro agente de IA aprende de tus flujos de trabajo financieros existentes y convierte tareas complejas en automatizaciones controladas, para que se ejecuten en segundos, con revisión y gobernanza incorporadas.",
         step1: "Entrenamiento por observación",
         step1Desc:
           "Trabajá como de costumbre; el agente observa tus procesos y construye una automatización personalizada sin configuración manual exhaustiva.",
         step2: "Revisión y control",
         step2Desc:
-          "Revisás cada acción, ajustás detalles finos o agregás pasos manuales cuando haga falta — mantenés el control total en todo momento.",
+          "Revisás cada acción, ajustás detalles finos o agregás pasos manuales cuando haga falta. Mantenés el control total en todo momento.",
         step3: "Ejecución con un clic",
         step3Desc:
           "Con un botón ejecutás el flujo completo. Pausá, editá o revertí cuando sea necesario, con seguridad SOC 2 e ISO 27001, trazabilidad y permisos controlados.",
@@ -825,7 +825,7 @@ export const translations = {
         r4: "Eficiencia escalable: menos cuellos de botella operativos sin crecer headcount",
         for: "¿Para quién?",
         forDesc:
-          "Equipos de finanzas liderados por CFO que necesitan automatizar cierres, conciliaciones, reportes y flujos de auditoría—con gobernanza y cumplimiento.",
+          "Equipos de finanzas liderados por CFO que necesitan automatizar cierres, conciliaciones, reportes y flujos de auditoría, con gobernanza y cumplimiento.",
         roles: "Roles clave:",
         rolesDesc: "CFO, Controller, liderazgo de Finance Ops/Accounting, FP&A Lead, responsables de controles internos, auditoría y compliance",
         clients: "Las industrias que lo utilizan:",
@@ -930,10 +930,10 @@ export const translations = {
         cardOutcome: "Más atención, menos administración",
         b1: "Borrador de notas clínicas asistido por IA desde el inicio",
         b2: "RAG sobre datos del hospital, sin alucinaciones",
-        hero: "La documentación clínica es la base para mejores resultados. Latil HealthCare Agent asiste a los equipos de salud desde el primer borrador, estructura la información desde los datos del EHR y ayuda a generar notas defendibles—para que el cuidado se enfoque en pacientes con menos carga administrativa y menor riesgo legal.",
+        hero: "La documentación clínica es la base para mejores resultados. Latil HealthCare Agent asiste a los equipos de salud desde el primer borrador, estructura la información desde los datos del EHR y ayuda a generar notas defendibles, para que el cuidado se enfoque en pacientes con menos carga administrativa y menor riesgo legal.",
         how: "Documentación care-first:",
         description:
-          "Pensado para mejorar la calidad de las notas, reducir la carga administrativa y convertir información no estructurada del EHR en inteligencia accionable—con una arquitectura de confianza para entornos hospitalarios exigentes.",
+          "Pensado para mejorar la calidad de las notas, reducir la carga administrativa y convertir información no estructurada del EHR en inteligencia accionable, con una arquitectura de confianza para entornos hospitalarios exigentes.",
         step1: "Generación de notas care-first",
         step1Desc:
           "Creación asistida de notas clínicas precisas siguiendo guías y mejores prácticas clínicas. Reduce la carga del médico manteniendo notas completas, consistentes y defendibles.",
@@ -1062,7 +1062,7 @@ export const translations = {
         cardOutcome: "20+ años de experiencia combinada",
         b1: "Discovery a lanzamiento: estrategia, desarrollo y soporte",
         b2: "Desarrolladores senior y product managers en tu proyecto",
-        hero: "¿Ninguna solución estándar encaja con tu negocio? Nuestro equipo de desarrolladores senior y product managers — con más de 20 años de experiencia combinada — se asocia con vos desde el concepto hasta el lanzamiento para construir exactamente lo que necesitás.",
+        hero: "¿Ninguna solución estándar encaja con tu negocio? Nuestro equipo de desarrolladores senior y product managers, con más de 20 años de experiencia combinada, se asocia con vos desde el concepto hasta el lanzamiento para construir exactamente lo que necesitás.",
         how: "Cómo trabajamos:",
         description: "Nos asociamos con vos desde el concepto hasta la entrega, en tres fases estructuradas con feedback continuo y total transparencia.",
         step1: "Discovery y Estrategia",
