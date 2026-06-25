@@ -588,6 +588,9 @@ export const translations = {
       terms: "Terms",
       privacy: "Privacy",
     },
+    partners: {
+      title: "Our Partners",
+    },
   },
   es: {
     nav: {
@@ -1176,6 +1179,9 @@ export const translations = {
       rights: "© 2025 Latil.io - Todos los derechos reservados",
       terms: "Términos",
       privacy: "Privacidad",
+    },
+    partners: {
+      title: "Nuestros Partners",
     },
   },
 } as const;
