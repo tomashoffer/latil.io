@@ -33,7 +33,7 @@ const Partners = () => {
               animation-play-state: paused;
             }
           `}</style>
-          <div className="marquee-track flex">
+          <div className="marquee-track flex" style={{ width: "max-content", willChange: "transform" }}>
             {[...partners, ...partners].map((p, i) => (
               <div key={i} className="flex-shrink-0 flex items-center justify-center px-14">
                 <Image src={p.src} alt={p.alt} width={p.width} height={p.height} className={`${p.h} w-auto object-contain`} />
