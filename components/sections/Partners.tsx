@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const partners = [
-  { src: "/partners/aws.png",    alt: "AWS Partner Network", width: 300, height: 100, h: "h-24" },
-  { src: "/partners/newcrux.png",alt: "Newcrux",             width: 280, height: 80,  h: "h-9"  },
-  { src: "/partners/mejia.png",  alt: "Mejía.co",            width: 260, height: 140, h: "h-20" },
+  { src: "/partners/mejia.png",  alt: "Mejía.co",            width: 260, height: 140, h: "h-28" },
+  { src: "/partners/newcrux.png",alt: "Newcrux",             width: 280, height: 80,  h: "h-12" },
   { src: "/partners/dirmod.png", alt: "DirMOD",              width: 280, height: 90,  h: "h-8"  },
+  { src: "/partners/aws.png",    alt: "AWS Partner Network", width: 300, height: 100, h: "h-32" },
 ];
 
 const Partners = () => {
