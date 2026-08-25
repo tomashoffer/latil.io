@@ -554,8 +554,8 @@ export const translations = {
           badge3: "Guarded",
           footerLeft: "Fraud evidence growth",
           footerRight: "+1,000%",
-          float1: "AI-era trust",
-          float2: "5 patent families",
+          float1: "13 patents",
+          float2: "16K hours",
         },
       },
       juganu: {
@@ -1368,8 +1368,8 @@ export const translations = {
           badge3: "Protegido",
           footerLeft: "Crecimiento del fraude",
           footerRight: "+1.000%",
-          float1: "Confianza era IA",
-          float2: "5 familias de patentes",
+          float1: "13 patentes",
+          float2: "16K horas",
         },
       },
       juganu: {
