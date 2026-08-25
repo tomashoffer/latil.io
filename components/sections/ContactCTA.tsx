@@ -117,10 +117,13 @@ const ContactCTA = () => {
                   >
                     <option value="">{t.contact.form.challengeOptions.placeholder}</option>
                     <option value="finops">{t.contact.form.challengeOptions.finops}</option>
-                    <option value="finance">{t.contact.form.challengeOptions.finance}</option>
+                    <option value="dtect">{t.contact.form.challengeOptions.dtect}</option>
                     <option value="customerAi">{t.contact.form.challengeOptions.customerAi}</option>
-                    <option value="healthcare">{t.contact.form.challengeOptions.healthcare}</option>
+                    <option value="finance">{t.contact.form.challengeOptions.finance}</option>
                     <option value="quantum">{t.contact.form.challengeOptions.quantum}</option>
+                    <option value="tokenOptimization">{t.contact.form.challengeOptions.tokenOptimization}</option>
+                    <option value="juganu">{t.contact.form.challengeOptions.juganu}</option>
+                    <option value="healthcare">{t.contact.form.challengeOptions.healthcare}</option>
                     <option value="custom">{t.contact.form.challengeOptions.custom}</option>
                     <option value="other">{t.contact.form.challengeOptions.other}</option>
                   </Select>

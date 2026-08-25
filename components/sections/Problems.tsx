@@ -1,7 +1,7 @@
 "use client";
 
 import FadeIn from "@/components/animations/FadeIn";
-import { Cloud, Calculator, FileSearch, Stethoscope, Eye, ArrowRight, Code2 } from "lucide-react";
+import { Cloud, Calculator, FileSearch, Stethoscope, Eye, ArrowRight, Code2, ShieldAlert, Building2, Coins } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
@@ -18,12 +18,12 @@ const Problems = () => {
       consequences: [t.problems.cloud.c1, t.problems.cloud.c2, t.problems.cloud.c3],
     },
     {
-      icon: Calculator,
-      title: t.problems.finance.title,
-      pain: t.problems.finance.pain,
-      consequencesTitle: t.problems.finance.consequences,
-      href: "/solutions/finance",
-      consequences: [t.problems.finance.c1, t.problems.finance.c2, t.problems.finance.c3],
+      icon: ShieldAlert,
+      title: t.problems.dtect.title,
+      pain: t.problems.dtect.pain,
+      consequencesTitle: t.problems.dtect.consequences,
+      href: "/solutions/evidence-guard",
+      consequences: [t.problems.dtect.c1, t.problems.dtect.c2, t.problems.dtect.c3],
     },
     {
       icon: FileSearch,
@@ -34,12 +34,12 @@ const Problems = () => {
       consequences: [t.problems.taxIntelligence.c1, t.problems.taxIntelligence.c2, t.problems.taxIntelligence.c3],
     },
     {
-      icon: Stethoscope,
-      title: t.problems.healthcare.title,
-      pain: t.problems.healthcare.pain,
-      consequencesTitle: t.problems.healthcare.consequences,
-      href: "/solutions/healthcare",
-      consequences: [t.problems.healthcare.c1, t.problems.healthcare.c2, t.problems.healthcare.c3],
+      icon: Calculator,
+      title: t.problems.finance.title,
+      pain: t.problems.finance.pain,
+      consequencesTitle: t.problems.finance.consequences,
+      href: "/solutions/finance",
+      consequences: [t.problems.finance.c1, t.problems.finance.c2, t.problems.finance.c3],
     },
     {
       icon: Eye,
@@ -48,6 +48,30 @@ const Problems = () => {
       consequencesTitle: t.problems.quantumSecurity.consequences,
       href: "/solutions/vision-shield",
       consequences: [t.problems.quantumSecurity.c1, t.problems.quantumSecurity.c2, t.problems.quantumSecurity.c3],
+    },
+    {
+      icon: Coins,
+      title: t.problems.tokenOptimization.title,
+      pain: t.problems.tokenOptimization.pain,
+      consequencesTitle: t.problems.tokenOptimization.consequences,
+      href: "/solutions/token-optimization",
+      consequences: [t.problems.tokenOptimization.c1, t.problems.tokenOptimization.c2, t.problems.tokenOptimization.c3],
+    },
+    {
+      icon: Building2,
+      title: t.problems.juganu.title,
+      pain: t.problems.juganu.pain,
+      consequencesTitle: t.problems.juganu.consequences,
+      href: "/solutions/smart-spaces",
+      consequences: [t.problems.juganu.c1, t.problems.juganu.c2, t.problems.juganu.c3],
+    },
+    {
+      icon: Stethoscope,
+      title: t.problems.healthcare.title,
+      pain: t.problems.healthcare.pain,
+      consequencesTitle: t.problems.healthcare.consequences,
+      href: "/solutions/healthcare",
+      consequences: [t.problems.healthcare.c1, t.problems.healthcare.c2, t.problems.healthcare.c3],
     },
     {
       icon: Code2,
@@ -112,11 +136,8 @@ const Problems = () => {
             {t.problems.title}
           </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {problems.slice(0, 3).map((problem, idx) => renderCard(problem, idx))}
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {problems.slice(3).map((problem, idx) => renderCard(problem, idx + 3))}
+          {problems.map((problem, idx) => renderCard(problem, idx))}
         </div>
       </div>
     </section>

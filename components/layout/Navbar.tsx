@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, ChevronDown, Cloud, Brain, Bot, Stethoscope, Eye, Code2 } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, Cloud, Brain, Bot, Stethoscope, Eye, Code2, ShieldAlert, Building2, Coins } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -12,10 +12,13 @@ import { CALENDLY_URL } from "@/lib/config";
 
 const solutionItems = [
   { key: "finops", href: "/solutions/finops", icon: Cloud },
-  { key: "finance", href: "/solutions/finance", icon: Brain },
+  { key: "dtect", href: "/solutions/evidence-guard", icon: ShieldAlert },
   { key: "taxIntelligence", href: "/solutions/customer-platform", icon: Bot },
-  { key: "healthcare", href: "/solutions/healthcare", icon: Stethoscope },
+  { key: "finance", href: "/solutions/finance", icon: Brain },
   { key: "quantumSecurity", href: "/solutions/vision-shield", icon: Eye },
+  { key: "tokenOptimization", href: "/solutions/token-optimization", icon: Coins },
+  { key: "juganu", href: "/solutions/smart-spaces", icon: Building2 },
+  { key: "healthcare", href: "/solutions/healthcare", icon: Stethoscope },
   { key: "custom", href: "/solutions/custom", icon: Code2 },
 ] as const;
 
@@ -112,10 +115,10 @@ const Navbar = () => {
                   <>
                     <div className="fixed inset-0 z-10" onClick={() => setIsSolutionsOpen(false)} />
                     <div
-                      className="absolute left-1/2 -translate-x-1/2 mt-3 w-[460px] max-w-[90vw] bg-white rounded-2xl shadow-xl border border-gray-100 p-3 z-20"
+                      className="absolute left-1/2 -translate-x-1/2 mt-3 w-[720px] max-w-[90vw] bg-white rounded-2xl shadow-xl border border-gray-100 p-3 z-20"
                       onMouseLeave={() => setIsSolutionsOpen(false)}
                     >
-                      <div className="grid grid-cols-2 gap-1">
+                      <div className="grid grid-cols-3 gap-1">
                         {solutionItems.map((item) => {
                           const Icon = item.icon;
                           return (

@@ -7,10 +7,13 @@ import Link from "next/link";
 
 const solutionItems = [
   { key: "finops", href: "/solutions/finops" },
-  { key: "finance", href: "/solutions/finance" },
+  { key: "dtect", href: "/solutions/evidence-guard" },
   { key: "taxIntelligence", href: "/solutions/customer-platform" },
-  { key: "healthcare", href: "/solutions/healthcare" },
+  { key: "finance", href: "/solutions/finance" },
   { key: "quantumSecurity", href: "/solutions/vision-shield" },
+  { key: "tokenOptimization", href: "/solutions/token-optimization" },
+  { key: "juganu", href: "/solutions/smart-spaces" },
+  { key: "healthcare", href: "/solutions/healthcare" },
   { key: "custom", href: "/solutions/custom" },
 ] as const;
 
@@ -19,7 +22,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.7fr_1fr] gap-8">
           {/* Brand */}
           <div>
             <Image
@@ -37,7 +40,7 @@ const Footer = () => {
           {/* Soluciones */}
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.solutions}</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
               {solutionItems.map((item) => (
                 <li key={item.key}>
                   <Link
