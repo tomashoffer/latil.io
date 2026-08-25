@@ -1,7 +1,7 @@
 "use client";
 
 import FadeIn from "@/components/animations/FadeIn";
-import { Cloud, Brain, Bot, Stethoscope, Eye, ArrowRight, Code2 } from "lucide-react";
+import { Cloud, Brain, Bot, Stethoscope, Eye, ArrowRight, Code2, ShieldAlert, Building2, Coins } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
@@ -18,12 +18,12 @@ const SolutionsOverview = () => {
       href: "/solutions/finops",
     },
     {
-      icon: Brain,
-      title: t.solutions.finance.title.replace("Latil ", "").replace(":", ""),
-      subtitle: t.solutions.finance.subtitle,
-      benefits: [t.solutions.finance.b1, t.solutions.finance.b2],
-      outcome: t.solutions.finance.cardOutcome,
-      href: "/solutions/finance",
+      icon: ShieldAlert,
+      title: t.solutions.dtect.title.replace("Latil ", "").replace(":", ""),
+      subtitle: t.solutions.dtect.subtitle,
+      benefits: [t.solutions.dtect.b1, t.solutions.dtect.b2],
+      outcome: t.solutions.dtect.cardOutcome,
+      href: "/solutions/evidence-guard",
     },
     {
       icon: Bot,
@@ -34,12 +34,12 @@ const SolutionsOverview = () => {
       href: "/solutions/customer-platform",
     },
     {
-      icon: Stethoscope,
-      title: t.solutions.healthcare.title.replace("Latil ", "").replace(":", ""),
-      subtitle: t.solutions.healthcare.subtitle,
-      benefits: [t.solutions.healthcare.b1, t.solutions.healthcare.b2],
-      outcome: t.solutions.healthcare.cardOutcome,
-      href: "/solutions/healthcare",
+      icon: Brain,
+      title: t.solutions.finance.title.replace("Latil ", "").replace(":", ""),
+      subtitle: t.solutions.finance.subtitle,
+      benefits: [t.solutions.finance.b1, t.solutions.finance.b2],
+      outcome: t.solutions.finance.cardOutcome,
+      href: "/solutions/finance",
     },
     {
       icon: Eye,
@@ -48,6 +48,30 @@ const SolutionsOverview = () => {
       benefits: [t.solutions.quantumSecurity.b1, t.solutions.quantumSecurity.b2],
       outcome: t.solutions.quantumSecurity.cardOutcome,
       href: "/solutions/vision-shield",
+    },
+    {
+      icon: Coins,
+      title: t.solutions.tokenOptimization.title.replace("Latil ", "").replace(":", ""),
+      subtitle: t.solutions.tokenOptimization.subtitle,
+      benefits: [t.solutions.tokenOptimization.b1, t.solutions.tokenOptimization.b2],
+      outcome: t.solutions.tokenOptimization.cardOutcome,
+      href: "/solutions/token-optimization",
+    },
+    {
+      icon: Building2,
+      title: t.solutions.juganu.title.replace("Latil ", "").replace(":", ""),
+      subtitle: t.solutions.juganu.subtitle,
+      benefits: [t.solutions.juganu.b1, t.solutions.juganu.b2],
+      outcome: t.solutions.juganu.cardOutcome,
+      href: "/solutions/smart-spaces",
+    },
+    {
+      icon: Stethoscope,
+      title: t.solutions.healthcare.title.replace("Latil ", "").replace(":", ""),
+      subtitle: t.solutions.healthcare.subtitle,
+      benefits: [t.solutions.healthcare.b1, t.solutions.healthcare.b2],
+      outcome: t.solutions.healthcare.cardOutcome,
+      href: "/solutions/healthcare",
     },
     {
       icon: Code2,
@@ -90,11 +114,11 @@ const SolutionsOverview = () => {
                 ))}
               </ul>
               <div className="mt-auto pt-4 border-t border-gray-50">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-accent-50 border border-accent-200 text-accent-700 text-xs font-semibold">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="min-w-0 inline-flex items-center px-2.5 py-1 rounded-full bg-accent-50 border border-accent-200 text-accent-700 text-xs font-semibold leading-snug">
                     {solution.outcome}
                   </span>
-                  <div className="flex items-center gap-1.5 text-accent-600 font-medium text-sm group-hover:gap-2.5 transition-all">
+                  <div className="flex items-center gap-1.5 text-accent-600 font-medium text-sm whitespace-nowrap shrink-0 group-hover:gap-2.5 transition-all">
                     <span>{t.nav.learnMore}</span>
                     <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                   </div>
@@ -119,11 +143,8 @@ const SolutionsOverview = () => {
             {t.nav.solutionsSubtitle}
           </p>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {solutions.slice(0, 3).map((solution, idx) => renderCard(solution, idx))}
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {solutions.slice(3).map((solution, idx) => renderCard(solution, idx + 3))}
+          {solutions.map((solution, idx) => renderCard(solution, idx))}
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ export const contactFormSchema = z.object({
   company: z.string().optional(),
   role: z.string().optional(),
   challenge: z.enum(
-    ["", "finops", "finance", "customerAi", "healthcare", "quantum", "custom", "other"],
+    ["", "finops", "finance", "customerAi", "healthcare", "quantum", "dtect", "juganu", "tokenOptimization", "custom", "other"],
   ).optional(),
   message: z.string().optional(),
 });

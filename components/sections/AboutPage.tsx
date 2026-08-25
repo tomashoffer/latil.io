@@ -12,7 +12,7 @@ const teamMembers = [
   { key: "alejandro", src: "/team/ale.jpeg", position: "object-[50%_30%]" },
   { key: "tomas",     src: "/team/tomas.jpg",   position: "object-top" },
   { key: "nicolas",   src: "/team/nico.jpeg",    position: "object-top" },
-  { key: "publio",    src: "/team/publio.jpeg",  position: "object-top" },
+  { key: "betzalel",  src: "/team/betzalel.png", position: "object-top" },
   { key: "karen",     src: "/team/karen.jpg",    position: "object-top" },
 ] as const;
 

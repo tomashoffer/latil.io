@@ -1,0 +1,264 @@
+pages 22
+
+--- PAGE 1 ---
+Understand your space like it’s digital
+Preparing your store for 
+the future of AI
+Jan 2026
+Store of the Future
+Digitizing Physical Spaces with Real-Time AI
+--- PAGE 2 ---
+2 Juganu 520 | Confidential
+Juganu Platform
+AI Driven 
+Computer Vision
+3rd Party 
+Solutions
+Open API’s
+Overnight 
+Deployment
+Cloud Based 
+Dashboard
+Realtime 
+Analytics
+Built-in Privacy 
+& Security
+Flexible 
+Scaling
+
+--- PAGE 3 ---
+3 Juganu 520 | Confidential
+Business Impact
+Retail Media
+Operational 
+Optimization
+Journey Insights
+Savings
+Revenue
+Shelves & Aisles 
+Intelligence
+
+--- PAGE 4 ---
+4 Juganu 2025 | Confidential
+Deployment Simulation
+--- PAGE 5 ---
+5 Juganu 2025 | Confidential
+Real-Time Shelf Monitoring Eliminates Out-of-Stocks
+A leading grocery chain faced frequent stockouts, leading to customer 
+frustration and lost sales. Traditional inventory tracking failed to 
+provide real-time visibility, making replenishment inefficient
+By implementing AI-powered shelf monitoring, the retailer gained real-
+time insights into stock levels. Automated alerts notified store 
+associates before products ran out, allowing proactive replenishment
+↓ Stockouts ↑ On-Shelf Availability ↑ Sales Uplift
+--- PAGE 6 ---
+6 Juganu 2025 | Confidential
+Retail media in-store, now measurable, and revenue-generating – just like 
+eCommerce.
+• Shopper exposure becomes measurable
+• Engagement tracked
+• Conversion measured after exposure
+• Screens and shelves become monetizable assets
+• Optimize creatives with A/B testing
+• Deliver relevant ads at the right moment
+--- PAGE 7 ---
+7 Juganu 2025 | Confidential
+Increase revenue by partnering 
+with CPGs on real-time in-store 
+data
+• Shelf, movement, and engagement visibility
+• Improved supply & on-shelf execution
+• Smarter offers and more relevant products
+• Increased loyalty and conversions
+• Shared value and new revenue opportunities
+--- PAGE 8 ---
+Customer Journey Insights –Anonymized Data
+
+--- PAGE 9 ---
+9 Juganu 2025 | Confidential
+AI-driven store execution and operational efficiency
+• Continuous shelf availability monitoring
+• Staffing aligned to actual store activity
+• Queue tracking for improved checkout
+• Real-time task management
+• Automatic issue detection
+• Performance measured and improved over time
+--- PAGE 10 ---
+10 Juganu 2024 | Confidential
+Turning Store Data Into Business Value 
+Examples:
+Shelf Monitor Checkout Optimization Customer Journey
+Tracks and visualizes stock levels and 
+fullness
+Provides insights into checkout durations, 
+usage, and availability.
+Monitors the number of areas visited 
+during a journey, and the dwell time in 
+each aisle or near a specific shelf
+↓ Stockouts  | ↑ Availability ↓ Wait Time | ↑ Throughput Hot-zones → Higher Basket
+
+--- PAGE 11 ---
+11 Juganu 520 | Confidential
+Revenue growth of 
+10% to 15%
+by leveraging customer behavior 
+insights
+Grow 10 percentage 
+points faster
+Companies leading in 
+personalization outperform their 
+peers
+Up to 6–10% of 
+Revenue Uplift
+with tailored experiences
+Sources - McKinsey & Company, "The Future of Personalization," 2022, Boston Consulting Group, "Profiting from Personalization," 2025 
+Monetization potential:
+Retail Media & 
+Data sharing
+--- PAGE 12 ---
+12 Juganu 520 | Confidential
+What retailers achieve in the first 60 days
+✓ Fewer stockouts → higher availability
+✓ Shorter queues → improved checkout speed
+✓ In-store Wi-Fi → higher shopper engagement (coupons, 
+promotions, and retail media)
+✓ Better workforce allocation → lower operating cost
+✓ Higher shelf compliance and execution
+✓ Clear visibility into shopper journeys & hot zones
+✓ Measurable ROI baseline to support scale-up
+All delivered with overnight installation and full privacy-by-design
+--- PAGE 13 ---
+13 Juganu 2024 | Confidential
+Appendix
+The Information provided here in is subject to change without prior notice by Juganu. Any information included in this document is and shall remain, at all times, the 
+exclusive property of Juganu Ltd. and/or its licensors. Neither the furnishing, receipt or possession of any information thereof shall constitute the granting or 
+transferring of any right or license to copy, use or reproduce such information or any physical article or device, or any part thereof, nor to derive any benefit 
+therefrom, in any way, unless approved otherwise in writing by Juganu Ltd.
+--- PAGE 14 ---
+14 Juganu 2025 | Confidential
+Operational Gains
+NPS 
+improvement 
+impact on 
+revenue 
+Energy saving Workforce 
+alignment 
+Shelf Out of 
+stock Revenue 
+Improvement
+Real-time 
+Personalized 
+Retail Media
+Data share with 
+CPG
+New Revenue
+Juganu Platform: From Operational Gains to New Revenue
+
+--- PAGE 15 ---
+15 Juganu 2025 | Confidential
+Smart Fixture
+Including custom-designed fixtures tailored to store requirements
+Smart kit – full capabilities 
+without lighting
+• High resolution optic sensor
+• Edge Processor – Real-time insights at the edge, Built-in privacy
+• Lighting Module – Energy-saving smart lighting
+• Connectivity – Full in-store Wi-Fi and IoT
+• Wireless Connected Fixtures – rapid network deployment
+--- PAGE 16 ---
+16 Juganu 520 | Confidential
+• Whole-store visibility – unlike aisle-only or shelf-mounted solutions
+• Real-time edge analytics – no cloud delays, no heavy data transfer
+• One unified platform connecting operations, media, and CPG (no silos)
+• Privacy-by-design – no biometric identification, no video storage
+• Overnight installation – zero disruption to store operations
+• Scales across formats – works for hypermarkets, supermarkets, and convenience
+• Fully GDPR-compliant, delivering insights without storing or identifying individual shoppers.
+How this solution is different from anything else in the market
+--- PAGE 17 ---
+17 Juganu 520 | Confidential
+• Links in-store behavior with what ultimately appears at the POS, enabling retailers to 
+understand why purchases happen or don’t happen
+• Identifies out-of-stock events at the shelf the moment they occur, preventing lost sales before 
+they reach the POS
+• Reveals traffic flows, dwell time, and engagement patterns that directly impact conversion 
+and merchandising decisions
+• Delivers only structured insights through edge analytics, eliminating the need to move heavy 
+video data and significantly reducing cloud-processing costs.
+• All in one Platform -Creates a single intelligent layer that connects operations, inventory, 
+shopper behavior, and sales outcomes – supporting better forecasting, labor planning, and 
+store execution
+Why this solution delivers value for retailers?
+A complete, real-time picture of what happens in the store – from the moment 
+shoppers walk in until the transaction is completed
+--- PAGE 18 ---
+18 Juganu 2025 | Confidential
+Juganu by the Numbers
+2011
+Founded
+400K+
+Smart units installed
+67
+Registered patents in 
+lighting and networking 
+and AI
+30+
+Countries exposure
+100M+
+Sqm of smart lightning
+Selected by global giants
+
+--- PAGE 19 ---
+Play with solid fill
+Play Cross-Sensors Tracker video
+Play Cross-Sensors Tracker video
+--- PAGE 20 ---
+20 Juganu 2025 | Confidential
+Turning Store Video into Actionable Retail Intelligence
+Play with solid fill
+Play “Marking Tool” demo video
+Play “Marking Tool” demo video
+--- PAGE 21 ---
+21 Juganu 520 | Confidential
+Platform Landscape - Indoor
+Juganu Software Services
+Queue Management Shelf Intelligence Store Traffic Insights
+Security Light Management
+Extended Services
+(sample list)
+BI:
+Video:
+Parking:
+Facial Recognition:
+LPR:
+OpenAPI
+External Services
+API | SDK | RTSP
+Shared Data
+More services available
+Sensors
+Optical | Environmental 
+Processed Data
+AI Edge compute
+Lighting
+Monetization with 
+CPG
+Propietary 
+wireless backhaul
+Sensors
+Optical | Environmental 
+Processed Data
+AI Edge compute
+Lighting
+Sensors
+Optical | Environmental 
+Processed Data
+AI Edge compute
+Lighting
+--- PAGE 22 ---
+22 Juganu 2024 | Confidential
+Edge Processing Connected Fixtures Wi-Fi / 5GSmart Lighting Camera & Audio 
+sensors
+Platform Core Capabilities
+From Smart Fixtures to Actionable Retail Intelligence
+Overnight installation | Real-time insights at the edge | Privacy-by-design | Open APIs for 3rd-party apps

@@ -1,0 +1,44 @@
+pages 1
+
+--- PAGE 1 ---
+ 
+ 
+Dtect – Company One pager 
+The Trust Infrastructure for Digital Evidence in the AI Era 
+The Threat Is Already Operational - 
+AI-generated fraud has moved from edge cases to everyday risk. Manipulated, staged, replayed, or 
+synthetically generated digital media is now routinely used as evidence to bypass verification 
+systems, impersonate individuals, and compromise high-risk digital workflows. 
+In the past two years alone, the use of AI-manipulated and fraudulent digital evidence in fraud and 
+abuse incidents has grown by over 1,000%, with global losses projected to exceed $40B annually by 
+2027. As generative models continue to improve, detecting manipulated content is no longer a future 
+concern - it is becoming a core requirement for secure digital operations. 
+Why Dtect?  
+Dtect is a deep-tech company built to help organizations operate safely in this new reality. 
+Founded on years of pioneering academic research and developed by a team spanning AI, computer 
+vision, optics, and security-critical operations, Dtect delivers next-Gen Digital Evidence forensics 
+solutions designed for environments where trust, accuracy, and reliability matter. 
+At the core of Dtect’s approach is a patented dual-engine technology combining motion biometrics 
+and high-frequency spectral analysis to identify Fraudulent and AI-manipulated content. The platform 
+is the result of 16,000+ hours of proprietary research and is protected by five patent families, with 
+thirteen granted patents, providing a robust and future-ready detection foundation. 
+Built for Real-World Constraints - 
+There is no single definition of “trust. ” Different organizations face different risks, regulatory 
+constraints, and operational realities. 
+Dtect’s solutions are designed to integrate into existing workflows and operate in security-critical, 
+regulated environments, tested, validated, and deployed within Fortune 500 organizations and 
+tier-one government agencies managing large-scale digital identity, authentication, and media-
+verification systems. 
+The Minds Behind Dtect - 
+Dtect is led by a multidisciplinary founding team combining deep research excellence with real-world 
+operational experience. 
+Leadership includes Dor Shkedi (CEO) and Roee Dar (CTO), together with Prof. David Mendlovic, 
+former Chief Scientist of Israel, and Prof. Dan Raviv, a leading expert in AI and computer vision. 
+Working With Dtect - 
+Dtect is built to help organizations verify the authenticity, origin, and integrity of digital evidence in 
+environments where automated decisions have financial, legal, or security consequences. 
+supporting evaluations, pilots, and deployments tailored to each environment’s requirements. 
+If you are exploring how to protect identity, authentication, or media integrity in the age of generative 
+AI, we would be glad to connect and discuss how Dtect can support your needs! 
+Continue the Conversation 
+Dor Shkedi - dor@dtectvision.ai | +972-54-288-1443 
